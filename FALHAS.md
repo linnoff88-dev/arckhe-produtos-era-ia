@@ -1,6 +1,6 @@
 # Falhas — produtos-era-ia
 
-| data | o que quebrou | menor correção | prompt \| infra |
+| data | o que quebrou | menor correçêo | prompt \| infra |
 |---|---|---|---|
 | 2026-09-28 | i18n.py tratou o `<!DOCTYPE html>` como texto: páginas EN/ES com "html" solto no topo e em modo quirks | Pular Doctype/Declaration no walker do BeautifulSoup + checar `document.compatMode` no teste | prompt |
 | 2026-09-28 | `meta description` dos módulos quebrava quando o resumo tinha aspas (atributo sem escape no lib.mjs) | Escapar `&` e `"` no `head()` | prompt |

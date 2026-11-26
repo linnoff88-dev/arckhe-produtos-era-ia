@@ -3,9 +3,9 @@
 
 Uso:  node build/build.mjs && python3 build/i18n.py [en es] [--so-montar]
 
-Padrão INEMA trilíngue (wifi/RELATORIO-CURSOS-TRILINGUES.md): PT na raiz, <lang>/ ao lado.
+Padrêo INEMA trilíngue (wifi/RELATORIO-CURSOS-TRILINGUES.md): PT na raiz, <lang>/ ao lado.
 Só TEXTO vai para o modelo (blocos com as tags inline preservadas, atributos de acessibilidade, rótulos
-de SVG, manifesto e as mensagens do learn.js). Layout, CSS e JS são reaproveitados.
+de SVG, manifesto e as mensagens do learn.js). Layout, CSS e JS sêo reaproveitados.
 Motor: tradutor central do INEMA (`inema-traduz`, INEMA_TRADUCAO_* em ~/.config/inema/modelos.env, hoje Sonnet 5.5)
 pela ASSINATURA, sem chave de API.
 Cache em i18n/<lang>.json (chave = hash do texto PT): unidade traduzida nunca é reenviada.
@@ -55,10 +55,10 @@ FIXOS = {
     'es': dict(titulo='"Productos en la era de la IA"', t1='"La mentalidad"', t2='"¿Vale la pena construirlo?"',
                t3='"Lanzar y crecer"', trilha='"ruta"', modulo='"módulo"', topico='"tema"'),
 }
-# textos fixos das mensagens no <script> inline do lib.mjs (quiz e botão copiar)
+# textos fixos das mensagens no <script> inline do lib.mjs (quiz e botêo copiar)
 SCRIPT_FIXOS = {
-    'en': {"'✓ Certo. '": "'✓ Correct. '", "'✗ Não é essa. '": "'✗ Not quite. '", "'Copiado ✓'": "'Copied ✓'"},
-    'es': {"'✓ Certo. '": "'✓ Correcto. '", "'✗ Não é essa. '": "'✗ No es esa. '", "'Copiado ✓'": "'Copiado ✓'"},
+    'en': {"'✓ Certo. '": "'✓ Correct. '", "'✗ Nêo é essa. '": "'✗ Not quite. '", "'Copiado ✓'": "'Copied ✓'"},
+    'es': {"'✓ Certo. '": "'✓ Correcto. '", "'✗ Nêo é essa. '": "'✗ No es esa. '", "'Copiado ✓'": "'Copiado ✓'"},
 }
 # mensagens de interface do learn.js (só literais que o aluno vê)
 LEARN_UI = ['Adicionar nota', 'Anotar selecao', 'Apagar tudo', 'Armazenamento cheio. Exporte sua jornada para nao perder dados.',
@@ -79,7 +79,7 @@ def paginas():
 
 
 def eh_folha(tag):
-    """Tag cujos descendentes são só texto e tags inline: vira UMA unidade (innerHTML)."""
+    """Tag cujos descendentes sêo só texto e tags inline: vira UMA unidade (innerHTML)."""
     for d in tag.descendants:
         if isinstance(d, Tag) and d.name not in INLINE:
             return False
@@ -150,10 +150,10 @@ def valido(pt, tr):
 
 _TRADUTOR = os.path.expanduser("~/projetos/wifi/scripts/inema-traduz")
 def chamar_tradutor(pedido: str, timeout: int = 900) -> str:
-    """Tradução pelo tradutor central do INEMA (INEMA_TRADUCAO_* em ~/.config/inema/modelos.env). Assinatura, nunca API."""
+    """Traduçêo pelo tradutor central do INEMA (INEMA_TRADUCAO_* em ~/.config/inema/modelos.env). Assinatura, nunca API."""
     if os.path.exists(_TRADUTOR):
         cmd = [_TRADUTOR]
-    else:  # fora da máquina do Nei: Claude Code da assinatura com o modelo da variável (padrão Sonnet 5.5)
+    else:  # fora da máquina do Nei: Claude Code da assinatura com o modelo da variável (padrêo Sonnet 5.5)
         cmd = ["claude", "-p", "--model", os.environ.get("INEMA_TRADUCAO_MODELO", "claude-sonnet-5-5"),
                "--output-format", "text", "--tools", ""]
     env = {k: v for k, v in os.environ.items() if k not in ("ANTHROPIC_API_KEY", "OPENAI_API_KEY", "CLAUDECODE")}
@@ -172,7 +172,7 @@ def via_tradutor(sistema, lote):
 
 
 def traduzir(lang, fontes):
-    """fontes: {hash: pt}. Devolve {hash: tradução}, usando e atualizando o cache."""
+    """fontes: {hash: pt}. Devolve {hash: traduçêo}, usando e atualizando o cache."""
     os.makedirs(I18N, exist_ok=True)
     cpath = os.path.join(I18N, f'{lang}.json')
     cache = json.load(open(cpath, encoding='utf-8')) if os.path.exists(cpath) else {}
@@ -205,7 +205,7 @@ def traduzir(lang, fontes):
                 json.dump(cache, open(cpath, 'w', encoding='utf-8'), ensure_ascii=False, indent=0, sort_keys=True)
     ruins = [v[:80] for k, v in fontes.items() if not valido(v, cache.get(k))]
     if ruins:
-        sys.exit(f'[{lang}] {len(ruins)} unidades sem tradução válida, ex.: {ruins[:3]}')
+        sys.exit(f'[{lang}] {len(ruins)} unidades sem traduçêo válida, ex.: {ruins[:3]}')
     return cache
 
 
