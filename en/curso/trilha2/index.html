@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="produtos-era-ia-en" name="inema-course"/>
+<meta content="produtos-era-ia-en" name="ARCKHÉ-course"/>
 <title>Track 2 — Is It Worth Building? | Products in the AI Era</title>
 <meta content="The questions for evaluating an opportunity: real need, staying power, clone risk, data value, difficulty as a moat, and recurring use." name="description"/>
 <!-- ANTI-FOUC: bloqueante, antes de tudo -->
@@ -12,22 +12,22 @@
 (function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; } }
-      else { var legacy = localStorage.getItem('theme'); if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark'; }
+      else { var legacy = localStorage.getItem('theme'); if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark'; }
     } catch (e) { p = clone(DEF); }
-    var THEMES = { 'inema-dark': { dark: true, attr: null, cs: 'dark' }, 'claro': { dark: false, attr: null, cs: 'light' }, 'sepia': { dark: false, attr: 'sepia', cs: 'light' }, 'foco': { dark: null, attr: 'foco', cs: null }, 'contraste': { dark: true, attr: 'contraste', cs: 'dark' } };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var THEMES = { 'ARCKHÉ-dark': { dark: true, attr: null, cs: 'dark' }, 'claro': { dark: false, attr: null, cs: 'light' }, 'sepia': { dark: false, attr: 'sepia', cs: 'light' }, 'foco': { dark: null, attr: 'foco', cs: null }, 'contraste': { dark: true, attr: 'contraste', cs: 'dark' } };
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
     if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
     if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
     html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
     html.setAttribute('data-font', p.font || 'inter'); html.setAttribute('data-accent', p.accent || 'emerald');
     var s = html.style; var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString()); s.setProperty('font-size', scale + '%');
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString()); s.setProperty('font-size', scale + '%');
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch'); s.setProperty('--lh-body', (+p.leading || 1.7).toString());
     var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
     s.setProperty('--font-body', fam);
@@ -45,7 +45,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="../../assets/learn.css" rel="stylesheet"/>
 <!-- Manifesto do curso (obrigatório em toda página) -->
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
  "course": "produtos-era-ia-en",
  "tracks": [
@@ -228,23 +228,23 @@
     .qz-fb { display:none; } .qz[data-answered] .qz-fb { display:block; }
 
     /* TOC do módulo é um bloco inline, nêo uma barra lateral sticky */
-    [data-inema-toc] { position: static !important; top: auto !important; max-height: none !important; }
+    [data-ARCKHÉ-toc] { position: static !important; top: auto !important; max-height: none !important; }
     /* Painel de aparência (classes internas) */
-    .inema-appearance-sec { margin-bottom: .75rem; }
-    .inema-appearance-label { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9ca3af; margin-bottom: .35rem; }
-    .inema-appearance-row { display: flex; flex-wrap: wrap; gap: .35rem; }
-    .inema-chip { font-size: .8rem; padding: .3rem .65rem; border-radius: .5rem; border: 1px solid #374151; background: rgba(31,41,55,.6); color: #e5e7eb; cursor: pointer; }
-    .inema-chip:hover { border-color: #FACC15; }
-    .inema-chip[aria-pressed="true"], .inema-chip.is-active { background: rgba(250,204,21,.15); border-color: #FACC15; color: #FACC15; }
-    html:not(.dark) .inema-chip { background: #f3f4f6; color: #111827; border-color: #d1d5db; }
-    html:not(.dark) .inema-chip[aria-pressed="true"], html:not(.dark) .inema-chip.is-active { background: rgba(161,98,7,.1); border-color: #a16207; color: #a16207; }
+    .ARCKHÉ-appearance-sec { margin-bottom: .75rem; }
+    .ARCKHÉ-appearance-label { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9ca3af; margin-bottom: .35rem; }
+    .ARCKHÉ-appearance-row { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .ARCKHÉ-chip { font-size: .8rem; padding: .3rem .65rem; border-radius: .5rem; border: 1px solid #374151; background: rgba(31,41,55,.6); color: #e5e7eb; cursor: pointer; }
+    .ARCKHÉ-chip:hover { border-color: #FACC15; }
+    .ARCKHÉ-chip[aria-pressed="true"], .ARCKHÉ-chip.is-active { background: rgba(250,204,21,.15); border-color: #FACC15; color: #FACC15; }
+    html:not(.dark) .ARCKHÉ-chip { background: #f3f4f6; color: #111827; border-color: #d1d5db; }
+    html:not(.dark) .ARCKHÉ-chip[aria-pressed="true"], html:not(.dark) .ARCKHÉ-chip.is-active { background: rgba(161,98,7,.1); border-color: #a16207; color: #a16207; }
     /* Coluna do módulo: largura fixa do layout, independente da ordem em que o Tailwind CDN injeta o CSS */
-    main.max-w-6xl.inema-prose { max-width: 72rem; }
+    main.max-w-6xl.ARCKHÉ-prose { max-width: 72rem; }
     /* Code box */
     .codebox pre { white-space: pre-wrap; word-break: break-word; }
     
   </style>
-<link href="https://inematds.github.io/produtos-era-ia/curso/trilha2/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/en/curso/trilha2/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/es/curso/trilha2/" hreflang="es" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/curso/trilha2/" hreflang="x-default" rel="alternate"/>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha2/" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha2/" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha2/" hreflang="es" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha2/" hreflang="x-default" rel="alternate"/>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
 <!-- NAVIGATION -->
@@ -257,9 +257,9 @@
 <span class="font-bold text-lg hidden md:inline">Products in the AI Era</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600 hidden sm:inline">-</span>
-<a class="text-amber-700 dark:text-slate-300 hover:opacity-80 text-sm font-medium hidden sm:inline" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 dark:text-slate-300 hover:opacity-80 text-sm font-medium hidden sm:inline" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha1/index.html">
@@ -275,11 +275,11 @@
 <span class="hidden sm:inline">Launch</span>
 </a>
 <span class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-2" data-lang-switch=""><a class="text-neutral-400 hover:text-primary" href="../../../curso/trilha2/index.html" hreflang="pt-BR" lang="pt-BR">PT</a><span class="text-neutral-600">·</span><a class="text-primary font-bold" href="../../../en/curso/trilha2/index.html" hreflang="en" lang="en">EN</a><span class="text-neutral-600">·</span><a class="text-neutral-400 hover:text-primary" href="../../../es/curso/trilha2/index.html" hreflang="es" lang="es">ES</a></span>
-<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors" data-inema-journey-open="" type="button">
+<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors" data-ARCKHÉ-journey-open="" type="button">
 <span>🧭</span><span>My Journey</span>
-<span class="text-xs px-1.5 py-0.5 rounded-full bg-primary/20" data-inema-journey-badge=""></span>
+<span class="text-xs px-1.5 py-0.5 rounded-full bg-primary/20" data-ARCKHÉ-journey-badge=""></span>
 </button>
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" data-inema-appearance-toggle="[data-inema-appearance]" title="Appearance and reading" type="button">
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="Appearance and reading" type="button">
 <span aria-hidden="true">Aa</span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" id="theme-toggle" title="Light/dark theme">
@@ -290,47 +290,47 @@
 </div>
 </div>
 </nav>
-<div aria-label="Appearance and reading" class="inema-appearance-pop" data-inema-appearance="" role="region">
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Theme</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-theme="inema-dark" type="button">Dark</button>
-<button class="inema-chip" data-inema-set-theme="claro" type="button">Light</button>
-<button class="inema-chip" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button class="inema-chip" data-inema-set-theme="foco" type="button">Focus</button>
-<button class="inema-chip" data-inema-set-theme="contraste" type="button">Contrast</button>
+<div aria-label="Appearance and reading" class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="" role="region">
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Theme</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Dark</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="claro" type="button">Light</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="foco" type="button">Focus</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="contraste" type="button">Contrast</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Text size</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-fontscale="90" type="button">A-</button>
-<button class="inema-chip" data-inema-set-fontscale="100" type="button">A</button>
-<button class="inema-chip" data-inema-set-fontscale="115" type="button">A+</button>
-<button class="inema-chip" data-inema-set-fontscale="130" type="button">A++</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Text size</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="90" type="button">A-</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="115" type="button">A+</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="130" type="button">A++</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Font</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-font="inter" type="button">Inter</button>
-<button class="inema-chip" data-inema-set-font="system" type="button">System</button>
-<button class="inema-chip" data-inema-set-font="leitura" type="button">Reading</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Font</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="inter" type="button">Inter</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="system" type="button">System</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="leitura" type="button">Reading</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Line spacing</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-leading="1.5" type="button">Compact</button>
-<button class="inema-chip" data-inema-set-leading="1.7" type="button">Normal</button>
-<button class="inema-chip" data-inema-set-leading="1.9" type="button">Wide</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Line spacing</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.5" type="button">Compact</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.7" type="button">Normal</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.9" type="button">Wide</button>
 </div>
 </div>
 </div>
 <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 <div class="flex items-center space-x-2 text-sm text-neutral-400"><a class="hover:text-blue-400" href="../../index.html">Home</a><span>/</span><span class="text-blue-400">Track 2</span></div>
 </nav>
-<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600" data-inema-track="2">
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600" data-ARCKHÉ-track="2">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 <div>
@@ -340,10 +340,10 @@
 <div class="grid grid-cols-3 gap-4 mb-6">
 <div class="bg-dark-800 rounded-xl p-4 border border-dark-600 text-center"><div class="text-2xl font-bold text-blue-400">3</div><div class="text-xs text-neutral-500 mt-1">Modules</div></div><div class="bg-dark-800 rounded-xl p-4 border border-dark-600 text-center"><div class="text-2xl font-bold text-blue-400">18</div><div class="text-xs text-neutral-500 mt-1">Topics</div></div><div class="bg-dark-800 rounded-xl p-4 border border-dark-600 text-center"><div class="text-2xl font-bold text-blue-400">~2.1h</div><div class="text-xs text-neutral-500 mt-1">Duration</div></div>
 </div>
-<div aria-label="Track 2 progress" aria-valuemax="100" aria-valuemin="0" class="inema-meter bg-dark-800 rounded-xl p-4 border border-dark-600" data-inema-meter="trilha:2" role="progressbar">
-<div class="flex justify-between text-sm text-neutral-400 mb-2"><span>Your progress</span><span class="text-blue-400 font-semibold" data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar h-2 bg-dark-700 rounded-full overflow-hidden mb-2"><div class="inema-bar__fill h-full bg-blue-500 rounded-full transition-all" data-inema-meter-fill="" style="width:0%"></div></div>
-<div class="text-xs text-neutral-500"><span data-inema-meter-frac="">0 of 18</span> topics completed</div>
+<div aria-label="Track 2 progress" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter bg-dark-800 rounded-xl p-4 border border-dark-600" data-ARCKHÉ-meter="trilha:2" role="progressbar">
+<div class="flex justify-between text-sm text-neutral-400 mb-2"><span>Your progress</span><span class="text-blue-400 font-semibold" data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar h-2 bg-dark-700 rounded-full overflow-hidden mb-2"><div class="ARCKHÉ-bar__fill h-full bg-blue-500 rounded-full transition-all" data-ARCKHÉ-meter-fill="" style="width:0%"></div></div>
+<div class="text-xs text-neutral-500"><span data-ARCKHÉ-meter-frac="">0 of 18</span> topics completed</div>
 </div>
 </div>
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-4"><svg aria-label="Diagram of the 3 modules in Track 2: Is It Worth Building?" class="w-full h-auto" role="img" viewbox="0 0 800 300"><defs>
@@ -389,12 +389,12 @@
 </a></div>
 </section>
 <h2 class="text-2xl font-bold mb-6">Detailed content</h2>
-<div class="bg-dark-800 rounded-2xl border border-dark-600 mb-8 overflow-hidden scroll-mt-20" data-inema-module="2-1" id="modulo-2-1">
+<div class="bg-dark-800 rounded-2xl border border-dark-600 mb-8 overflow-hidden scroll-mt-20" data-ARCKHÉ-module="2-1" id="modulo-2-1">
 <div class="p-6 border-b border-dark-600">
 <div class="flex items-start justify-between flex-wrap gap-3 mb-3">
 <span class="text-blue-400 font-bold text-sm">Module 2.1</span>
 <div class="flex items-center gap-4"><span class="text-neutral-500 text-sm">~40 min</span>
-<span class="text-xs text-blue-400 font-semibold" data-inema-meter="modulo:2-1"><span data-inema-meter-frac="">0 of 6</span></span></div>
+<span class="text-xs text-blue-400 font-semibold" data-ARCKHÉ-meter="modulo:2-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span></span></div>
 </div>
 <h2 class="text-2xl font-bold mb-2">🩹 Need and shelf life</h2>
 <p class="text-neutral-400">Before you ask "how do I build it?", ask "does this need to exist?" and "will it still need to exist a year from now?" These are the two questions that eliminate the most ideas, and that's a good thing.</p>
@@ -486,12 +486,12 @@
 </div>
 </div>
 </div>
-<div class="bg-dark-800 rounded-2xl border border-dark-600 mb-8 overflow-hidden scroll-mt-20" data-inema-module="2-2" id="modulo-2-2">
+<div class="bg-dark-800 rounded-2xl border border-dark-600 mb-8 overflow-hidden scroll-mt-20" data-ARCKHÉ-module="2-2" id="modulo-2-2">
 <div class="p-6 border-b border-dark-600">
 <div class="flex items-start justify-between flex-wrap gap-3 mb-3">
 <span class="text-blue-400 font-bold text-sm">Module 2.2</span>
 <div class="flex items-center gap-4"><span class="text-neutral-500 text-sm">~40 min</span>
-<span class="text-xs text-blue-400 font-semibold" data-inema-meter="modulo:2-2"><span data-inema-meter-frac="">0 of 6</span></span></div>
+<span class="text-xs text-blue-400 font-semibold" data-ARCKHÉ-meter="modulo:2-2"><span data-ARCKHÉ-meter-frac="">0 of 6</span></span></div>
 </div>
 <h2 class="text-2xl font-bold mb-2">🐘 Giants, data, and defensibility</h2>
 <p class="text-neutral-400">In a world where any software can be copied, the question isn’t “Do I have a moat?” but “What, exactly, makes me hard to copy, and what’s left if someone does?”</p>
@@ -583,12 +583,12 @@
 </div>
 </div>
 </div>
-<div class="bg-dark-800 rounded-2xl border border-dark-600 mb-8 overflow-hidden scroll-mt-20" data-inema-module="2-3" id="modulo-2-3">
+<div class="bg-dark-800 rounded-2xl border border-dark-600 mb-8 overflow-hidden scroll-mt-20" data-ARCKHÉ-module="2-3" id="modulo-2-3">
 <div class="p-6 border-b border-dark-600">
 <div class="flex items-start justify-between flex-wrap gap-3 mb-3">
 <span class="text-blue-400 font-bold text-sm">Module 2.3</span>
 <div class="flex items-center gap-4"><span class="text-neutral-500 text-sm">~45 min</span>
-<span class="text-xs text-blue-400 font-semibold" data-inema-meter="modulo:2-3"><span data-inema-meter-frac="">0 of 6</span></span></div>
+<span class="text-xs text-blue-400 font-semibold" data-ARCKHÉ-meter="modulo:2-3"><span data-ARCKHÉ-meter-frac="">0 of 6</span></span></div>
 </div>
 <h2 class="text-2xl font-bold mb-2">🏒 Use, recurrence, and habit</h2>
 <p class="text-neutral-400">A product only matters if people keep using it. This module covers anticipating the market, choosing where the window stays open longest, and becoming part of the customer’s routine.</p>
@@ -689,8 +689,8 @@
 <footer class="border-t border-dark-600 mt-16 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm space-y-2">
 <p>Products in the AI Era · Track 2 — Is It Worth Building? · 2026 ·
-        <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> -
-        <a class="text-amber-700 dark:text-slate-300" href="https://inema.pro" target="_blank">PRO</a></p>
+        <a class="text-sky-400 hover:text-sky-300" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a> -
+        <a class="text-amber-700 dark:text-slate-300" href="https://ARCKHÉ.pro" target="_blank">PRO</a></p>
 </div>
 </footer>
 <!-- SCRIPTS núcleo v1 -->
@@ -718,7 +718,7 @@
       html.classList.toggle('dark');
       const dark = html.classList.contains('dark');
       localStorage.setItem('theme', dark ? 'dark' : 'light');
-      if (window.INEMA && INEMA.setPref) { try { INEMA.setPref('theme', dark ? 'inema-dark' : 'claro'); } catch (e) {} }
+      if (window.ARCKHÉ && ARCKHÉ.setPref) { try { ARCKHÉ.setPref('theme', dark ? 'ARCKHÉ-dark' : 'claro'); } catch (e) {} }
     });
     function openModal(modalId) { const m = document.getElementById(modalId); if (m) { m.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
     function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
@@ -742,7 +742,7 @@
   </script>
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init(); }
   </script>
 </body>
 </html>

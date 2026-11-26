@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="produtos-era-ia-en" name="inema-course"/>
+<meta content="produtos-era-ia-en" name="ARCKHÉ-course"/>
 <title>Positioning and the Customer Journey | Products in the AI Era</title>
 <meta content="If you can’t explain the product in one sentence, no one will explain it for you. And if users don’t feel its value in two minutes, they won’t come back. This module brings the two sides together: what people hear and what they experience." name="description"/>
 <!-- ANTI-FOUC: bloqueante, antes de tudo -->
@@ -12,22 +12,22 @@
 (function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; } }
-      else { var legacy = localStorage.getItem('theme'); if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark'; }
+      else { var legacy = localStorage.getItem('theme'); if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark'; }
     } catch (e) { p = clone(DEF); }
-    var THEMES = { 'inema-dark': { dark: true, attr: null, cs: 'dark' }, 'claro': { dark: false, attr: null, cs: 'light' }, 'sepia': { dark: false, attr: 'sepia', cs: 'light' }, 'foco': { dark: null, attr: 'foco', cs: null }, 'contraste': { dark: true, attr: 'contraste', cs: 'dark' } };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var THEMES = { 'ARCKHÉ-dark': { dark: true, attr: null, cs: 'dark' }, 'claro': { dark: false, attr: null, cs: 'light' }, 'sepia': { dark: false, attr: 'sepia', cs: 'light' }, 'foco': { dark: null, attr: 'foco', cs: null }, 'contraste': { dark: true, attr: 'contraste', cs: 'dark' } };
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
     if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
     if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
     html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
     html.setAttribute('data-font', p.font || 'inter'); html.setAttribute('data-accent', p.accent || 'emerald');
     var s = html.style; var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString()); s.setProperty('font-size', scale + '%');
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString()); s.setProperty('font-size', scale + '%');
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch'); s.setProperty('--lh-body', (+p.leading || 1.7).toString());
     var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
     s.setProperty('--font-body', fam);
@@ -45,7 +45,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="../../assets/learn.css" rel="stylesheet"/>
 <!-- Manifesto do curso (obrigatório em toda página) -->
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
  "course": "produtos-era-ia-en",
  "tracks": [
@@ -228,23 +228,23 @@
     .qz-fb { display:none; } .qz[data-answered] .qz-fb { display:block; }
 
     /* TOC do módulo é um bloco inline, nêo uma barra lateral sticky */
-    [data-inema-toc] { position: static !important; top: auto !important; max-height: none !important; }
+    [data-ARCKHÉ-toc] { position: static !important; top: auto !important; max-height: none !important; }
     /* Painel de aparência (classes internas) */
-    .inema-appearance-sec { margin-bottom: .75rem; }
-    .inema-appearance-label { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9ca3af; margin-bottom: .35rem; }
-    .inema-appearance-row { display: flex; flex-wrap: wrap; gap: .35rem; }
-    .inema-chip { font-size: .8rem; padding: .3rem .65rem; border-radius: .5rem; border: 1px solid #374151; background: rgba(31,41,55,.6); color: #e5e7eb; cursor: pointer; }
-    .inema-chip:hover { border-color: #FACC15; }
-    .inema-chip[aria-pressed="true"], .inema-chip.is-active { background: rgba(250,204,21,.15); border-color: #FACC15; color: #FACC15; }
-    html:not(.dark) .inema-chip { background: #f3f4f6; color: #111827; border-color: #d1d5db; }
-    html:not(.dark) .inema-chip[aria-pressed="true"], html:not(.dark) .inema-chip.is-active { background: rgba(161,98,7,.1); border-color: #a16207; color: #a16207; }
+    .ARCKHÉ-appearance-sec { margin-bottom: .75rem; }
+    .ARCKHÉ-appearance-label { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9ca3af; margin-bottom: .35rem; }
+    .ARCKHÉ-appearance-row { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .ARCKHÉ-chip { font-size: .8rem; padding: .3rem .65rem; border-radius: .5rem; border: 1px solid #374151; background: rgba(31,41,55,.6); color: #e5e7eb; cursor: pointer; }
+    .ARCKHÉ-chip:hover { border-color: #FACC15; }
+    .ARCKHÉ-chip[aria-pressed="true"], .ARCKHÉ-chip.is-active { background: rgba(250,204,21,.15); border-color: #FACC15; color: #FACC15; }
+    html:not(.dark) .ARCKHÉ-chip { background: #f3f4f6; color: #111827; border-color: #d1d5db; }
+    html:not(.dark) .ARCKHÉ-chip[aria-pressed="true"], html:not(.dark) .ARCKHÉ-chip.is-active { background: rgba(161,98,7,.1); border-color: #a16207; color: #a16207; }
     /* Coluna do módulo: largura fixa do layout, independente da ordem em que o Tailwind CDN injeta o CSS */
-    main.max-w-6xl.inema-prose { max-width: 72rem; }
+    main.max-w-6xl.ARCKHÉ-prose { max-width: 72rem; }
     /* Code box */
     .codebox pre { white-space: pre-wrap; word-break: break-word; }
     
   </style>
-<link href="https://inematds.github.io/produtos-era-ia/curso/trilha3/modulo-3-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/en/curso/trilha3/modulo-3-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/es/curso/trilha3/modulo-3-2.html" hreflang="es" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/curso/trilha3/modulo-3-2.html" hreflang="x-default" rel="alternate"/>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha3/modulo-3-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha3/modulo-3-2.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha3/modulo-3-2.html" hreflang="es" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha3/modulo-3-2.html" hreflang="x-default" rel="alternate"/>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
 <!-- NAVIGATION -->
@@ -257,9 +257,9 @@
 <span class="font-bold text-lg hidden md:inline">Products in the AI Era</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600 hidden sm:inline">-</span>
-<a class="text-amber-700 dark:text-slate-300 hover:opacity-80 text-sm font-medium hidden sm:inline" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 dark:text-slate-300 hover:opacity-80 text-sm font-medium hidden sm:inline" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha1/index.html">
@@ -275,11 +275,11 @@
 <span class="hidden sm:inline">Launch</span>
 </a>
 <span class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-2" data-lang-switch=""><a class="text-neutral-400 hover:text-primary" href="../../../curso/trilha3/modulo-3-2.html" hreflang="pt-BR" lang="pt-BR">PT</a><span class="text-neutral-600">·</span><a class="text-primary font-bold" href="../../../en/curso/trilha3/modulo-3-2.html" hreflang="en" lang="en">EN</a><span class="text-neutral-600">·</span><a class="text-neutral-400 hover:text-primary" href="../../../es/curso/trilha3/modulo-3-2.html" hreflang="es" lang="es">ES</a></span>
-<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors" data-inema-journey-open="" type="button">
+<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors" data-ARCKHÉ-journey-open="" type="button">
 <span>🧭</span><span>My Journey</span>
-<span class="text-xs px-1.5 py-0.5 rounded-full bg-primary/20" data-inema-journey-badge=""></span>
+<span class="text-xs px-1.5 py-0.5 rounded-full bg-primary/20" data-ARCKHÉ-journey-badge=""></span>
 </button>
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" data-inema-appearance-toggle="[data-inema-appearance]" title="Appearance and reading" type="button">
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="Appearance and reading" type="button">
 <span aria-hidden="true">Aa</span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" id="theme-toggle" title="Light/dark theme">
@@ -290,40 +290,40 @@
 </div>
 </div>
 </nav>
-<div aria-label="Appearance and reading" class="inema-appearance-pop" data-inema-appearance="" role="region">
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Theme</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-theme="inema-dark" type="button">Dark</button>
-<button class="inema-chip" data-inema-set-theme="claro" type="button">Light</button>
-<button class="inema-chip" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button class="inema-chip" data-inema-set-theme="foco" type="button">Focus</button>
-<button class="inema-chip" data-inema-set-theme="contraste" type="button">Contrast</button>
+<div aria-label="Appearance and reading" class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="" role="region">
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Theme</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Dark</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="claro" type="button">Light</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="foco" type="button">Focus</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="contraste" type="button">Contrast</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Text size</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-fontscale="90" type="button">A-</button>
-<button class="inema-chip" data-inema-set-fontscale="100" type="button">A</button>
-<button class="inema-chip" data-inema-set-fontscale="115" type="button">A+</button>
-<button class="inema-chip" data-inema-set-fontscale="130" type="button">A++</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Text size</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="90" type="button">A-</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="115" type="button">A+</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="130" type="button">A++</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Font</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-font="inter" type="button">Inter</button>
-<button class="inema-chip" data-inema-set-font="system" type="button">System</button>
-<button class="inema-chip" data-inema-set-font="leitura" type="button">Reading</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Font</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="inter" type="button">Inter</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="system" type="button">System</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="leitura" type="button">Reading</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Line spacing</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-leading="1.5" type="button">Compact</button>
-<button class="inema-chip" data-inema-set-leading="1.7" type="button">Normal</button>
-<button class="inema-chip" data-inema-set-leading="1.9" type="button">Wide</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Line spacing</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.5" type="button">Compact</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.7" type="button">Normal</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.9" type="button">Wide</button>
 </div>
 </div>
 </div>
@@ -344,26 +344,26 @@
 <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Topics</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">45</div><div class="text-xs text-neutral-400">Minutes</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Intermediate</div><div class="text-xs text-neutral-400">Level</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Practical</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module progress" aria-valuemax="100" aria-valuemin="0" class="inema-meter max-w-md mt-6" data-inema-meter="modulo:3-2" role="progressbar">
-<div class="flex justify-between text-sm text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar h-2 bg-dark-700 rounded-full overflow-hidden"><div class="inema-bar__fill h-full bg-purple-500 rounded-full transition-all" data-inema-meter-fill="" style="width:0%"></div></div>
+<div aria-label="Module progress" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter max-w-md mt-6" data-ARCKHÉ-meter="modulo:3-2" role="progressbar">
+<div class="flex justify-between text-sm text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar h-2 bg-dark-700 rounded-full overflow-hidden"><div class="ARCKHÉ-bar__fill h-full bg-purple-500 rounded-full transition-all" data-ARCKHÉ-meter-fill="" style="width:0%"></div></div>
 </div>
 </div>
 </header>
-<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 inema-prose" data-inema-module="3-2" data-inema-track="3">
-<nav aria-label="Topics in this module" class="mb-12 bg-dark-800 rounded-xl border border-dark-600 p-5" data-inema-toc="">
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ARCKHÉ-prose" data-ARCKHÉ-module="3-2" data-ARCKHÉ-track="3">
+<nav aria-label="Topics in this module" class="mb-12 bg-dark-800 rounded-xl border border-dark-600 p-5" data-ARCKHÉ-toc="">
 <p class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">In this module</p>
 <ol class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
 <li><a class="flex items-start gap-2 text-neutral-300 hover:text-purple-400" href="#topico-1"><span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</span><span>Positioning in one line</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-purple-400" href="#topico-2"><span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</span><span>A short video is an elevator pitch</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-purple-400" href="#topico-3"><span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</span><span>Fewer clicks to value</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-purple-400" href="#topico-4"><span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">4</span><span>Validate the interface with a free prototype</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-purple-400" href="#topico-5"><span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">5</span><span>Prove value in under two minutes</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-purple-400" href="#topico-6"><span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">6</span><span>The content flywheel</span></a></li>
 </ol>
 </nav>
 <!-- TÓPICO 1 -->
-<section class="mb-16" data-inema-topic="modulo-3-2#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-2#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🧷 Positioning in one line</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-p1">Compare two phrases. The first: <em>"we're an AI-based security platform for modern developers"</em>. The second: <strong class="text-purple-400">"antivirus for AI-generated apps"</strong>. The second is understood in a second because it uses a category everyone knows (antivirus) applied to a new problem (AI-generated apps).</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-2-p1">Compare two phrases. The first: <em>"we're an AI-based security platform for modern developers"</em>. The second: <strong class="text-purple-400">"antivirus for AI-generated apps"</strong>. The second is understood in a second because it uses a category everyone knows (antivirus) applied to a new problem (AI-generated apps).</p>
 <figure class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Comparison between a clear positioning statement and a generic one" class="w-full h-auto" role="img" viewbox="0 0 800 266"><defs>
 <lineargradient id="s45-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c084fc"></stop><stop offset="1" stop-color="#a855f7"></stop></lineargradient>
@@ -381,7 +381,7 @@
 </figure>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">🚕</span> Why "the Uber of X" stopped working</h3>
-<p class="text-neutral-300 mb-4" data-inema-block="m3-2-p2">When Uber was new, the analogy worked: people knew the concept, but it hadn't been used for everything yet. After thousands of "Uber of" something phrases, it became empty. It no longer says anything about your product.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m3-2-p2">When Uber was new, the analogy worked: people knew the concept, but it hadn't been used for everything yet. After thousands of "Uber of" something phrases, it became empty. It no longer says anything about your product.</p>
 </div>
 <div class="overflow-x-auto rounded-xl border border-dark-600 mb-6">
 <table class="w-full text-sm text-left">
@@ -402,22 +402,22 @@
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Bar test</h3>
-<p class="text-neutral-300" data-inema-block="m3-2-p3">Say the phrase to someone outside your field. If they reply, "Oh, I get it," and can repeat it to someone else, the phrase is ready. If they ask, "But what exactly does it do?", go back to the draft.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m3-2-p3">Say the phrase to someone outside your field. If they reply, "Oh, I get it," and can repeat it to someone else, the phrase is ready. If they ask, "But what exactly does it do?", go back to the draft.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 2 -->
-<section class="mb-16" data-inema-topic="modulo-3-2#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-2#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">📱 A short video is an elevator pitch</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-p4">An elevator pitch is the explanation you’d give someone during an elevator ride: 30 seconds or less. If your product works well in a short video, you already have that pitch. <strong class="text-purple-400">A short video is a pitch framework</strong>: hook, problem, demo, result.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-2-p4">An elevator pitch is the explanation you’d give someone during an elevator ride: 30 seconds or less. If your product works well in a short video, you already have that pitch. <strong class="text-purple-400">A short video is a pitch framework</strong>: hook, problem, demo, result.</p>
 <figure class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="The layers of a short pitch, from what grabs attention to what convinces" class="w-full h-auto" role="img" viewbox="0 0 800 340"><defs>
 <lineargradient id="s46-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c084fc"></stop><stop offset="1" stop-color="#a855f7"></stop></lineargradient>
@@ -468,26 +468,26 @@ Task:
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical tip</h3>
-<p class="text-neutral-300" data-inema-block="m3-2-p5">Keep the winning phrase somewhere visible. It will show up again in your page headline, social media bio, the start of every video, and email subject lines.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m3-2-p5">Keep the winning phrase somewhere visible. It will show up again in your page headline, social media bio, the start of every video, and email subject lines.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 3 -->
-<section class="mb-16" data-inema-topic="modulo-3-2#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-2#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">👆 Fewer clicks to value</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-p6">The <strong class="text-purple-400">user journey</strong> is the path someone takes from arriving at your product to experiencing its value. The most important metric along that path is time to value: how many clicks and seconds it takes for them to think, "This solves my problem."</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-2-p6">The <strong class="text-purple-400">user journey</strong> is the path someone takes from arriving at your product to experiencing its value. The most important metric along that path is time to value: how many clicks and seconds it takes for them to think, "This solves my problem."</p>
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-purple-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-purple-400 mb-3">New here? Terms in this topic</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">User journey</dt><dd class="text-neutral-400" data-inema-block="m3-2-p7">The sequence of screens and actions between arrival and the result the person was looking for.</dd></div><div><dt class="font-semibold text-neutral-100">Friction</dt><dd class="text-neutral-400" data-inema-block="m3-2-p8">Anything that takes effort without delivering value: a long signup, email confirmation, welcome screen.</dd></div><div><dt class="font-semibold text-neutral-100">Funnel</dt><dd class="text-neutral-400" data-inema-block="m3-2-p9">A view of the journey as steps, showing how many people move from one step to the next.</dd></div><div><dt class="font-semibold text-neutral-100">Time to value</dt><dd class="text-neutral-400" data-inema-block="m3-2-p10">How long it takes from arrival for the user to see the first useful result.</dd></div>
+<div><dt class="font-semibold text-neutral-100">User journey</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-2-p7">The sequence of screens and actions between arrival and the result the person was looking for.</dd></div><div><dt class="font-semibold text-neutral-100">Friction</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-2-p8">Anything that takes effort without delivering value: a long signup, email confirmation, welcome screen.</dd></div><div><dt class="font-semibold text-neutral-100">Funnel</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-2-p9">A view of the journey as steps, showing how many people move from one step to the next.</dd></div><div><dt class="font-semibold text-neutral-100">Time to value</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-2-p10">How long it takes from arrival for the user to see the first useful result.</dd></div>
 </dl>
 </aside>
 <figure class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
@@ -522,28 +522,28 @@ Task:
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">1</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Map the current journey</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-2-p11">List every screen and click from arrival to the first result. Count them.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-2-p11">List every screen and click from arrival to the first result. Count them.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">2</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Mark what doesn’t deliver value</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-2-p12">Signup, confirmation, welcome tour, plan selection. Ask whether each step can wait until after the result.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-2-p12">Signup, confirmation, welcome tour, plan selection. Ask whether each step can wait until after the result.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">3</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Move signup to later</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-2-p13">Let people try it first; ask them to create an account when they want to save or download what they generated.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-2-p13">Let people try it first; ask them to create an account when they want to save or download what they generated.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">4</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Measure again</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-2-p14">Compare how many people reach the result before and after the change.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-2-p14">Compare how many people reach the result before and after the change.</p>
 </div>
 </div>
 </div>
@@ -559,26 +559,26 @@ Task:
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical tip</h3>
-<p class="text-neutral-300" data-inema-block="m3-2-p15">Ask someone to use the product while you watch silently. Each time they hesitate, note the screen. Those hesitations are your friction map.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m3-2-p15">Ask someone to use the product while you watch silently. Each time they hesitate, note the screen. Those hesitations are your friction map.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 4 -->
-<section class="mb-16" data-inema-topic="modulo-3-2#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-2#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🧪 Validate the interface with a free prototype</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-p16">A smart way to validate the interface for your main product is to first launch a <strong class="text-purple-400">small, free tool</strong> with the same interaction format. If people from different countries, languages, and fields can use it without help, the format is validated.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-2-p16">A smart way to validate the interface for your main product is to first launch a <strong class="text-purple-400">small, free tool</strong> with the same interaction format. If people from different countries, languages, and fields can use it without help, the format is validated.</p>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">🔎</span> Example: the page diagnostic tool</h3>
-<p class="text-neutral-300 mb-4" data-inema-block="m3-2-p17">A creator published a free tool: people pasted in the address of their live page and got a full assessment of how it was built. It was one field, one button, and one report.</p>
-<p class="text-neutral-300 mb-4" data-inema-block="m3-2-p18">Weeks later, people were still finding the old post and saying thanks. Users across languages, niches, and technical skill levels used it without asking anything. The conclusion: the format "paste the link, get a diagnosis" works for any audience. That format was reused in the paid product.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m3-2-p17">A creator published a free tool: people pasted in the address of their live page and got a full assessment of how it was built. It was one field, one button, and one report.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m3-2-p18">Weeks later, people were still finding the old post and saying thanks. Users across languages, niches, and technical skill levels used it without asking anything. The conclusion: the format "paste the link, get a diagnosis" works for any audience. That format was reused in the paid product.</p>
 </div>
 <figure class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="From a free prototype to a validated interface in the main product" class="w-full h-auto" role="img" viewbox="0 0 800 200"><defs>
@@ -620,22 +620,22 @@ Task:
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Distribution bonus</h3>
-<p class="text-neutral-300" data-inema-block="m3-2-p19">A useful free tool is also a hook: people discover you when they use it. Discreetly add a link to the main product at the end of the result.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m3-2-p19">A useful free tool is also a hook: people discover you when they use it. Discreetly add a link to the main product at the end of the result.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 5 -->
-<section class="mb-16" data-inema-topic="modulo-3-2#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-2#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">⏱️ Prove value in under two minutes</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-p20">The bar is simple: <strong class="text-purple-400">Can someone outside your field understand why this is valuable, use it, and see its value in less than two minutes?</strong> The ideal action takes just a few steps: click, drop in a file, paste a link, connect an account. That’s it.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-2-p20">The bar is simple: <strong class="text-purple-400">Can someone outside your field understand why this is valuable, use it, and see its value in less than two minutes?</strong> The ideal action takes just a few steps: click, drop in a file, paste a link, connect an account. That’s it.</p>
 <figure class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Simple actions that lead to the first result in less than two minutes" class="w-full h-auto" role="img" viewbox="0 0 800 158"><defs>
 <lineargradient id="s49-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c084fc"></stop><stop offset="1" stop-color="#a855f7"></stop></lineargradient>
@@ -657,7 +657,7 @@ Task:
 </div>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">⚡</span> How to avoid look-alike demos</h3>
-<p class="text-neutral-300 mb-4" data-inema-block="m3-2-p21">Most AI product pages look the same: a big headline, a gradient, and three feature cards. A pattern interrupt means doing something different right away: for example, putting the test field above the fold instead of a "get started" button that leads to sign-up.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m3-2-p21">Most AI product pages look the same: a big headline, a gradient, and three feature cards. A pattern interrupt means doing something different right away: for example, putting the test field above the fold instead of a "get started" button that leads to sign-up.</p>
 </div>
 <div class="space-y-5 mb-6">
 <h3 class="text-lg font-semibold text-purple-400 mb-2">Test with a real non-expert</h3>
@@ -665,46 +665,46 @@ Task:
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">1</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Choose someone outside the field</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-2-p22">A relative, a neighbor, a friend in another profession.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-2-p22">A relative, a neighbor, a friend in another profession.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">2</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Give them only the address, with no instructions</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-2-p23">Start a timer and stay quiet.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-2-p23">Start a timer and stay quiet.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">3</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Stop after two minutes</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-2-p24">Ask: "What does this do?" and "Would you use it?" Note where they got stuck.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-2-p24">Ask: "What does this do?" and "Would you use it?" Note where they got stuck.</p>
 </div>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical tip</h3>
-<p class="text-neutral-300" data-inema-block="m3-2-p25">A preloaded example ("test it with this demo link") solves half the cases. The person sees the value before deciding whether to trust you with their own data.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m3-2-p25">A preloaded example ("test it with this demo link") solves half the cases. The person sees the value before deciding whether to trust you with their own data.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 6 -->
-<section class="mb-16" data-inema-topic="modulo-3-2#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-2#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🌀 The content flywheel</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-p26">A <strong class="text-purple-400">flywheel</strong> (a heavy wheel that, once spinning, <em>keeps itself going</em>) is a cycle that feeds itself: the more it spins, the easier it gets to spin. In a content flywheel, usage data becomes articles, articles bring in users, and users generate more data.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-2-p26">A <strong class="text-purple-400">flywheel</strong> (a heavy wheel that, once spinning, <em>keeps itself going</em>) is a cycle that feeds itself: the more it spins, the easier it gets to spin. In a content flywheel, usage data becomes articles, articles bring in users, and users generate more data.</p>
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-purple-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-purple-400 mb-3">New here? Terms in this topic</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">Anonymize</dt><dd class="text-neutral-400" data-inema-block="m3-2-p27">Remove everything that identifies people or companies, leaving only the aggregated pattern.</dd></div><div><dt class="font-semibold text-neutral-100">SEO</dt><dd class="text-neutral-400" data-inema-block="m3-2-p28">Optimization to appear in search results from engines like Google.</dd></div><div><dt class="font-semibold text-neutral-100">AEO</dt><dd class="text-neutral-400" data-inema-block="m3-2-p29">Optimization to be cited as the answer by answer engines and assistants.</dd></div><div><dt class="font-semibold text-neutral-100">GEO</dt><dd class="text-neutral-400" data-inema-block="m3-2-p30">Optimization to be mentioned by generative AI (ChatGPT, Claude, Gemini) when someone asks about the topic.</dd></div>
+<div><dt class="font-semibold text-neutral-100">Anonymize</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-2-p27">Remove everything that identifies people or companies, leaving only the aggregated pattern.</dd></div><div><dt class="font-semibold text-neutral-100">SEO</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-2-p28">Optimization to appear in search results from engines like Google.</dd></div><div><dt class="font-semibold text-neutral-100">AEO</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-2-p29">Optimization to be cited as the answer by answer engines and assistants.</dd></div><div><dt class="font-semibold text-neutral-100">GEO</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-2-p30">Optimization to be mentioned by generative AI (ChatGPT, Claude, Gemini) when someone asks about the topic.</dd></div>
 </dl>
 </aside>
 <figure class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
@@ -743,28 +743,28 @@ Task:
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
 <div class="text-2xl mb-2">🎥</div>
 <h4 class="font-semibold text-purple-400 mb-2">Short-form video</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-2-p31">Short-form video platforms don't require followers, only consistency. A new account can get 30,000 views on a video and bring in customers without any call to action.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-2-p31">Short-form video platforms don't require followers, only consistency. A new account can get 30,000 views on a video and bring in customers without any call to action.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
 <div class="text-2xl mb-2">📝</div>
 <h4 class="font-semibold text-purple-400 mb-2">Automated articles</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-2-p32">Periodic reports generated from aggregated data and reviewed before publishing.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-2-p32">Periodic reports generated from aggregated data and reviewed before publishing.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
 <div class="text-2xl mb-2">🤖</div>
 <h4 class="font-semibold text-purple-400 mb-2">AI answers</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-2-p33">Clear content with numbers and lists tends to be cited when someone asks an assistant a question.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-2-p33">Clear content with numbers and lists tends to be cited when someone asks an assistant a question.</p>
 </div>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Privacy is not optional</h3>
-<p class="text-neutral-300" data-inema-block="m3-2-p34">Anonymization is required and must be covered in the terms of use. Publish aggregated patterns ("37% of the apps analyzed had X"), never identifiable cases. A leak in your own content destroys the product, especially if the product is about security.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m3-2-p34">Anonymization is required and must be covered in the terms of use. Publish aggregated patterns ("37% of the apps analyzed had X"), never identifiable cases. A leak in your own content destroys the product, especially if the product is about security.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- QUIZ -->
@@ -814,8 +814,8 @@ Task:
 <footer class="border-t border-dark-600 mt-16 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm space-y-2">
 <p>Products in the AI Era · Track 3 — Launch and Grow · 2026 ·
-        <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> -
-        <a class="text-amber-700 dark:text-slate-300" href="https://inema.pro" target="_blank">PRO</a></p>
+        <a class="text-sky-400 hover:text-sky-300" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a> -
+        <a class="text-amber-700 dark:text-slate-300" href="https://ARCKHÉ.pro" target="_blank">PRO</a></p>
 </div>
 </footer>
 <!-- SCRIPTS núcleo v1 -->
@@ -843,7 +843,7 @@ Task:
       html.classList.toggle('dark');
       const dark = html.classList.contains('dark');
       localStorage.setItem('theme', dark ? 'dark' : 'light');
-      if (window.INEMA && INEMA.setPref) { try { INEMA.setPref('theme', dark ? 'inema-dark' : 'claro'); } catch (e) {} }
+      if (window.ARCKHÉ && ARCKHÉ.setPref) { try { ARCKHÉ.setPref('theme', dark ? 'ARCKHÉ-dark' : 'claro'); } catch (e) {} }
     });
     function openModal(modalId) { const m = document.getElementById(modalId); if (m) { m.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
     function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
@@ -867,7 +867,7 @@ Task:
   </script>
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init(); }
   </script>
 </body>
 </html>

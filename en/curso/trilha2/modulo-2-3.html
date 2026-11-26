@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="produtos-era-ia-en" name="inema-course"/>
+<meta content="produtos-era-ia-en" name="ARCKHÉ-course"/>
 <title>Usage, Repeat Use, and Habit | Products in the AI Era</title>
 <meta content="A product only matters if people keep using it. This module covers anticipating the market, choosing where the window stays open longest, and becoming part of the customer’s routine." name="description"/>
 <!-- ANTI-FOUC: bloqueante, antes de tudo -->
@@ -12,22 +12,22 @@
 (function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; } }
-      else { var legacy = localStorage.getItem('theme'); if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark'; }
+      else { var legacy = localStorage.getItem('theme'); if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark'; }
     } catch (e) { p = clone(DEF); }
-    var THEMES = { 'inema-dark': { dark: true, attr: null, cs: 'dark' }, 'claro': { dark: false, attr: null, cs: 'light' }, 'sepia': { dark: false, attr: 'sepia', cs: 'light' }, 'foco': { dark: null, attr: 'foco', cs: null }, 'contraste': { dark: true, attr: 'contraste', cs: 'dark' } };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var THEMES = { 'ARCKHÉ-dark': { dark: true, attr: null, cs: 'dark' }, 'claro': { dark: false, attr: null, cs: 'light' }, 'sepia': { dark: false, attr: 'sepia', cs: 'light' }, 'foco': { dark: null, attr: 'foco', cs: null }, 'contraste': { dark: true, attr: 'contraste', cs: 'dark' } };
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
     if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
     if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
     html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
     html.setAttribute('data-font', p.font || 'inter'); html.setAttribute('data-accent', p.accent || 'emerald');
     var s = html.style; var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString()); s.setProperty('font-size', scale + '%');
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString()); s.setProperty('font-size', scale + '%');
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch'); s.setProperty('--lh-body', (+p.leading || 1.7).toString());
     var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
     s.setProperty('--font-body', fam);
@@ -45,7 +45,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="../../assets/learn.css" rel="stylesheet"/>
 <!-- Manifesto do curso (obrigatório em toda página) -->
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
  "course": "produtos-era-ia-en",
  "tracks": [
@@ -228,23 +228,23 @@
     .qz-fb { display:none; } .qz[data-answered] .qz-fb { display:block; }
 
     /* TOC do módulo é um bloco inline, nêo uma barra lateral sticky */
-    [data-inema-toc] { position: static !important; top: auto !important; max-height: none !important; }
+    [data-ARCKHÉ-toc] { position: static !important; top: auto !important; max-height: none !important; }
     /* Painel de aparência (classes internas) */
-    .inema-appearance-sec { margin-bottom: .75rem; }
-    .inema-appearance-label { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9ca3af; margin-bottom: .35rem; }
-    .inema-appearance-row { display: flex; flex-wrap: wrap; gap: .35rem; }
-    .inema-chip { font-size: .8rem; padding: .3rem .65rem; border-radius: .5rem; border: 1px solid #374151; background: rgba(31,41,55,.6); color: #e5e7eb; cursor: pointer; }
-    .inema-chip:hover { border-color: #FACC15; }
-    .inema-chip[aria-pressed="true"], .inema-chip.is-active { background: rgba(250,204,21,.15); border-color: #FACC15; color: #FACC15; }
-    html:not(.dark) .inema-chip { background: #f3f4f6; color: #111827; border-color: #d1d5db; }
-    html:not(.dark) .inema-chip[aria-pressed="true"], html:not(.dark) .inema-chip.is-active { background: rgba(161,98,7,.1); border-color: #a16207; color: #a16207; }
+    .ARCKHÉ-appearance-sec { margin-bottom: .75rem; }
+    .ARCKHÉ-appearance-label { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9ca3af; margin-bottom: .35rem; }
+    .ARCKHÉ-appearance-row { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .ARCKHÉ-chip { font-size: .8rem; padding: .3rem .65rem; border-radius: .5rem; border: 1px solid #374151; background: rgba(31,41,55,.6); color: #e5e7eb; cursor: pointer; }
+    .ARCKHÉ-chip:hover { border-color: #FACC15; }
+    .ARCKHÉ-chip[aria-pressed="true"], .ARCKHÉ-chip.is-active { background: rgba(250,204,21,.15); border-color: #FACC15; color: #FACC15; }
+    html:not(.dark) .ARCKHÉ-chip { background: #f3f4f6; color: #111827; border-color: #d1d5db; }
+    html:not(.dark) .ARCKHÉ-chip[aria-pressed="true"], html:not(.dark) .ARCKHÉ-chip.is-active { background: rgba(161,98,7,.1); border-color: #a16207; color: #a16207; }
     /* Coluna do módulo: largura fixa do layout, independente da ordem em que o Tailwind CDN injeta o CSS */
-    main.max-w-6xl.inema-prose { max-width: 72rem; }
+    main.max-w-6xl.ARCKHÉ-prose { max-width: 72rem; }
     /* Code box */
     .codebox pre { white-space: pre-wrap; word-break: break-word; }
     
   </style>
-<link href="https://inematds.github.io/produtos-era-ia/curso/trilha2/modulo-2-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/en/curso/trilha2/modulo-2-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/es/curso/trilha2/modulo-2-3.html" hreflang="es" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/curso/trilha2/modulo-2-3.html" hreflang="x-default" rel="alternate"/>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha2/modulo-2-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha2/modulo-2-3.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha2/modulo-2-3.html" hreflang="es" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha2/modulo-2-3.html" hreflang="x-default" rel="alternate"/>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
 <!-- NAVIGATION -->
@@ -257,9 +257,9 @@
 <span class="font-bold text-lg hidden md:inline">Products in the AI Era</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600 hidden sm:inline">-</span>
-<a class="text-amber-700 dark:text-slate-300 hover:opacity-80 text-sm font-medium hidden sm:inline" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 dark:text-slate-300 hover:opacity-80 text-sm font-medium hidden sm:inline" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha1/index.html">
@@ -275,11 +275,11 @@
 <span class="hidden sm:inline">Launch</span>
 </a>
 <span class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-2" data-lang-switch=""><a class="text-neutral-400 hover:text-primary" href="../../../curso/trilha2/modulo-2-3.html" hreflang="pt-BR" lang="pt-BR">PT</a><span class="text-neutral-600">·</span><a class="text-primary font-bold" href="../../../en/curso/trilha2/modulo-2-3.html" hreflang="en" lang="en">EN</a><span class="text-neutral-600">·</span><a class="text-neutral-400 hover:text-primary" href="../../../es/curso/trilha2/modulo-2-3.html" hreflang="es" lang="es">ES</a></span>
-<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors" data-inema-journey-open="" type="button">
+<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors" data-ARCKHÉ-journey-open="" type="button">
 <span>🧭</span><span>My Journey</span>
-<span class="text-xs px-1.5 py-0.5 rounded-full bg-primary/20" data-inema-journey-badge=""></span>
+<span class="text-xs px-1.5 py-0.5 rounded-full bg-primary/20" data-ARCKHÉ-journey-badge=""></span>
 </button>
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" data-inema-appearance-toggle="[data-inema-appearance]" title="Appearance and reading" type="button">
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="Appearance and reading" type="button">
 <span aria-hidden="true">Aa</span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" id="theme-toggle" title="Light/dark theme">
@@ -290,40 +290,40 @@
 </div>
 </div>
 </nav>
-<div aria-label="Appearance and reading" class="inema-appearance-pop" data-inema-appearance="" role="region">
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Theme</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-theme="inema-dark" type="button">Dark</button>
-<button class="inema-chip" data-inema-set-theme="claro" type="button">Light</button>
-<button class="inema-chip" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button class="inema-chip" data-inema-set-theme="foco" type="button">Focus</button>
-<button class="inema-chip" data-inema-set-theme="contraste" type="button">Contrast</button>
+<div aria-label="Appearance and reading" class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="" role="region">
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Theme</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Dark</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="claro" type="button">Light</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="foco" type="button">Focus</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="contraste" type="button">Contrast</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Text size</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-fontscale="90" type="button">A-</button>
-<button class="inema-chip" data-inema-set-fontscale="100" type="button">A</button>
-<button class="inema-chip" data-inema-set-fontscale="115" type="button">A+</button>
-<button class="inema-chip" data-inema-set-fontscale="130" type="button">A++</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Text size</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="90" type="button">A-</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="115" type="button">A+</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="130" type="button">A++</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Font</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-font="inter" type="button">Inter</button>
-<button class="inema-chip" data-inema-set-font="system" type="button">System</button>
-<button class="inema-chip" data-inema-set-font="leitura" type="button">Reading</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Font</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="inter" type="button">Inter</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="system" type="button">System</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="leitura" type="button">Reading</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Line spacing</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-leading="1.5" type="button">Compact</button>
-<button class="inema-chip" data-inema-set-leading="1.7" type="button">Normal</button>
-<button class="inema-chip" data-inema-set-leading="1.9" type="button">Wide</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Line spacing</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.5" type="button">Compact</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.7" type="button">Normal</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.9" type="button">Wide</button>
 </div>
 </div>
 </div>
@@ -344,26 +344,26 @@
 <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Topics</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">45</div><div class="text-xs text-neutral-400">Minutes</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Intermediate</div><div class="text-xs text-neutral-400">Level</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Strategy</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module progress" aria-valuemax="100" aria-valuemin="0" class="inema-meter max-w-md mt-6" data-inema-meter="modulo:2-3" role="progressbar">
-<div class="flex justify-between text-sm text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar h-2 bg-dark-700 rounded-full overflow-hidden"><div class="inema-bar__fill h-full bg-blue-500 rounded-full transition-all" data-inema-meter-fill="" style="width:0%"></div></div>
+<div aria-label="Module progress" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter max-w-md mt-6" data-ARCKHÉ-meter="modulo:2-3" role="progressbar">
+<div class="flex justify-between text-sm text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar h-2 bg-dark-700 rounded-full overflow-hidden"><div class="ARCKHÉ-bar__fill h-full bg-blue-500 rounded-full transition-all" data-ARCKHÉ-meter-fill="" style="width:0%"></div></div>
 </div>
 </div>
 </header>
-<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 inema-prose" data-inema-module="2-3" data-inema-track="2">
-<nav aria-label="Topics in this module" class="mb-12 bg-dark-800 rounded-xl border border-dark-600 p-5" data-inema-toc="">
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ARCKHÉ-prose" data-ARCKHÉ-module="2-3" data-ARCKHÉ-track="2">
+<nav aria-label="Topics in this module" class="mb-12 bg-dark-800 rounded-xl border border-dark-600 p-5" data-ARCKHÉ-toc="">
 <p class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">In this module</p>
 <ol class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
 <li><a class="flex items-start gap-2 text-neutral-300 hover:text-blue-400" href="#topico-1"><span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</span><span>Skate to where the puck is going</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-blue-400" href="#topico-2"><span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</span><span>Arbitrage on market naivety</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-blue-400" href="#topico-3"><span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</span><span>Lagging industries offer long windows</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-blue-400" href="#topico-4"><span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">4</span><span>Cat and mouse versus saturation</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-blue-400" href="#topico-5"><span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">5</span><span>Live in the daily flow and generate passive progress</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-blue-400" href="#topico-6"><span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">6</span><span>Feel good and become a verb</span></a></li>
 </ol>
 </nav>
 <!-- TÓPICO 1 -->
-<section class="mb-16" data-inema-topic="modulo-2-3#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-3#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🎯 Skate to where the puck is going</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-p1">In hockey, a good player doesn’t chase the puck. They watch who has it and anticipate <strong class="text-blue-400">where it will be</strong>, so they can get there first and, with luck, score. Products work the same way.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-p1">In hockey, a good player doesn’t chase the puck. They watch who has it and anticipate <strong class="text-blue-400">where it will be</strong>, so they can get there first and, with luck, score. Products work the same way.</p>
 <figure class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Chasing the current market versus anticipating the next one: those who anticipate arrive when demand appears" class="w-full h-auto" role="img" viewbox="0 0 800 200"><defs>
 <lineargradient id="s32-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
@@ -392,7 +392,7 @@
 <text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="400" y="178">Chasing the current market versus anticipating the next one: those who anticipate arrive when demand appears</text></svg>
 <figcaption class="text-xs text-neutral-400 mt-3 px-1"><strong class="text-blue-400">What to look for:</strong> The common mistake is to build for the first box. The right move is to read the signals, project ahead, and build for the second-to-last box, arriving alongside demand.</figcaption>
 </figure>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-p2">The practical question: if the industry is heading toward a point where your idea could be swallowed up, <strong class="text-blue-400">will your customer notice</strong>? And when?</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-p2">The practical question: if the industry is heading toward a point where your idea could be swallowed up, <strong class="text-blue-400">will your customer notice</strong>? And when?</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
 <h4 class="font-bold text-blue-400 mb-4">✓ Those who skate to where the puck is going</h4>
@@ -405,17 +405,17 @@
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> A simple habit</h3>
-<p class="text-neutral-300" data-inema-block="m2-3-p3">Every week, write down three things that have become easier with AI. In a month, you’ll have a list of what’s about to become a commodity and what hasn’t yet.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m2-3-p3">Every week, write down three things that have become easier with AI. In a month, you’ll have a list of what’s about to become a commodity and what hasn’t yet.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 2 -->
-<section class="mb-16" data-inema-topic="modulo-2-3#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-3#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🙈 Arbitraging customer naivety</h2>
@@ -423,10 +423,10 @@
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-blue-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-blue-400 mb-3">New here? Terms in this topic</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">Arbitrage</dt><dd class="text-neutral-400" data-inema-block="m2-3-p4">Profiting from a temporary difference between two places or points in time. Here, the difference is between what’s already possible and what the customer knows is possible.</dd></div><div><dt class="font-semibold text-neutral-100">Market naivety</dt><dd class="text-neutral-400" data-inema-block="m2-3-p5">The public’s lack of awareness of what AI can already do. It’s not the customer’s fault: no one can keep up with everything.</dd></div><div><dt class="font-semibold text-neutral-100">Pivot</dt><dd class="text-neutral-400" data-inema-block="m2-3-p6">Changing the product’s direction while building on what’s already been created (customers, data, brand).</dd></div>
+<div><dt class="font-semibold text-neutral-100">Arbitrage</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m2-3-p4">Profiting from a temporary difference between two places or points in time. Here, the difference is between what’s already possible and what the customer knows is possible.</dd></div><div><dt class="font-semibold text-neutral-100">Market naivety</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m2-3-p5">The public’s lack of awareness of what AI can already do. It’s not the customer’s fault: no one can keep up with everything.</dd></div><div><dt class="font-semibold text-neutral-100">Pivot</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m2-3-p6">Changing the product’s direction while building on what’s already been created (customers, data, brand).</dd></div>
 </dl>
 </aside>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-p7">Many people won’t discover that they can vibe-code a particular solution for another six or twelve months. Until then, there’s an <strong class="text-blue-400">arbitrage on market naivety</strong>: you sell something they could technically build themselves, but they don’t know that.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-p7">Many people won’t discover that they can vibe-code a particular solution for another six or twelve months. Until then, there’s an <strong class="text-blue-400">arbitrage on market naivety</strong>: you sell something they could technically build themselves, but they don’t know that.</p>
 <figure class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="The arbitrage window: what’s already possible rises quickly; what the customer knows is possible rises slowly; the space between the two curves is the opportunity" class="w-full h-auto" role="img" viewbox="0 0 800 360"><defs>
 <lineargradient id="s33-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
@@ -449,43 +449,43 @@
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Scale</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m2-3-p8">Grow enough for your brand, data, and distribution to protect you when the naivety wears off.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m2-3-p8">Grow enough for your brand, data, and distribution to protect you when the naivety wears off.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Sell</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m2-3-p9">Negotiate a sale of the business (or the data) while it’s still worth a lot.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m2-3-p9">Negotiate a sale of the business (or the data) while it’s still worth a lot.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Pivot</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m2-3-p10">Use your customers and what you’ve learned to tackle the next problem that hasn’t become a commodity yet.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m2-3-p10">Use your customers and what you’ve learned to tackle the next problem that hasn’t become a commodity yet.</p>
 </div>
 </div>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Arbitrage isn’t deception</h3>
-<p class="text-neutral-300" data-inema-block="m2-3-p11">Customers pay for convenience, trust, and time saved. That’s legitimate. Hiding information or exaggerating how difficult something is to keep them locked in isn’t.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m2-3-p11">Customers pay for convenience, trust, and time saved. That’s legitimate. Hiding information or exaggerating how difficult something is to keep them locked in isn’t.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 3 -->
-<section class="mb-16" data-inema-topic="modulo-2-3#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-3#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🛢️ Slow-moving industries mean longer windows</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-p12">Think of industries like <strong class="text-blue-400">oil and gas, precious metals, mining, traditional agribusiness</strong>. Even if a model ten times better came out tomorrow, many of them would just be discovering that you can connect an AI assistant to email.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-p13">These companies make a lot of money by doing one thing well in the physical world. They’re focused on metallurgical processes, logistics, and workplace safety, not on which model launched this week. If even people who work in tech can’t keep up with everything, imagine people who work in other fields.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-p12">Think of industries like <strong class="text-blue-400">oil and gas, precious metals, mining, traditional agribusiness</strong>. Even if a model ten times better came out tomorrow, many of them would just be discovering that you can connect an AI assistant to email.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-p13">These companies make a lot of money by doing one thing well in the physical world. They’re focused on metallurgical processes, logistics, and workplace safety, not on which model launched this week. If even people who work in tech can’t keep up with everything, imagine people who work in other fields.</p>
 <figure class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Technology sectors versus traditional sectors: speed of AI adoption and length of the opportunity window" class="w-full h-auto" role="img" viewbox="0 0 800 300"><defs>
 <lineargradient id="s34-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
@@ -513,22 +513,22 @@
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Translate, don’t impress</h3>
-<p class="text-neutral-300" data-inema-block="m2-3-p14">In these industries, nobody wants to hear “agent with a frontier model.” They want to hear “the report that used to take two days now comes out in twenty minutes, in the same format as always.”</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m2-3-p14">In these industries, nobody wants to hear “agent with a frontier model.” They want to hear “the report that used to take two days now comes out in twenty minutes, in the same format as always.”</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 4 -->
-<section class="mb-16" data-inema-topic="modulo-2-3#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-3#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🐭 Cat and mouse versus saturation</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-p15">Think about interface component libraries for developers. Most of the content is free: you copy a prompt or a code snippet, and you’re done. There are hundreds of alternatives, many open source. <strong class="text-blue-400">Why would anyone pay?</strong> It’s hard to make money from a problem that’s been solved well enough and has spread everywhere.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-p15">Think about interface component libraries for developers. Most of the content is free: you copy a prompt or a code snippet, and you’re done. There are hundreds of alternatives, many open source. <strong class="text-blue-400">Why would anyone pay?</strong> It’s hard to make money from a problem that’s been solved well enough and has spread everywhere.</p>
 <figure class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Customer willingness to pay over time: it holds steady for cat-and-mouse problems; for saturated problems, it drops to zero" class="w-full h-auto" role="img" viewbox="0 0 800 360"><defs>
 <lineargradient id="s35-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
@@ -552,34 +552,34 @@
 <tbody class="divide-y divide-dark-600"><tr class="bg-dark-900/40"><td class="px-4 py-3 font-semibold text-neutral-100">Does the problem keep coming back?</td><td class="px-4 py-3 text-neutral-300">Yes, every week or whenever the environment changes</td></tr><tr class="bg-dark-900/40"><td class="px-4 py-3 font-semibold text-neutral-100">Does the solution need continuous updates?</td><td class="px-4 py-3 text-neutral-300">Yes, the world changes and the solution keeps up</td></tr><tr class="bg-dark-900/40"><td class="px-4 py-3 font-semibold text-neutral-100">Are there equivalent free alternatives?</td><td class="px-4 py-3 text-neutral-300">No, or they’re much worse</td></tr><tr class="bg-dark-900/40"><td class="px-4 py-3 font-semibold text-neutral-100">Does the customer lose something if they cancel?</td><td class="px-4 py-3 text-neutral-300">Yes: history, protection, data, routine</td></tr></tbody>
 </table>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-p16">That’s why the most useful question is: <strong class="text-blue-400">what recurring pain is worth solving that most people won’t solve on their own?</strong> Not the sexy problem, but the boring one that keeps coming back.</p>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-p16">That’s why the most useful question is: <strong class="text-blue-400">what recurring pain is worth solving that most people won’t solve on their own?</strong> Not the sexy problem, but the boring one that keeps coming back.</p>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 5 -->
-<section class="mb-16" data-inema-topic="modulo-2-3#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-3#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🔄 Be part of the daily workflow and generate passive progress</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-p17">It’s very hard to build a product that stays in the background and that users <strong class="text-blue-400">want</strong> to have there. Two examples from the world of software development show the way.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-p17">It’s very hard to build a product that stays in the background and that users <strong class="text-blue-400">want</strong> to have there. Two examples from the world of software development show the way.</p>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 mb-6">
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
 <div class="text-2xl mb-2">🚨</div>
 <h4 class="font-semibold text-blue-400 mb-2">Error monitor (e.g., Sentry)</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m2-3-p18">It watches the application and alerts you when an error shows up for users. Developers don’t have to remember to open anything: the alert comes to them.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m2-3-p18">It watches the application and alerts you when an error shows up for users. Developers don’t have to remember to open anything: the alert comes to them.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
 <div class="text-2xl mb-2">🐇</div>
 <h4 class="font-semibold text-blue-400 mb-2">Code reviewer (e.g., CodeRabbit)</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m2-3-p19">It analyzed a huge number of code changes and learned patterns in errors. After the agent writes the code, it warns you: “this will break in production; have it fixed.”</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m2-3-p19">It analyzed a huge number of code changes and learned patterns in errors. After the agent writes the code, it warns you: “this will break in production; have it fixed.”</p>
 </div>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-p20">Notice the second example: it lives in <strong class="text-blue-400">symbiosis</strong> with the tools automating development itself. A lot of people don’t even look at the code the agent writes anymore; they “close their eyes and pray.” The product makes that prayer safer. It doesn’t compete with automation; it builds on it.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-p20">Notice the second example: it lives in <strong class="text-blue-400">symbiosis</strong> with the tools automating development itself. A lot of people don’t even look at the code the agent writes anymore; they “close their eyes and pray.” The product makes that prayer safer. It doesn’t compete with automation; it builds on it.</p>
 <figure class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Passive progress: the product uses data the user already has, works on its own, and delivers a justified recommendation" class="w-full h-auto" role="img" viewbox="0 0 800 200"><defs>
 <lineargradient id="s36-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
@@ -610,32 +610,32 @@
 </figure>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">💳</span> Example: bank statement becomes an investment thesis</h3>
-<p class="text-neutral-300 mb-4" data-inema-block="m2-3-p21">Imagine an app where you connect your bank account through a provider with security certifications. Every day, it reviews your spending and suggests investments that align with what you consume, with an explanation.</p>
-<p class="text-neutral-300 mb-4" data-inema-block="m2-3-p22">If you pay for almost everything with a credit card and notice that everyone does the same, it makes sense to consider payment companies. The app doesn’t invest for you: it gives you a list and explains why, using data you already had but weren’t putting to use. What we buy reflects what we value, and that often resembles what similar people value.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m2-3-p21">Imagine an app where you connect your bank account through a provider with security certifications. Every day, it reviews your spending and suggests investments that align with what you consume, with an explanation.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m2-3-p22">If you pay for almost everything with a credit card and notice that everyone does the same, it makes sense to consider payment companies. The app doesn’t invest for you: it gives you a list and explains why, using data you already had but weren’t putting to use. What we buy reflects what we value, and that often resembles what similar people value.</p>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Financial recommendations require care</h3>
-<p class="text-neutral-300" data-inema-block="m2-3-p23">The example is illustrative. A real product in this area must comply with local regulations (in Brazil, CVM and the Central Bank) and make clear that it isn’t individual financial advice.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m2-3-p23">The example is illustrative. A real product in this area must comply with local regulations (in Brazil, CVM and the Central Bank) and make clear that it isn’t individual financial advice.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 6 -->
-<section class="mb-16" data-inema-topic="modulo-2-3#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-2-3#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🧸 A good feeling and becoming a verb</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-p24">Remember when running antivirus software was a ritual? The progress bar moved, “no threats found” appeared, and you felt relieved. That <strong class="text-blue-400">warm feeling of security</strong> is part of the product. A boring topic like security can deliver a very good feeling.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-p24">Remember when running antivirus software was a ritual? The progress bar moved, “no threats found” appeared, and you felt relieved. That <strong class="text-blue-400">warm feeling of security</strong> is part of the product. A boring topic like security can deliver a very good feeling.</p>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> The dark side: manufactured demand</h3>
-<p class="text-neutral-300" data-inema-block="m2-3-p25">There are old reports of vendors helping create the problem so they could sell the solution. That’s not strategy; it’s fraud. The legitimate lesson is different: identify a real fear and provide real peace of mind.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m2-3-p25">There are old reports of vendors helping create the problem so they could sell the solution. That’s not strategy; it’s fraud. The legitimate lesson is different: identify a real fear and provide real peace of mind.</p>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-3-p26">The last signal is the rarest: <strong class="text-blue-400">can the product become a verb?</strong> “Google it,” “get an Uber,” “send it on Slack.” Nine out of ten products never get there, and that’s fine. But it’s worth asking whether the name and main action are simple enough to become part of everyday speech.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m2-3-p26">The last signal is the rarest: <strong class="text-blue-400">can the product become a verb?</strong> “Google it,” “get an Uber,” “send it on Slack.” Nine out of ten products never get there, and that’s fine. But it’s worth asking whether the name and main action are simple enough to become part of everyday speech.</p>
 <figure class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Visual checklist of the recurring-use signals covered in this module" class="w-full h-auto" role="img" viewbox="0 0 800 158"><defs>
 <lineargradient id="s37-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
@@ -670,13 +670,13 @@ Then suggest 3 concrete changes that would increase usage frequency without addi
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Combine the signals</h3>
-<p class="text-neutral-300" data-inema-block="m2-3-p27">The strongest products combine several signals: a security monitor for AI-built apps is a cat-and-mouse game, runs in the background, brings relief, and keeps accumulating data. Each signal reinforces the others.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m2-3-p27">The strongest products combine several signals: a security monitor for AI-built apps is a cat-and-mouse game, runs in the background, brings relief, and keeps accumulating data. Each signal reinforces the others.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-blue-500/20 text-blue-400 hover:bg-blue-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- QUIZ -->
@@ -725,8 +725,8 @@ Then suggest 3 concrete changes that would increase usage frequency without addi
 <footer class="border-t border-dark-600 mt-16 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm space-y-2">
 <p>Products in the AI Era · Track 2 — Is It Worth Building? · 2026 ·
-        <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> -
-        <a class="text-amber-700 dark:text-slate-300" href="https://inema.pro" target="_blank">PRO</a></p>
+        <a class="text-sky-400 hover:text-sky-300" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a> -
+        <a class="text-amber-700 dark:text-slate-300" href="https://ARCKHÉ.pro" target="_blank">PRO</a></p>
 </div>
 </footer>
 <!-- SCRIPTS núcleo v1 -->
@@ -754,7 +754,7 @@ Then suggest 3 concrete changes that would increase usage frequency without addi
       html.classList.toggle('dark');
       const dark = html.classList.contains('dark');
       localStorage.setItem('theme', dark ? 'dark' : 'light');
-      if (window.INEMA && INEMA.setPref) { try { INEMA.setPref('theme', dark ? 'inema-dark' : 'claro'); } catch (e) {} }
+      if (window.ARCKHÉ && ARCKHÉ.setPref) { try { ARCKHÉ.setPref('theme', dark ? 'ARCKHÉ-dark' : 'claro'); } catch (e) {} }
     });
     function openModal(modalId) { const m = document.getElementById(modalId); if (m) { m.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
     function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
@@ -778,7 +778,7 @@ Then suggest 3 concrete changes that would increase usage frequency without addi
   </script>
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init(); }
   </script>
 </body>
 </html>

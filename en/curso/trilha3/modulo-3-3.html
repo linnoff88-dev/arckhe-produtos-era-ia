@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="produtos-era-ia-en" name="inema-course"/>
+<meta content="produtos-era-ia-en" name="ARCKHÉ-course"/>
 <title>Feedback, Design, and Simulated Users | Products in the AI Era</title>
 <meta content="Users rarely say what's wrong; they simply leave. This module shows you how to listen for what isn't said, how to design without falling into AI's average look, and how to test your product with simulated users before launch." name="description"/>
 <!-- ANTI-FOUC: bloqueante, antes de tudo -->
@@ -12,22 +12,22 @@
 (function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; } }
-      else { var legacy = localStorage.getItem('theme'); if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark'; }
+      else { var legacy = localStorage.getItem('theme'); if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark'; }
     } catch (e) { p = clone(DEF); }
-    var THEMES = { 'inema-dark': { dark: true, attr: null, cs: 'dark' }, 'claro': { dark: false, attr: null, cs: 'light' }, 'sepia': { dark: false, attr: 'sepia', cs: 'light' }, 'foco': { dark: null, attr: 'foco', cs: null }, 'contraste': { dark: true, attr: 'contraste', cs: 'dark' } };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var THEMES = { 'ARCKHÉ-dark': { dark: true, attr: null, cs: 'dark' }, 'claro': { dark: false, attr: null, cs: 'light' }, 'sepia': { dark: false, attr: 'sepia', cs: 'light' }, 'foco': { dark: null, attr: 'foco', cs: null }, 'contraste': { dark: true, attr: 'contraste', cs: 'dark' } };
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
     if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
     if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
     html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
     html.setAttribute('data-font', p.font || 'inter'); html.setAttribute('data-accent', p.accent || 'emerald');
     var s = html.style; var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString()); s.setProperty('font-size', scale + '%');
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString()); s.setProperty('font-size', scale + '%');
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch'); s.setProperty('--lh-body', (+p.leading || 1.7).toString());
     var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
     s.setProperty('--font-body', fam);
@@ -45,7 +45,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="../../assets/learn.css" rel="stylesheet"/>
 <!-- Manifesto do curso (obrigatório em toda página) -->
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
  "course": "produtos-era-ia-en",
  "tracks": [
@@ -228,23 +228,23 @@
     .qz-fb { display:none; } .qz[data-answered] .qz-fb { display:block; }
 
     /* TOC do módulo é um bloco inline, nêo uma barra lateral sticky */
-    [data-inema-toc] { position: static !important; top: auto !important; max-height: none !important; }
+    [data-ARCKHÉ-toc] { position: static !important; top: auto !important; max-height: none !important; }
     /* Painel de aparência (classes internas) */
-    .inema-appearance-sec { margin-bottom: .75rem; }
-    .inema-appearance-label { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9ca3af; margin-bottom: .35rem; }
-    .inema-appearance-row { display: flex; flex-wrap: wrap; gap: .35rem; }
-    .inema-chip { font-size: .8rem; padding: .3rem .65rem; border-radius: .5rem; border: 1px solid #374151; background: rgba(31,41,55,.6); color: #e5e7eb; cursor: pointer; }
-    .inema-chip:hover { border-color: #FACC15; }
-    .inema-chip[aria-pressed="true"], .inema-chip.is-active { background: rgba(250,204,21,.15); border-color: #FACC15; color: #FACC15; }
-    html:not(.dark) .inema-chip { background: #f3f4f6; color: #111827; border-color: #d1d5db; }
-    html:not(.dark) .inema-chip[aria-pressed="true"], html:not(.dark) .inema-chip.is-active { background: rgba(161,98,7,.1); border-color: #a16207; color: #a16207; }
+    .ARCKHÉ-appearance-sec { margin-bottom: .75rem; }
+    .ARCKHÉ-appearance-label { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9ca3af; margin-bottom: .35rem; }
+    .ARCKHÉ-appearance-row { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .ARCKHÉ-chip { font-size: .8rem; padding: .3rem .65rem; border-radius: .5rem; border: 1px solid #374151; background: rgba(31,41,55,.6); color: #e5e7eb; cursor: pointer; }
+    .ARCKHÉ-chip:hover { border-color: #FACC15; }
+    .ARCKHÉ-chip[aria-pressed="true"], .ARCKHÉ-chip.is-active { background: rgba(250,204,21,.15); border-color: #FACC15; color: #FACC15; }
+    html:not(.dark) .ARCKHÉ-chip { background: #f3f4f6; color: #111827; border-color: #d1d5db; }
+    html:not(.dark) .ARCKHÉ-chip[aria-pressed="true"], html:not(.dark) .ARCKHÉ-chip.is-active { background: rgba(161,98,7,.1); border-color: #a16207; color: #a16207; }
     /* Coluna do módulo: largura fixa do layout, independente da ordem em que o Tailwind CDN injeta o CSS */
-    main.max-w-6xl.inema-prose { max-width: 72rem; }
+    main.max-w-6xl.ARCKHÉ-prose { max-width: 72rem; }
     /* Code box */
     .codebox pre { white-space: pre-wrap; word-break: break-word; }
     
   </style>
-<link href="https://inematds.github.io/produtos-era-ia/curso/trilha3/modulo-3-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/en/curso/trilha3/modulo-3-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/es/curso/trilha3/modulo-3-3.html" hreflang="es" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/curso/trilha3/modulo-3-3.html" hreflang="x-default" rel="alternate"/>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha3/modulo-3-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha3/modulo-3-3.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha3/modulo-3-3.html" hreflang="es" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha3/modulo-3-3.html" hreflang="x-default" rel="alternate"/>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
 <!-- NAVIGATION -->
@@ -257,9 +257,9 @@
 <span class="font-bold text-lg hidden md:inline">Products in the AI Era</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600 hidden sm:inline">-</span>
-<a class="text-amber-700 dark:text-slate-300 hover:opacity-80 text-sm font-medium hidden sm:inline" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 dark:text-slate-300 hover:opacity-80 text-sm font-medium hidden sm:inline" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../../curso/trilha1/index.html">
@@ -275,11 +275,11 @@
 <span class="hidden sm:inline">Launch</span>
 </a>
 <span class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-2" data-lang-switch=""><a class="text-neutral-400 hover:text-primary" href="../../../curso/trilha3/modulo-3-3.html" hreflang="pt-BR" lang="pt-BR">PT</a><span class="text-neutral-600">·</span><a class="text-primary font-bold" href="../../../en/curso/trilha3/modulo-3-3.html" hreflang="en" lang="en">EN</a><span class="text-neutral-600">·</span><a class="text-neutral-400 hover:text-primary" href="../../../es/curso/trilha3/modulo-3-3.html" hreflang="es" lang="es">ES</a></span>
-<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors" data-inema-journey-open="" type="button">
+<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors" data-ARCKHÉ-journey-open="" type="button">
 <span>🧭</span><span>My Journey</span>
-<span class="text-xs px-1.5 py-0.5 rounded-full bg-primary/20" data-inema-journey-badge=""></span>
+<span class="text-xs px-1.5 py-0.5 rounded-full bg-primary/20" data-ARCKHÉ-journey-badge=""></span>
 </button>
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" data-inema-appearance-toggle="[data-inema-appearance]" title="Appearance and reading" type="button">
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="Appearance and reading" type="button">
 <span aria-hidden="true">Aa</span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" id="theme-toggle" title="Light/dark theme">
@@ -290,40 +290,40 @@
 </div>
 </div>
 </nav>
-<div aria-label="Appearance and reading" class="inema-appearance-pop" data-inema-appearance="" role="region">
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Theme</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-theme="inema-dark" type="button">Dark</button>
-<button class="inema-chip" data-inema-set-theme="claro" type="button">Light</button>
-<button class="inema-chip" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button class="inema-chip" data-inema-set-theme="foco" type="button">Focus</button>
-<button class="inema-chip" data-inema-set-theme="contraste" type="button">Contrast</button>
+<div aria-label="Appearance and reading" class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="" role="region">
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Theme</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Dark</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="claro" type="button">Light</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="foco" type="button">Focus</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="contraste" type="button">Contrast</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Text size</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-fontscale="90" type="button">A-</button>
-<button class="inema-chip" data-inema-set-fontscale="100" type="button">A</button>
-<button class="inema-chip" data-inema-set-fontscale="115" type="button">A+</button>
-<button class="inema-chip" data-inema-set-fontscale="130" type="button">A++</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Text size</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="90" type="button">A-</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="115" type="button">A+</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="130" type="button">A++</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Font</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-font="inter" type="button">Inter</button>
-<button class="inema-chip" data-inema-set-font="system" type="button">System</button>
-<button class="inema-chip" data-inema-set-font="leitura" type="button">Reading</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Font</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="inter" type="button">Inter</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="system" type="button">System</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="leitura" type="button">Reading</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Line spacing</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-leading="1.5" type="button">Compact</button>
-<button class="inema-chip" data-inema-set-leading="1.7" type="button">Normal</button>
-<button class="inema-chip" data-inema-set-leading="1.9" type="button">Wide</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Line spacing</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.5" type="button">Compact</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.7" type="button">Normal</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.9" type="button">Wide</button>
 </div>
 </div>
 </div>
@@ -344,36 +344,36 @@
 <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Topics</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">50</div><div class="text-xs text-neutral-400">Minutes</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Intermediate</div><div class="text-xs text-neutral-400">Level</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Practical</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
-<div aria-label="Module progress" aria-valuemax="100" aria-valuemin="0" class="inema-meter max-w-md mt-6" data-inema-meter="modulo:3-3" role="progressbar">
-<div class="flex justify-between text-sm text-neutral-400 mb-1"><span data-inema-meter-frac="">0 of 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar h-2 bg-dark-700 rounded-full overflow-hidden"><div class="inema-bar__fill h-full bg-purple-500 rounded-full transition-all" data-inema-meter-fill="" style="width:0%"></div></div>
+<div aria-label="Module progress" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter max-w-md mt-6" data-ARCKHÉ-meter="modulo:3-3" role="progressbar">
+<div class="flex justify-between text-sm text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 of 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar h-2 bg-dark-700 rounded-full overflow-hidden"><div class="ARCKHÉ-bar__fill h-full bg-purple-500 rounded-full transition-all" data-ARCKHÉ-meter-fill="" style="width:0%"></div></div>
 </div>
 </div>
 </header>
-<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 inema-prose" data-inema-module="3-3" data-inema-track="3">
-<nav aria-label="Topics in this module" class="mb-12 bg-dark-800 rounded-xl border border-dark-600 p-5" data-inema-toc="">
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ARCKHÉ-prose" data-ARCKHÉ-module="3-3" data-ARCKHÉ-track="3">
+<nav aria-label="Topics in this module" class="mb-12 bg-dark-800 rounded-xl border border-dark-600 p-5" data-ARCKHÉ-toc="">
 <p class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">In this module</p>
 <ol class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
 <li><a class="flex items-start gap-2 text-neutral-300 hover:text-purple-400" href="#topico-1"><span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</span><span>The feedback nobody gave</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-purple-400" href="#topico-2"><span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</span><span>The /product-feedback command</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-purple-400" href="#topico-3"><span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</span><span>Copy the onboarding of a business that already earns revenue</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-purple-400" href="#topico-4"><span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">4</span><span>Design without bloating the setup</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-purple-400" href="#topico-5"><span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">5</span><span>Simulated users with subagents</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-purple-400" href="#topico-6"><span class="w-5 h-5 rounded-full bg-purple-500/20 text-purple-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">6</span><span>Synthetic crowds and judgment</span></a></li>
 </ol>
 </nav>
 <!-- TÓPICO 1 -->
-<section class="mb-16" data-inema-topic="modulo-3-3#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-3#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🎞️ The feedback no one gave</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-3-p1">Tools like <strong class="text-purple-400">PostHog</strong> and <strong class="text-purple-400">Hotjar</strong> offer session replays (<em>session replays</em>): you watch, like a video, as a user navigates your product. Where they clicked, where they paused, where they went back, where they gave up.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-3-p1">Tools like <strong class="text-purple-400">PostHog</strong> and <strong class="text-purple-400">Hotjar</strong> offer session replays (<em>session replays</em>): you watch, like a video, as a user navigates your product. Where they clicked, where they paused, where they went back, where they gave up.</p>
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-purple-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-purple-400 mb-3">New here? Terms in this topic</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">Session replay</dt><dd class="text-neutral-400" data-inema-block="m3-3-p2">A video reconstruction of a user's navigation, based on page events. It doesn't use the person's camera.</dd></div><div><dt class="font-semibold text-neutral-100">Drop-off</dt><dd class="text-neutral-400" data-inema-block="m3-3-p3">The moment when a user leaves without completing what they came to do.</dd></div><div><dt class="font-semibold text-neutral-100">Production bug</dt><dd class="text-neutral-400" data-inema-block="m3-3-p4">A failure that appears only with real users in the live system, not in your tests.</dd></div><div><dt class="font-semibold text-neutral-100">Masking</dt><dd class="text-neutral-400" data-inema-block="m3-3-p5">A feature that automatically hides sensitive fields (passwords, card details) in recordings.</dd></div>
+<div><dt class="font-semibold text-neutral-100">Session replay</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p2">A video reconstruction of a user's navigation, based on page events. It doesn't use the person's camera.</dd></div><div><dt class="font-semibold text-neutral-100">Drop-off</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p3">The moment when a user leaves without completing what they came to do.</dd></div><div><dt class="font-semibold text-neutral-100">Production bug</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p4">A failure that appears only with real users in the live system, not in your tests.</dd></div><div><dt class="font-semibold text-neutral-100">Masking</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p5">A feature that automatically hides sensitive fields (passwords, card details) in recordings.</dd></div>
 </dl>
 </aside>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">💳</span> A big-company habit</h3>
-<p class="text-neutral-300 mb-4" data-inema-block="m3-3-p6">In its early months, the Stripe team watched its customers use the product, one by one, to find every pain point. This isn't just a small-company habit; it's what successful companies did at the beginning.</p>
-<p class="text-neutral-300 mb-4" data-inema-block="m3-3-p7">Many bugs only show up this way: a button that fails on a double-click, a form that disappears on a specific phone, a user trying something you never imagined.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m3-3-p6">In its early months, the Stripe team watched its customers use the product, one by one, to find every pain point. This isn't just a small-company habit; it's what successful companies did at the beginning.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m3-3-p7">Many bugs only show up this way: a button that fails on a double-click, a form that disappears on a specific phone, a user trying something you never imagined.</p>
 </div>
 <figure class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="What the user says versus what the session replay shows" class="w-full h-auto" role="img" viewbox="0 0 800 266"><defs>
@@ -402,22 +402,22 @@
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical tip</h3>
-<p class="text-neutral-300" data-inema-block="m3-3-p8">Building your own AI recording tool is possible, but established tools are still more reliable and have free plans. Save your energy for your product.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m3-3-p8">Building your own AI recording tool is possible, but established tools are still more reliable and have free plans. Save your energy for your product.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 2 -->
-<section class="mb-16" data-inema-topic="modulo-3-3#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-3#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">⚙️ The /product-feedback command</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-3-p9">Today, instead of watching every recording yourself, a <strong class="text-purple-400">fast multimodal model</strong> (such as Gemini Flash versions) can watch them all and tell you where the user journey is confusing and where people fail to reach the desired click in under ten seconds. Then, a coding agent like Claude Code turns that diagnosis into a fix plan.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-3-p9">Today, instead of watching every recording yourself, a <strong class="text-purple-400">fast multimodal model</strong> (such as Gemini Flash versions) can watch them all and tell you where the user journey is confusing and where people fail to reach the desired click in under ten seconds. Then, a coding agent like Claude Code turns that diagnosis into a fix plan.</p>
 <figure class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="The /product-feedback command workflow, from collection to fix plan" class="w-full h-auto" role="img" viewbox="0 0 800 200"><defs>
 <lineargradient id="s52-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c084fc"></stop><stop offset="1" stop-color="#a855f7"></stop></lineargradient>
@@ -449,7 +449,7 @@
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-purple-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-purple-400 mb-3">New here? Terms in this topic</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">Skill</dt><dd class="text-neutral-400" data-inema-block="m3-3-p10">A saved set of instructions that Claude Code runs when you call it by name, such as /product-feedback.</dd></div><div><dt class="font-semibold text-neutral-100">Multimodal model</dt><dd class="text-neutral-400" data-inema-block="m3-3-p11">An AI model that understands images and video as well as text.</dd></div>
+<div><dt class="font-semibold text-neutral-100">Skill</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p10">A saved set of instructions that Claude Code runs when you call it by name, such as /product-feedback.</dd></div><div><dt class="font-semibold text-neutral-100">Multimodal model</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p11">An AI model that understands images and video as well as text.</dd></div>
 </dl>
 </aside>
 <div class="codebox bg-dark-800 rounded-xl border border-purple-500/30 overflow-hidden mb-6">
@@ -492,26 +492,26 @@ Goal: find where users get stuck, even when no one has complained.
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Cost and privacy</h3>
-<p class="text-neutral-300" data-inema-block="m3-3-p12">Sending videos to an external model has a per-use cost and sends browsing data outside your organization. Use recordings with masked fields, limit the number of sessions per run, and confirm that your terms of use allow this processing.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m3-3-p12">Sending videos to an external model has a per-use cost and sends browsing data outside your organization. Use recordings with masked fields, limit the number of sessions per run, and confirm that your terms of use allow this processing.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 3 -->
-<section class="mb-16" data-inema-topic="modulo-3-3#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-3#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🧭 Copy the onboarding of products that already make money</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-3-p13"><strong class="text-purple-400">Onboarding</strong> is how a user enters your product: from their first visit to the moment they understand it and start using it. Products that make money have refined this entry process through many tests. Instead of starting from scratch, study what they do.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-3-p13"><strong class="text-purple-400">Onboarding</strong> is how a user enters your product: from their first visit to the moment they understand it and start using it. Products that make money have refined this entry process through many tests. Instead of starting from scratch, study what they do.</p>
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-purple-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-purple-400 mb-3">New here? Terms in this topic</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">Onboarding</dt><dd class="text-neutral-400" data-inema-block="m3-3-p14">The process of welcoming and guiding a new user through their first successful use.</dd></div><div><dt class="font-semibold text-neutral-100">A/B test</dt><dd class="text-neutral-400" data-inema-block="m3-3-p15">Showing two versions to different groups and seeing which one converts better.</dd></div><div><dt class="font-semibold text-neutral-100">Reverse engineering</dt><dd class="text-neutral-400" data-inema-block="m3-3-p16">Studying a finished product to understand how it was designed.</dd></div><div><dt class="font-semibold text-neutral-100">Computer use</dt><dd class="text-neutral-400" data-inema-block="m3-3-p17">An AI agent's ability to open a browser, click, scroll, and read the screen like a person.</dd></div>
+<div><dt class="font-semibold text-neutral-100">Onboarding</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p14">The process of welcoming and guiding a new user through their first successful use.</dd></div><div><dt class="font-semibold text-neutral-100">A/B test</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p15">Showing two versions to different groups and seeing which one converts better.</dd></div><div><dt class="font-semibold text-neutral-100">Reverse engineering</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p16">Studying a finished product to understand how it was designed.</dd></div><div><dt class="font-semibold text-neutral-100">Computer use</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p17">An AI agent's ability to open a browser, click, scroll, and read the screen like a person.</dd></div>
 </dl>
 </aside>
 <div class="space-y-5 mb-6">
@@ -520,28 +520,28 @@ Goal: find where users get stuck, even when no one has complained.
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">1</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Find products with real revenue</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-3-p18">Some sites list products with revenue verified through payment provider integrations. Revenue is a sign that the onboarding flow works.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-3-p18">Some sites list products with revenue verified through payment provider integrations. Revenue is a sign that the onboarding flow works.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">2</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Go through the entire flow</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-3-p19">Create an account and try it for the first time. Or ask an agent with computer use (Codex has a built-in browser) to do it and record each screen.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-3-p19">Create an account and try it for the first time. Or ask an agent with computer use (Codex has a built-in browser) to do it and record each screen.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">3</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Note what’s different</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-3-p20">The order of the questions, what’s asked and when, button text, and what appears right after signup.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-3-p20">The order of the questions, what’s asked and when, button text, and what appears right after signup.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center"><span class="text-purple-400 font-bold">4</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Adapt, don’t clone</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-3-p21">Take the principle, not the design. What works for their audience may need adjusting for yours.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-3-p21">Take the principle, not the design. What works for their audience may need adjusting for yours.</p>
 </div>
 </div>
 </div>
@@ -564,26 +564,26 @@ Goal: find where users get stuck, even when no one has complained.
 </figure>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Why not just ask "make a good onboarding flow"</h3>
-<p class="text-neutral-300" data-inema-block="m3-3-p22">If you ask the model for an onboarding flow without a reference, it gives you the average of what it saw in training. The average isn’t what converts best; it’s just the most common. Real references raise the result above average.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m3-3-p22">If you ask the model for an onboarding flow without a reference, it gives you the average of what it saw in training. The average isn’t what converts best; it’s just the most common. Real references raise the result above average.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical tip</h3>
-<p class="text-neutral-300" data-inema-block="m3-3-p23">Be careful with public metrics platforms: exposing your revenue on an open site also alerts copycats. Study others, but think carefully before exposing your numbers.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m3-3-p23">Be careful with public metrics platforms: exposing your revenue on an open site also alerts copycats. Study others, but think carefully before exposing your numbers.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 4 -->
-<section class="mb-16" data-inema-topic="modulo-3-3#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-3#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🖌️ Design without bloating your setup</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-3-p24">A common recommendation is "install these seven design skills so your app doesn’t look AI-made." The result often looks... AI-made. Worse, each skill brings a different style, and when the agent uses three at once, <strong class="text-purple-400">the design paradigms clash</strong>. The setup gets bloated, and the visuals get confusing.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-3-p24">A common recommendation is "install these seven design skills so your app doesn’t look AI-made." The result often looks... AI-made. Worse, each skill brings a different style, and when the agent uses three at once, <strong class="text-purple-400">the design paradigms clash</strong>. The setup gets bloated, and the visuals get confusing.</p>
 <figure class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Bloated design skills setup versus an agent that studies references and chooses selectively" class="w-full h-auto" role="img" viewbox="0 0 800 266"><defs>
 <lineargradient id="s54-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c084fc"></stop><stop offset="1" stop-color="#a855f7"></stop></lineargradient>
@@ -603,17 +603,17 @@ Goal: find where users get stuck, even when no one has complained.
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
 <div class="text-2xl mb-2">🧩</div>
 <h4 class="font-semibold text-purple-400 mb-2">21st.dev</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-3-p25">A gallery of UI components: backgrounds, borders, cards, buttons. Useful for seeing visual patterns.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-3-p25">A gallery of UI components: backgrounds, borders, cards, buttons. Useful for seeing visual patterns.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
 <div class="text-2xl mb-2">🎬</div>
 <h4 class="font-semibold text-purple-400 mb-2">whatships</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-3-p26">Product launch videos. A reference for your site’s marketing video.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-3-p26">Product launch videos. A reference for your site’s marketing video.</p>
 </div>
 <div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
 <div class="text-2xl mb-2">🏆</div>
 <h4 class="font-semibold text-purple-400 mb-2">Awwwards</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m3-3-p27">Award-winning sites of the month and year. Typography, layout, and interaction above average.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m3-3-p27">Award-winning sites of the month and year. Typography, layout, and interaction above average.</p>
 </div>
 </div>
 <div class="codebox bg-dark-800 rounded-xl border border-purple-500/30 overflow-hidden mb-6">
@@ -640,26 +640,26 @@ Desired feel: &lt;e.g., trustworthy and calm | fast and bold&gt;
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Value per scroll</h3>
-<p class="text-neutral-300" data-inema-block="m3-3-p28">When reviewing your page, ask at every screenful: "What did the person learn here?" Minimalist doesn’t mean empty; each scroll should deliver value.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m3-3-p28">When reviewing your page, ask at every screenful: "What did the person learn here?" Minimalist doesn’t mean empty; each scroll should deliver value.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 5 -->
-<section class="mb-16" data-inema-topic="modulo-3-3#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-3#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">👥 Simulated users with subagents</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-3-p29">A <strong class="text-purple-400">subagent</strong> is an AI agent that the main agent creates to handle a separate task, with its own instructions. You can create several, each with a <strong class="text-purple-400">persona</strong>: a user profile with a different age, routine, patience level, and experience.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-3-p29">A <strong class="text-purple-400">subagent</strong> is an AI agent that the main agent creates to handle a separate task, with its own instructions. You can create several, each with a <strong class="text-purple-400">persona</strong>: a user profile with a different age, routine, patience level, and experience.</p>
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-purple-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-purple-400 mb-3">New here? Terms in this topic</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">Subagent</dt><dd class="text-neutral-400" data-inema-block="m3-3-p30">An assistant agent created for a specific task, with its own context and instructions.</dd></div><div><dt class="font-semibold text-neutral-100">Persona</dt><dd class="text-neutral-400" data-inema-block="m3-3-p31">Description of a typical user: who they are, what they want, what frustrates them.</dd></div>
+<div><dt class="font-semibold text-neutral-100">Subagent</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p30">An assistant agent created for a specific task, with its own context and instructions.</dd></div><div><dt class="font-semibold text-neutral-100">Persona</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p31">Description of a typical user: who they are, what they want, what frustrates them.</dd></div>
 </dl>
 </aside>
 <figure class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
@@ -714,32 +714,32 @@ important disagreements, and the 5 highest-impact changes, in order.</code></pre
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Simulation is not validation</h3>
-<p class="text-neutral-300" data-inema-block="m3-3-p32">Simulated personas help you find obvious problems before launch. They do not replace real people paying. Use them to improve the product, not to conclude that it will succeed.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m3-3-p32">Simulated personas help you find obvious problems before launch. They do not replace real people paying. Use them to improve the product, not to conclude that it will succeed.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- TÓPICO 6 -->
-<section class="mb-16" data-inema-topic="modulo-3-3#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-3-3#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🌐 Synthetic crowds and judgment</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-3-p33">There are tools, such as <strong class="text-purple-400">Mirofish</strong>, that create hundreds or thousands of agents, each with a short system prompt describing who they are. Together, they simulate buyers in a market and tell you what they would think of your product, page, or ad.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m3-3-p33">There are tools, such as <strong class="text-purple-400">Mirofish</strong>, that create hundreds or thousands of agents, each with a short system prompt describing who they are. Together, they simulate buyers in a market and tell you what they would think of your product, page, or ad.</p>
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-purple-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-purple-400 mb-3">New here? Terms in this topic</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">Synthetic crowd</dt><dd class="text-neutral-400" data-inema-block="m3-3-p34">A large number of agents with varied profiles that simulate how an audience might react.</dd></div><div><dt class="font-semibold text-neutral-100">Backtest</dt><dd class="text-neutral-400" data-inema-block="m3-3-p35">Test a method against past data to see whether it would have correctly predicted what actually happened.</dd></div><div><dt class="font-semibold text-neutral-100">System prompt</dt><dd class="text-neutral-400" data-inema-block="m3-3-p36">Initial instruction that defines who the agent is and how it should behave.</dd></div>
+<div><dt class="font-semibold text-neutral-100">Synthetic crowd</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p34">A large number of agents with varied profiles that simulate how an audience might react.</dd></div><div><dt class="font-semibold text-neutral-100">Backtest</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p35">Test a method against past data to see whether it would have correctly predicted what actually happened.</dd></div><div><dt class="font-semibold text-neutral-100">System prompt</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m3-3-p36">Initial instruction that defines who the agent is and how it should behave.</dd></div>
 </dl>
 </aside>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">📊</span> The test that builds confidence: the backtest</h3>
-<p class="text-neutral-300 mb-4" data-inema-block="m3-3-p37">People have been using these tools for a simple test: take the last 10 posts from an account and ask a synthetic crowd modeled on that account’s audience to say which one would perform best. In many cases, it picks the post that actually went viral.</p>
-<p class="text-neutral-300 mb-4" data-inema-block="m3-3-p38">If the simulation gets the past right, you gain some confidence in using it for future decisions: which headline to test, which page to publish, which offer to make.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m3-3-p37">People have been using these tools for a simple test: take the last 10 posts from an account and ask a synthetic crowd modeled on that account’s audience to say which one would perform best. In many cases, it picks the post that actually went viral.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m3-3-p38">If the simulation gets the past right, you gain some confidence in using it for future decisions: which headline to test, which page to publish, which offer to make.</p>
 </div>
 <figure class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="From cheapest and fastest to most reliable: the testing layers before and after launch" class="w-full h-auto" role="img" viewbox="0 0 800 340"><defs>
@@ -770,18 +770,18 @@ important disagreements, and the 5 highest-impact changes, in order.</code></pre
 </div>
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">🧭</span> Closing: judgment is the game</h3>
-<p class="text-neutral-300 mb-4" data-inema-block="m3-3-p39">Everything this course has shown is within anyone’s reach today: building, designing, simulating, analyzing. That’s exactly why none of it is a differentiator on its own.</p>
-<p class="text-neutral-300 mb-4" data-inema-block="m3-3-p40">What sets you apart is judgment: knowing whether something is worth building, for whom, for how long, and how to reach those people. In a world where you can build anything, that judgment is the whole game.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m3-3-p39">Everything this course has shown is within anyone’s reach today: building, designing, simulating, analyzing. That’s exactly why none of it is a differentiator on its own.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m3-3-p40">What sets you apart is judgment: knowing whether something is worth building, for whom, for how long, and how to reach those people. In a world where you can build anything, that judgment is the whole game.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practical next step</h3>
-<p class="text-neutral-300" data-inema-block="m3-3-p41">Take the product or idea you’re working on and do these in order: the one-line statement (3-2), the persona panel (3-3), and the distribution plan for the first 100 people (3-1). In one afternoon, you’ll have all three answers written down.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m3-3-p41">Take the product or idea you’re working on and do these in order: the one-line statement (3-2), the persona panel (3-3), and the distribution plan for the first 100 people (3-1). In one afternoon, you’ll have all three answers written down.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Mark as read</span>
-<span class="inema-label-done">Read</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-purple-500/20 text-purple-400 hover:bg-purple-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Mark as read</span>
+<span class="ARCKHÉ-label-done">Read</span>
 </button>
 </section>
 <!-- QUIZ -->
@@ -830,8 +830,8 @@ important disagreements, and the 5 highest-impact changes, in order.</code></pre
 <footer class="border-t border-dark-600 mt-16 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm space-y-2">
 <p>Products in the AI Era · Track 3 — Launch and Grow · 2026 ·
-        <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> -
-        <a class="text-amber-700 dark:text-slate-300" href="https://inema.pro" target="_blank">PRO</a></p>
+        <a class="text-sky-400 hover:text-sky-300" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a> -
+        <a class="text-amber-700 dark:text-slate-300" href="https://ARCKHÉ.pro" target="_blank">PRO</a></p>
 </div>
 </footer>
 <!-- SCRIPTS núcleo v1 -->
@@ -859,7 +859,7 @@ important disagreements, and the 5 highest-impact changes, in order.</code></pre
       html.classList.toggle('dark');
       const dark = html.classList.contains('dark');
       localStorage.setItem('theme', dark ? 'dark' : 'light');
-      if (window.INEMA && INEMA.setPref) { try { INEMA.setPref('theme', dark ? 'inema-dark' : 'claro'); } catch (e) {} }
+      if (window.ARCKHÉ && ARCKHÉ.setPref) { try { ARCKHÉ.setPref('theme', dark ? 'ARCKHÉ-dark' : 'claro'); } catch (e) {} }
     });
     function openModal(modalId) { const m = document.getElementById(modalId); if (m) { m.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
     function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
@@ -883,7 +883,7 @@ important disagreements, and the 5 highest-impact changes, in order.</code></pre
   </script>
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init(); }
   </script>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="produtos-era-ia-es" name="inema-course"/>
+<meta content="produtos-era-ia-es" name="ARCKHÉ-course"/>
 <title>El problema de la media | Productos en la era de la IA</title>
 <meta content="Los modelos de lenguaje aprenden de lo que ya existe y tienden a devolver lo más común. Eso es excelente para la velocidad y pésimo para diferenciarse. Este módulo explica por qué lo «promedio» no llama la atención y qué hacer al respecto." name="description"/>
 <!-- ANTI-FOUC: bloqueante, antes de tudo -->
@@ -12,22 +12,22 @@
 (function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; } }
-      else { var legacy = localStorage.getItem('theme'); if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark'; }
+      else { var legacy = localStorage.getItem('theme'); if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark'; }
     } catch (e) { p = clone(DEF); }
-    var THEMES = { 'inema-dark': { dark: true, attr: null, cs: 'dark' }, 'claro': { dark: false, attr: null, cs: 'light' }, 'sepia': { dark: false, attr: 'sepia', cs: 'light' }, 'foco': { dark: null, attr: 'foco', cs: null }, 'contraste': { dark: true, attr: 'contraste', cs: 'dark' } };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var THEMES = { 'ARCKHÉ-dark': { dark: true, attr: null, cs: 'dark' }, 'claro': { dark: false, attr: null, cs: 'light' }, 'sepia': { dark: false, attr: 'sepia', cs: 'light' }, 'foco': { dark: null, attr: 'foco', cs: null }, 'contraste': { dark: true, attr: 'contraste', cs: 'dark' } };
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
     if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
     if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
     html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
     html.setAttribute('data-font', p.font || 'inter'); html.setAttribute('data-accent', p.accent || 'emerald');
     var s = html.style; var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString()); s.setProperty('font-size', scale + '%');
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString()); s.setProperty('font-size', scale + '%');
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch'); s.setProperty('--lh-body', (+p.leading || 1.7).toString());
     var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
     s.setProperty('--font-body', fam);
@@ -45,7 +45,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="../../assets/learn.css" rel="stylesheet"/>
 <!-- Manifesto do curso (obrigatório em toda página) -->
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
  "course": "produtos-era-ia-es",
  "tracks": [
@@ -228,23 +228,23 @@
     .qz-fb { display:none; } .qz[data-answered] .qz-fb { display:block; }
 
     /* TOC do módulo é um bloco inline, nêo uma barra lateral sticky */
-    [data-inema-toc] { position: static !important; top: auto !important; max-height: none !important; }
+    [data-ARCKHÉ-toc] { position: static !important; top: auto !important; max-height: none !important; }
     /* Painel de aparência (classes internas) */
-    .inema-appearance-sec { margin-bottom: .75rem; }
-    .inema-appearance-label { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9ca3af; margin-bottom: .35rem; }
-    .inema-appearance-row { display: flex; flex-wrap: wrap; gap: .35rem; }
-    .inema-chip { font-size: .8rem; padding: .3rem .65rem; border-radius: .5rem; border: 1px solid #374151; background: rgba(31,41,55,.6); color: #e5e7eb; cursor: pointer; }
-    .inema-chip:hover { border-color: #FACC15; }
-    .inema-chip[aria-pressed="true"], .inema-chip.is-active { background: rgba(250,204,21,.15); border-color: #FACC15; color: #FACC15; }
-    html:not(.dark) .inema-chip { background: #f3f4f6; color: #111827; border-color: #d1d5db; }
-    html:not(.dark) .inema-chip[aria-pressed="true"], html:not(.dark) .inema-chip.is-active { background: rgba(161,98,7,.1); border-color: #a16207; color: #a16207; }
+    .ARCKHÉ-appearance-sec { margin-bottom: .75rem; }
+    .ARCKHÉ-appearance-label { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9ca3af; margin-bottom: .35rem; }
+    .ARCKHÉ-appearance-row { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .ARCKHÉ-chip { font-size: .8rem; padding: .3rem .65rem; border-radius: .5rem; border: 1px solid #374151; background: rgba(31,41,55,.6); color: #e5e7eb; cursor: pointer; }
+    .ARCKHÉ-chip:hover { border-color: #FACC15; }
+    .ARCKHÉ-chip[aria-pressed="true"], .ARCKHÉ-chip.is-active { background: rgba(250,204,21,.15); border-color: #FACC15; color: #FACC15; }
+    html:not(.dark) .ARCKHÉ-chip { background: #f3f4f6; color: #111827; border-color: #d1d5db; }
+    html:not(.dark) .ARCKHÉ-chip[aria-pressed="true"], html:not(.dark) .ARCKHÉ-chip.is-active { background: rgba(161,98,7,.1); border-color: #a16207; color: #a16207; }
     /* Coluna do módulo: largura fixa do layout, independente da ordem em que o Tailwind CDN injeta o CSS */
-    main.max-w-6xl.inema-prose { max-width: 72rem; }
+    main.max-w-6xl.ARCKHÉ-prose { max-width: 72rem; }
     /* Code box */
     .codebox pre { white-space: pre-wrap; word-break: break-word; }
     
   </style>
-<link href="https://inematds.github.io/produtos-era-ia/curso/trilha1/modulo-1-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/en/curso/trilha1/modulo-1-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/es/curso/trilha1/modulo-1-2.html" hreflang="es" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/curso/trilha1/modulo-1-2.html" hreflang="x-default" rel="alternate"/>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha1/modulo-1-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha1/modulo-1-2.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha1/modulo-1-2.html" hreflang="es" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha1/modulo-1-2.html" hreflang="x-default" rel="alternate"/>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
 <!-- NAVIGATION -->
@@ -257,9 +257,9 @@
 <span class="font-bold text-lg hidden md:inline">Productos en la era de la IA</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600 hidden sm:inline">-</span>
-<a class="text-amber-700 dark:text-slate-300 hover:opacity-80 text-sm font-medium hidden sm:inline" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 dark:text-slate-300 hover:opacity-80 text-sm font-medium hidden sm:inline" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="../../curso/trilha1/index.html">
@@ -275,11 +275,11 @@
 <span class="hidden sm:inline">Lanzar</span>
 </a>
 <span class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-2" data-lang-switch=""><a class="text-neutral-400 hover:text-primary" href="../../../curso/trilha1/modulo-1-2.html" hreflang="pt-BR" lang="pt-BR">PT</a><span class="text-neutral-600">·</span><a class="text-neutral-400 hover:text-primary" href="../../../en/curso/trilha1/modulo-1-2.html" hreflang="en" lang="en">EN</a><span class="text-neutral-600">·</span><a class="text-primary font-bold" href="../../../es/curso/trilha1/modulo-1-2.html" hreflang="es" lang="es">ES</a></span>
-<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors" data-inema-journey-open="" type="button">
+<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors" data-ARCKHÉ-journey-open="" type="button">
 <span>🧭</span><span>Mi recorrido</span>
-<span class="text-xs px-1.5 py-0.5 rounded-full bg-primary/20" data-inema-journey-badge=""></span>
+<span class="text-xs px-1.5 py-0.5 rounded-full bg-primary/20" data-ARCKHÉ-journey-badge=""></span>
 </button>
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" data-inema-appearance-toggle="[data-inema-appearance]" title="Apariencia y lectura" type="button">
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="Apariencia y lectura" type="button">
 <span aria-hidden="true">Aa</span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" id="theme-toggle" title="Tema claro/oscuro">
@@ -290,40 +290,40 @@
 </div>
 </div>
 </nav>
-<div aria-label="Apariencia y lectura" class="inema-appearance-pop" data-inema-appearance="" role="region">
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Tema</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-theme="inema-dark" type="button">Oscuro</button>
-<button class="inema-chip" data-inema-set-theme="claro" type="button">Claro</button>
-<button class="inema-chip" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button class="inema-chip" data-inema-set-theme="foco" type="button">Enfoque</button>
-<button class="inema-chip" data-inema-set-theme="contraste" type="button">Contraste</button>
+<div aria-label="Apariencia y lectura" class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="" role="region">
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Tema</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Oscuro</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="foco" type="button">Enfoque</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="contraste" type="button">Contraste</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Tamaño del texto</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-fontscale="90" type="button">A-</button>
-<button class="inema-chip" data-inema-set-fontscale="100" type="button">A</button>
-<button class="inema-chip" data-inema-set-fontscale="115" type="button">A+</button>
-<button class="inema-chip" data-inema-set-fontscale="130" type="button">A++</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Tamaño del texto</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="90" type="button">A-</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="115" type="button">A+</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="130" type="button">A++</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Fuente</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-font="inter" type="button">Inter</button>
-<button class="inema-chip" data-inema-set-font="system" type="button">Sistema</button>
-<button class="inema-chip" data-inema-set-font="leitura" type="button">Lectura</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Fuente</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="inter" type="button">Inter</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="system" type="button">Sistema</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="leitura" type="button">Lectura</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Interlineado</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-leading="1.5" type="button">Compacto</button>
-<button class="inema-chip" data-inema-set-leading="1.7" type="button">Normal</button>
-<button class="inema-chip" data-inema-set-leading="1.9" type="button">Amplio</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Interlineado</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.5" type="button">Compacto</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.7" type="button">Normal</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.9" type="button">Amplio</button>
 </div>
 </div>
 </div>
@@ -344,30 +344,30 @@
 <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">40</div><div class="text-xs text-neutral-400">Minutos</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nivel</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Fundamento</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progreso del módulo" aria-valuemax="100" aria-valuemin="0" class="inema-meter max-w-md mt-6" data-inema-meter="modulo:1-2" role="progressbar">
-<div class="flex justify-between text-sm text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar h-2 bg-dark-700 rounded-full overflow-hidden"><div class="inema-bar__fill h-full bg-emerald-500 rounded-full transition-all" data-inema-meter-fill="" style="width:0%"></div></div>
+<div aria-label="Progreso del módulo" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter max-w-md mt-6" data-ARCKHÉ-meter="modulo:1-2" role="progressbar">
+<div class="flex justify-between text-sm text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar h-2 bg-dark-700 rounded-full overflow-hidden"><div class="ARCKHÉ-bar__fill h-full bg-emerald-500 rounded-full transition-all" data-ARCKHÉ-meter-fill="" style="width:0%"></div></div>
 </div>
 </div>
 </header>
-<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 inema-prose" data-inema-module="1-2" data-inema-track="1">
-<nav aria-label="Temas de este módulo" class="mb-12 bg-dark-800 rounded-xl border border-dark-600 p-5" data-inema-toc="">
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ARCKHÉ-prose" data-ARCKHÉ-module="1-2" data-ARCKHÉ-track="1">
+<nav aria-label="Temas de este módulo" class="mb-12 bg-dark-800 rounded-xl border border-dark-600 p-5" data-ARCKHÉ-toc="">
 <p class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">En este módulo</p>
 <ol class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
 <li><a class="flex items-start gap-2 text-neutral-300 hover:text-emerald-400" href="#topico-1"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</span><span>Construir con LLM es construir la media</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-emerald-400" href="#topico-2"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</span><span>Pattern interrupt</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-emerald-400" href="#topico-3"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</span><span>La erosión del juicio</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-emerald-400" href="#topico-4"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">4</span><span>La palabra "lanzamiento" perdió su sentido</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-emerald-400" href="#topico-5"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">5</span><span>Un mercado saturado no es un mercado cerrado</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-emerald-400" href="#topico-6"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">6</span><span>Los tres criterios</span></a></li>
 </ol>
 </nav>
 <!-- TÓPICO 1 -->
-<section class="mb-16" data-inema-topic="modulo-1-2#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-2#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">📊 Construir con LLM es construir lo promedio</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-p1">Un modelo de lenguaje funciona, de forma simplificada, prediciendo cuál es la continuación más probable de un texto. Aprendió a hacerlo leyendo una cantidad gigantesca de contenido que ya existe. El resultado natural es que, sin una orientación clara, devuelve <strong class="text-emerald-400">lo más común</strong>: el diseño más común, la frase de marketing más común, el recorrido más común.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-p1">Un modelo de lenguaje funciona, de forma simplificada, prediciendo cuál es la continuación más probable de un texto. Aprendió a hacerlo leyendo una cantidad gigantesca de contenido que ya existe. El resultado natural es que, sin una orientación clara, devuelve <strong class="text-emerald-400">lo más común</strong>: el diseño más común, la frase de marketing más común, el recorrido más común.</p>
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-emerald-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-3">¿Eres nuevo por aquí? Términos de este tema</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">LLM</dt><dd class="text-neutral-400" data-inema-block="m1-2-p2">Large Language Model, modelo de lenguaje grande. El tipo de IA que está detrás de ChatGPT, Claude y Gemini.</dd></div><div><dt class="font-semibold text-neutral-100">Media (aquí)</dt><dd class="text-neutral-400" data-inema-block="m1-2-p3">El resultado más típico, el que aparece con más frecuencia en los datos de entrenamiento. No es malo; simplemente es igual a los demás.</dd></div><div><dt class="font-semibold text-neutral-100">Slop</dt><dd class="text-neutral-400" data-inema-block="m1-2-p4">Término coloquial para el contenido generado por IA sin cuidado: correcto, genérico y sin alma. Se reconoce a la distancia.</dd></div>
+<div><dt class="font-semibold text-neutral-100">LLM</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-2-p2">Large Language Model, modelo de lenguaje grande. El tipo de IA que está detrás de ChatGPT, Claude y Gemini.</dd></div><div><dt class="font-semibold text-neutral-100">Media (aquí)</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-2-p3">El resultado más típico, el que aparece con más frecuencia en los datos de entrenamiento. No es malo; simplemente es igual a los demás.</dd></div><div><dt class="font-semibold text-neutral-100">Slop</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-2-p4">Término coloquial para el contenido generado por IA sin cuidado: correcto, genérico y sin alma. Se reconoce a la distancia.</dd></div>
 </dl>
 </aside>
 <figure class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
@@ -386,33 +386,33 @@
 </figure>
 <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">⚖️</span> La media no es un defecto, es la naturaleza de la herramienta</h3>
-<p class="text-neutral-300 mb-4" data-inema-block="m1-2-p5">Para las tareas en las que lo común es lo correcto (un formulario de inicio de sesión, un correo de confirmación), la media es exactamente lo que quieres. El problema aparece cuando usas la misma herramienta, de la misma manera, para la parte del producto que debería ser única.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m1-2-p5">Para las tareas en las que lo común es lo correcto (un formulario de inicio de sesión, un correo de confirmación), la media es exactamente lo que quieres. El problema aparece cuando usas la misma herramienta, de la misma manera, para la parte del producto que debería ser única.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dónde aceptar la media</h3>
-<p class="text-neutral-300" data-inema-block="m1-2-p6">Deja que el modelo decida sobre la infraestructura (autenticación, tablas, pantallas de configuración). Reserva tu criterio para tres cosas: la promesa principal, la primera experiencia del usuario y la identidad visual.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m1-2-p6">Deja que el modelo decida sobre la infraestructura (autenticación, tablas, pantallas de configuración). Reserva tu criterio para tres cosas: la promesa principal, la primera experiencia del usuario y la identidad visual.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Marcar como leído</span>
-<span class="inema-label-done">Leído</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span>
+<span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </section>
 <!-- TÓPICO 2 -->
-<section class="mb-16" data-inema-topic="modulo-1-2#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-2#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">🚨 Pattern interrupt</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-p7">Piensa en tu feed. Pasas por decenas de publicaciones por minuto sin leer. Lo que hace que te detengas es algo que <strong>rompe el patrón</strong>: una imagen extraña, una frase inesperada, un producto que hace algo que no sabías que era posible. En marketing, esto se llama <strong class="text-emerald-400">pattern interrupt</strong>.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-p7">Piensa en tu feed. Pasas por decenas de publicaciones por minuto sin leer. Lo que hace que te detengas es algo que <strong>rompe el patrón</strong>: una imagen extraña, una frase inesperada, un producto que hace algo que no sabías que era posible. En marketing, esto se llama <strong class="text-emerald-400">pattern interrupt</strong>.</p>
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-emerald-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-3">¿Eres nuevo por aquí? Términos de este tema</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">Pattern interrupt</dt><dd class="text-neutral-400" data-inema-block="m1-2-p8">Pattern interrupt. El momento en que algo se sale de lo esperado y capta tu atención por reflejo.</dd></div><div><dt class="font-semibold text-neutral-100">Desplazamiento infinito</dt><dd class="text-neutral-400" data-inema-block="m1-2-p9">Feeds interminables (Instagram, TikTok, X) en los que el contenido nunca se acaba y la atención dura fracciones de segundo.</dd></div>
+<div><dt class="font-semibold text-neutral-100">Pattern interrupt</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-2-p8">Pattern interrupt. El momento en que algo se sale de lo esperado y capta tu atención por reflejo.</dd></div><div><dt class="font-semibold text-neutral-100">Desplazamiento infinito</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-2-p9">Feeds interminables (Instagram, TikTok, X) en los que el contenido nunca se acaba y la atención dura fracciones de segundo.</dd></div>
 </dl>
 </aside>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-p10">El problema de la media se relaciona con esto: <strong>cuando todo el mundo ya vio la versión media, esta deja de interrumpir</strong>. El primer sitio con cierto degradado morado llamó la atención. El milésimo, no. Lo mismo ocurre con las funcionalidades: la primera app que resumía reuniones impresionó; hoy es algo esperado.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-p10">El problema de la media se relaciona con esto: <strong>cuando todo el mundo ya vio la versión media, esta deja de interrumpir</strong>. El primer sitio con cierto degradado morado llamó la atención. El milésimo, no. Lo mismo ocurre con las funcionalidades: la primera app que resumía reuniones impresionó; hoy es algo esperado.</p>
 <figure class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Ciclo de desgaste de una novedad hasta convertirse en ruido" class="w-full h-auto" role="img" viewbox="0 0 800 200"><defs>
 <lineargradient id="s8-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
@@ -447,29 +447,29 @@
 <ul class="space-y-3 text-neutral-300"><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>«Con el poder de la IA» en el título.</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Una landing page con el mismo degradado, íconos y frases que todas las demás.</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Otro asistente de chat genérico.</span></li></ul>
 </div>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Marcar como leído</span>
-<span class="inema-label-done">Leído</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span>
+<span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </section>
 <!-- TÓPICO 3 -->
-<section class="mb-16" data-inema-topic="modulo-1-2#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-2#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🧠 La erosión del criterio</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-p11">Estamos entrando en un mundo en el que pocas personas van a ejercitar su propio criterio. Todo se puede delegar: el texto, el diseño, la estrategia e incluso el <strong>recorrido del usuario</strong>, es decir, la secuencia de pasos que alguien sigue desde que llega a tu producto hasta conseguir lo que buscaba.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-p11">Estamos entrando en un mundo en el que pocas personas van a ejercitar su propio criterio. Todo se puede delegar: el texto, el diseño, la estrategia e incluso el <strong>recorrido del usuario</strong>, es decir, la secuencia de pasos que alguien sigue desde que llega a tu producto hasta conseguir lo que buscaba.</p>
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-emerald-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-3">¿Eres nuevo por aquí? Términos de este tema</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">Juicio</dt><dd class="text-neutral-400" data-inema-block="m1-2-p12">La capacidad de decidir bien sin tener toda la información: saber qué importa, qué descartar y cuándo parar.</dd></div><div><dt class="font-semibold text-neutral-100">Recorrido del usuario</dt><dd class="text-neutral-400" data-inema-block="m1-2-p13">El recorrido completo de una persona en el producto: descubrirlo, entrar, entenderlo, usarlo por primera vez y volver.</dd></div><div><dt class="font-semibold text-neutral-100">Delegación cognitiva</dt><dd class="text-neutral-400" data-inema-block="m1-2-p14">Delegar en otra persona o en una IA no solo la ejecución, sino también el propio análisis del problema.</dd></div>
+<div><dt class="font-semibold text-neutral-100">Juicio</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-2-p12">La capacidad de decidir bien sin tener toda la información: saber qué importa, qué descartar y cuándo parar.</dd></div><div><dt class="font-semibold text-neutral-100">Recorrido del usuario</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-2-p13">El recorrido completo de una persona en el producto: descubrirlo, entrar, entenderlo, usarlo por primera vez y volver.</dd></div><div><dt class="font-semibold text-neutral-100">Delegación cognitiva</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-2-p14">Delegar en otra persona o en una IA no solo la ejecución, sino también el propio análisis del problema.</dd></div>
 </dl>
 </aside>
 <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🛡️</span> Por qué esto se convierte en una ventaja para quienes se resisten</h3>
-<p class="text-neutral-300 mb-4" data-inema-block="m1-2-p15">Si la mayoría delega su criterio, quienes conservan el suyo se vuelven escasos. Y la escasez, en un mercado inflado, tiene valor. Ser cuidadoso, pensar en la experiencia de quien usa el producto, cuestionar la sugerencia del modelo: todo esto se convierte en una ventaja competitiva.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m1-2-p15">Si la mayoría delega su criterio, quienes conservan el suyo se vuelven escasos. Y la escasez, en un mercado inflado, tiene valor. Ser cuidadoso, pensar en la experiencia de quien usa el producto, cuestionar la sugerencia del modelo: todo esto se convierte en una ventaja competitiva.</p>
 </div>
 <figure class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Equilibrio entre delegar la ejecución y delegar el criterio" class="w-full h-auto" role="img" viewbox="0 0 800 320"><defs>
@@ -490,22 +490,22 @@
 </figure>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Ejercicio para una semana</h3>
-<p class="text-neutral-300" data-inema-block="m1-2-p16">Antes de pedirle a la IA cualquier decisión sobre el producto, escribe tu propia respuesta en tres líneas. Solo después compárala con la del modelo. Notarás en qué estás de acuerdo por pereza y dónde tenías una idea mejor.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m1-2-p16">Antes de pedirle a la IA cualquier decisión sobre el producto, escribe tu propia respuesta en tres líneas. Solo después compárala con la del modelo. Notarás en qué estás de acuerdo por pereza y dónde tenías una idea mejor.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Marcar como leído</span>
-<span class="inema-label-done">Leído</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span>
+<span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </section>
 <!-- TÓPICO 4 -->
-<section class="mb-16" data-inema-topic="modulo-1-2#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-2#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">📣 La palabra «lanzamiento» perdió su sentido</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-p17">Abre cualquier red de tecnología y cuenta cuántas veces aparece la palabra «presentando» o «introducing» en un día. Un nuevo ingeniero de QA con IA. Un nuevo modelo de voz más rápido. Un nuevo agente que lo hace todo. Hay tantos que <strong class="text-emerald-400">la palabra perdió su peso</strong>.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-p17">Abre cualquier red de tecnología y cuenta cuántas veces aparece la palabra «presentando» o «introducing» en un día. Un nuevo ingeniero de QA con IA. Un nuevo modelo de voz más rápido. Un nuevo agente que lo hace todo. Hay tantos que <strong class="text-emerald-400">la palabra perdió su peso</strong>.</p>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> El comportamiento típico frente al exceso</h3>
 <ul class="space-y-3 text-neutral-300"><li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">•</span><span>La persona pasa 40 minutos desplazándose por la pantalla y guarda seis cosas «para ver después».</span></li><li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">•</span><span>Al día siguiente, aparecen otras seis. Las de ayer nunca se vuelven a abrir.</span></li><li class="flex items-start space-x-2"><span class="text-blue-400 mt-1">•</span><span>La lista de favoritos se convierte en un cementerio de buenas intenciones.</span></li></ul>
@@ -538,26 +538,26 @@
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Lo mismo aplica a los «consejos» de diseño</h3>
-<p class="text-neutral-300" data-inema-block="m1-2-p18">Muchos videos prometen «las siete habilidades para un diseño que no parece hecho por IA», y el resultado sigue pareciendo hecho por IA. Seguir la receta de moda es, por definición, producir el promedio de lo que está de moda.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m1-2-p18">Muchos videos prometen «las siete habilidades para un diseño que no parece hecho por IA», y el resultado sigue pareciendo hecho por IA. Seguir la receta de moda es, por definición, producir el promedio de lo que está de moda.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Marcar como leído</span>
-<span class="inema-label-done">Leído</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span>
+<span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </section>
 <!-- TÓPICO 5 -->
-<section class="mb-16" data-inema-topic="modulo-1-2#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-2#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🗺️ Un mercado saturado no está cerrado</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-p19">Si todo se puede copiar y nadie tiene un foso, ¿entonces ningún producto merece existir? No. Cuando observas un problema con <strong>suficiente precisión</strong>, casi siempre encuentras partes que nadie ha resuelto, que se han resuelto mal o que se han resuelto, pero nunca llegaron a quienes las necesitan.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-p19">Si todo se puede copiar y nadie tiene un foso, ¿entonces ningún producto merece existir? No. Cuando observas un problema con <strong>suficiente precisión</strong>, casi siempre encuentras partes que nadie ha resuelto, que se han resuelto mal o que se han resuelto, pero nunca llegaron a quienes las necesitan.</p>
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-emerald-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-3">¿Eres nuevo por aquí? Términos de este tema</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">Foso (moat)</dt><dd class="text-neutral-400" data-inema-block="m1-2-p20">Lo que protege un negocio de la competencia: marca, datos exclusivos, costo de cambio, red de usuarios. La imagen es el foso con agua alrededor de un castillo.</dd></div><div><dt class="font-semibold text-neutral-100">Canal de distribución</dt><dd class="text-neutral-400" data-inema-block="m1-2-p21">El camino por el que el producto llega al cliente: redes sociales, socios, búsquedas en Google, recomendaciones, ventas directas.</dd></div>
+<div><dt class="font-semibold text-neutral-100">Foso (moat)</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-2-p20">Lo que protege un negocio de la competencia: marca, datos exclusivos, costo de cambio, red de usuarios. La imagen es el foso con agua alrededor de un castillo.</dd></div><div><dt class="font-semibold text-neutral-100">Canal de distribución</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-2-p21">El camino por el que el producto llega al cliente: redes sociales, socios, búsquedas en Google, recomendaciones, ventas directas.</dd></div>
 </dl>
 </aside>
 <figure class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
@@ -581,22 +581,22 @@
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> La distribución también es una brecha</h3>
-<p class="text-neutral-300" data-inema-block="m1-2-p22">Muchas veces la solución existe, pero nunca llegó al público adecuado. Llevar una solución conocida a un nicho que nadie atiende, en su idioma y a su manera, es una oportunidad legítima.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m1-2-p22">Muchas veces la solución existe, pero nunca llegó al público adecuado. Llevar una solución conocida a un nicho que nadie atiende, en su idioma y a su manera, es una oportunidad legítima.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Marcar como leído</span>
-<span class="inema-label-done">Leído</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span>
+<span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </section>
 <!-- TÓPICO 6 -->
-<section class="mb-16" data-inema-topic="modulo-1-2#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-2#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">🔭 Los tres criterios</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-p23">Construir en una época en la que se puede construir casi cualquier cosa exige discernimiento en tres niveles. El primero es <strong>saber construir</strong>. El segundo es <strong>saber qué construir</strong>. El tercero, y más raro, es <strong class="text-emerald-400">saber si vale la pena construirlo</strong>.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-2-p23">Construir en una época en la que se puede construir casi cualquier cosa exige discernimiento en tres niveles. El primero es <strong>saber construir</strong>. El segundo es <strong>saber qué construir</strong>. El tercero, y más raro, es <strong class="text-emerald-400">saber si vale la pena construirlo</strong>.</p>
 <figure class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Los tres niveles de discernimiento, del más común al más raro" class="w-full h-auto" role="img" viewbox="0 0 800 270"><defs>
 <lineargradient id="s12-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
@@ -625,33 +625,33 @@
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Empieza por el tercero</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m1-2-p24">Antes de cualquier prototipo, responde: ¿vale la pena? Toda la Ruta 2 gira en torno a esta pregunta.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m1-2-p24">Antes de cualquier prototipo, responde: ¿vale la pena? Toda la Ruta 2 gira en torno a esta pregunta.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Después, el segundo</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m1-2-p25">Si vale la pena, ¿qué parte exacta del problema vas a abordar primero?</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m1-2-p25">Si vale la pena, ¿qué parte exacta del problema vas a abordar primero?</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Solo entonces, el primero</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m1-2-p26">Ahora sí, construye rápido, con toda la ayuda que ofrece la IA.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m1-2-p26">Ahora sí, construye rápido, con toda la ayuda que ofrece la IA.</p>
 </div>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Frase para pegar en el monitor</h3>
-<p class="text-neutral-300" data-inema-block="m1-2-p27">En un mundo donde se puede construir cualquier cosa, el juicio sobre qué vale la pena construir es el juego completo.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m1-2-p27">En un mundo donde se puede construir cualquier cosa, el juicio sobre qué vale la pena construir es el juego completo.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Marcar como leído</span>
-<span class="inema-label-done">Leído</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span>
+<span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </section>
 <!-- QUIZ -->
@@ -701,8 +701,8 @@
 <footer class="border-t border-dark-600 mt-16 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm space-y-2">
 <p>Productos en la era de la IA · Ruta 1 — La mentalidad · 2026 ·
-        <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> -
-        <a class="text-amber-700 dark:text-slate-300" href="https://inema.pro" target="_blank">PRO</a></p>
+        <a class="text-sky-400 hover:text-sky-300" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a> -
+        <a class="text-amber-700 dark:text-slate-300" href="https://ARCKHÉ.pro" target="_blank">PRO</a></p>
 </div>
 </footer>
 <!-- SCRIPTS núcleo v1 -->
@@ -730,7 +730,7 @@
       html.classList.toggle('dark');
       const dark = html.classList.contains('dark');
       localStorage.setItem('theme', dark ? 'dark' : 'light');
-      if (window.INEMA && INEMA.setPref) { try { INEMA.setPref('theme', dark ? 'inema-dark' : 'claro'); } catch (e) {} }
+      if (window.ARCKHÉ && ARCKHÉ.setPref) { try { ARCKHÉ.setPref('theme', dark ? 'ARCKHÉ-dark' : 'claro'); } catch (e) {} }
     });
     function openModal(modalId) { const m = document.getElementById(modalId); if (m) { m.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
     function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
@@ -754,7 +754,7 @@
   </script>
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init(); }
   </script>
 </body>
 </html>

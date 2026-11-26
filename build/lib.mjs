@@ -1,4 +1,4 @@
-// Biblioteca de templates do curso "Produtos na era da IA" — formato INEMA v2
+// Biblioteca de templates do curso "Produtos na era da IA" — formato ARCKHÉ v2
 // Gera HTML self-contained (Tailwind CDN + learn.css/learn.js por caminho relativo).
 
 export const COURSE_ID = 'produtos-era-ia';
@@ -47,22 +47,22 @@ export function antiFouc() {
 (function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; } }
-      else { var legacy = localStorage.getItem('theme'); if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark'; }
+      else { var legacy = localStorage.getItem('theme'); if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark'; }
     } catch (e) { p = clone(DEF); }
-    var THEMES = { 'inema-dark': { dark: true, attr: null, cs: 'dark' }, 'claro': { dark: false, attr: null, cs: 'light' }, 'sepia': { dark: false, attr: 'sepia', cs: 'light' }, 'foco': { dark: null, attr: 'foco', cs: null }, 'contraste': { dark: true, attr: 'contraste', cs: 'dark' } };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var THEMES = { 'ARCKHÉ-dark': { dark: true, attr: null, cs: 'dark' }, 'claro': { dark: false, attr: null, cs: 'light' }, 'sepia': { dark: false, attr: 'sepia', cs: 'light' }, 'foco': { dark: null, attr: 'foco', cs: null }, 'contraste': { dark: true, attr: 'contraste', cs: 'dark' } };
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
     if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
     if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
     html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
     html.setAttribute('data-font', p.font || 'inter'); html.setAttribute('data-accent', p.accent || 'emerald');
     var s = html.style; var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString()); s.setProperty('font-size', scale + '%');
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString()); s.setProperty('font-size', scale + '%');
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch'); s.setProperty('--lh-body', (+p.leading || 1.7).toString());
     var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
     s.setProperty('--font-body', fam);
@@ -81,7 +81,7 @@ export function head({ rel, title, desc, manifestJson, extraCss = '' }) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="inema-course" content="${COURSE_ID}">
+  <meta name="ARCKHÉ-course" content="${COURSE_ID}">
   <title>${title} | ${COURSE_TITLE}</title>
   <meta name="description" content="${String(desc).replace(/<[^>]+>/g, '').replace(/&/g, '&amp;').replace(/"/g, '&quot;')}">
 
@@ -96,7 +96,7 @@ export function head({ rel, title, desc, manifestJson, extraCss = '' }) {
   <link rel="stylesheet" href="${rel}/assets/learn.css">
 
   <!-- Manifesto do curso (obrigatório em toda página) -->
-  <script type="application/json" data-inema-manifest>
+  <script type="application/json" data-ARCKHÉ-manifest>
 ${manifestJson}
   </script>
 
@@ -155,18 +155,18 @@ ${manifestJson}
     .qz-fb { display:none; } .qz[data-answered] .qz-fb { display:block; }
 
     /* TOC do módulo é um bloco inline, não uma barra lateral sticky */
-    [data-inema-toc] { position: static !important; top: auto !important; max-height: none !important; }
+    [data-ARCKHÉ-toc] { position: static !important; top: auto !important; max-height: none !important; }
     /* Painel de aparência (classes internas) */
-    .inema-appearance-sec { margin-bottom: .75rem; }
-    .inema-appearance-label { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9ca3af; margin-bottom: .35rem; }
-    .inema-appearance-row { display: flex; flex-wrap: wrap; gap: .35rem; }
-    .inema-chip { font-size: .8rem; padding: .3rem .65rem; border-radius: .5rem; border: 1px solid #374151; background: rgba(31,41,55,.6); color: #e5e7eb; cursor: pointer; }
-    .inema-chip:hover { border-color: #FACC15; }
-    .inema-chip[aria-pressed="true"], .inema-chip.is-active { background: rgba(250,204,21,.15); border-color: #FACC15; color: #FACC15; }
-    html:not(.dark) .inema-chip { background: #f3f4f6; color: #111827; border-color: #d1d5db; }
-    html:not(.dark) .inema-chip[aria-pressed="true"], html:not(.dark) .inema-chip.is-active { background: rgba(161,98,7,.1); border-color: #a16207; color: #a16207; }
+    .ARCKHÉ-appearance-sec { margin-bottom: .75rem; }
+    .ARCKHÉ-appearance-label { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9ca3af; margin-bottom: .35rem; }
+    .ARCKHÉ-appearance-row { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .ARCKHÉ-chip { font-size: .8rem; padding: .3rem .65rem; border-radius: .5rem; border: 1px solid #374151; background: rgba(31,41,55,.6); color: #e5e7eb; cursor: pointer; }
+    .ARCKHÉ-chip:hover { border-color: #FACC15; }
+    .ARCKHÉ-chip[aria-pressed="true"], .ARCKHÉ-chip.is-active { background: rgba(250,204,21,.15); border-color: #FACC15; color: #FACC15; }
+    html:not(.dark) .ARCKHÉ-chip { background: #f3f4f6; color: #111827; border-color: #d1d5db; }
+    html:not(.dark) .ARCKHÉ-chip[aria-pressed="true"], html:not(.dark) .ARCKHÉ-chip.is-active { background: rgba(161,98,7,.1); border-color: #a16207; color: #a16207; }
     /* Coluna do módulo: largura fixa do layout, independente da ordem em que o Tailwind CDN injeta o CSS */
-    main.max-w-6xl.inema-prose { max-width: 72rem; }
+    main.max-w-6xl.ARCKHÉ-prose { max-width: 72rem; }
     /* Code box */
     .codebox pre { white-space: pre-wrap; word-break: break-word; }
     ${extraCss}
@@ -198,17 +198,17 @@ export function nav({ rel, active }) {
             <span class="font-bold text-lg hidden md:inline">${BRAND}</span>
           </a>
           <span class="text-neutral-600">|</span>
-          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+          <a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">ARCKHÉ AI</a>
           <span class="text-neutral-600 hidden sm:inline">-</span>
-          <a href="https://inema.pro" target="_blank" class="text-amber-700 dark:text-slate-300 hover:opacity-80 text-sm font-medium hidden sm:inline">PRO</a>
+          <a href="https://ARCKHÉ.pro" target="_blank" class="text-amber-700 dark:text-slate-300 hover:opacity-80 text-sm font-medium hidden sm:inline">PRO</a>
         </div>
         <div class="flex items-center space-x-1 sm:space-x-2">
 ${links}
-          <button type="button" data-inema-journey-open class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors">
+          <button type="button" data-ARCKHÉ-journey-open class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors">
             <span>🧭</span><span>Minha jornada</span>
-            <span data-inema-journey-badge class="text-xs px-1.5 py-0.5 rounded-full bg-primary/20"></span>
+            <span data-ARCKHÉ-journey-badge class="text-xs px-1.5 py-0.5 rounded-full bg-primary/20"></span>
           </button>
-          <button type="button" data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" title="Aparência e leitura">
+          <button type="button" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" title="Aparência e leitura">
             <span aria-hidden="true">Aa</span>
           </button>
           <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" title="Tema claro/escuro">
@@ -225,40 +225,40 @@ ${links}
 
 function appearancePanel() {
   return `
-  <div data-inema-appearance class="inema-appearance-pop" role="region" aria-label="Aparência e leitura">
-    <div class="inema-appearance-sec">
-      <p class="inema-appearance-label">Tema</p>
-      <div class="inema-appearance-row">
-        <button type="button" data-inema-set-theme="inema-dark" class="inema-chip">Escuro</button>
-        <button type="button" data-inema-set-theme="claro" class="inema-chip">Claro</button>
-        <button type="button" data-inema-set-theme="sepia" class="inema-chip">Sépia</button>
-        <button type="button" data-inema-set-theme="foco" class="inema-chip">Foco</button>
-        <button type="button" data-inema-set-theme="contraste" class="inema-chip">Contraste</button>
+  <div data-ARCKHÉ-appearance class="ARCKHÉ-appearance-pop" role="region" aria-label="Aparência e leitura">
+    <div class="ARCKHÉ-appearance-sec">
+      <p class="ARCKHÉ-appearance-label">Tema</p>
+      <div class="ARCKHÉ-appearance-row">
+        <button type="button" data-ARCKHÉ-set-theme="ARCKHÉ-dark" class="ARCKHÉ-chip">Escuro</button>
+        <button type="button" data-ARCKHÉ-set-theme="claro" class="ARCKHÉ-chip">Claro</button>
+        <button type="button" data-ARCKHÉ-set-theme="sepia" class="ARCKHÉ-chip">Sépia</button>
+        <button type="button" data-ARCKHÉ-set-theme="foco" class="ARCKHÉ-chip">Foco</button>
+        <button type="button" data-ARCKHÉ-set-theme="contraste" class="ARCKHÉ-chip">Contraste</button>
       </div>
     </div>
-    <div class="inema-appearance-sec">
-      <p class="inema-appearance-label">Tamanho do texto</p>
-      <div class="inema-appearance-row">
-        <button type="button" data-inema-set-fontscale="90" class="inema-chip">A-</button>
-        <button type="button" data-inema-set-fontscale="100" class="inema-chip">A</button>
-        <button type="button" data-inema-set-fontscale="115" class="inema-chip">A+</button>
-        <button type="button" data-inema-set-fontscale="130" class="inema-chip">A++</button>
+    <div class="ARCKHÉ-appearance-sec">
+      <p class="ARCKHÉ-appearance-label">Tamanho do texto</p>
+      <div class="ARCKHÉ-appearance-row">
+        <button type="button" data-ARCKHÉ-set-fontscale="90" class="ARCKHÉ-chip">A-</button>
+        <button type="button" data-ARCKHÉ-set-fontscale="100" class="ARCKHÉ-chip">A</button>
+        <button type="button" data-ARCKHÉ-set-fontscale="115" class="ARCKHÉ-chip">A+</button>
+        <button type="button" data-ARCKHÉ-set-fontscale="130" class="ARCKHÉ-chip">A++</button>
       </div>
     </div>
-    <div class="inema-appearance-sec">
-      <p class="inema-appearance-label">Fonte</p>
-      <div class="inema-appearance-row">
-        <button type="button" data-inema-set-font="inter" class="inema-chip">Inter</button>
-        <button type="button" data-inema-set-font="system" class="inema-chip">Sistema</button>
-        <button type="button" data-inema-set-font="leitura" class="inema-chip">Leitura</button>
+    <div class="ARCKHÉ-appearance-sec">
+      <p class="ARCKHÉ-appearance-label">Fonte</p>
+      <div class="ARCKHÉ-appearance-row">
+        <button type="button" data-ARCKHÉ-set-font="inter" class="ARCKHÉ-chip">Inter</button>
+        <button type="button" data-ARCKHÉ-set-font="system" class="ARCKHÉ-chip">Sistema</button>
+        <button type="button" data-ARCKHÉ-set-font="leitura" class="ARCKHÉ-chip">Leitura</button>
       </div>
     </div>
-    <div class="inema-appearance-sec">
-      <p class="inema-appearance-label">Entrelinha</p>
-      <div class="inema-appearance-row">
-        <button type="button" data-inema-set-leading="1.5" class="inema-chip">Compacta</button>
-        <button type="button" data-inema-set-leading="1.7" class="inema-chip">Normal</button>
-        <button type="button" data-inema-set-leading="1.9" class="inema-chip">Ampla</button>
+    <div class="ARCKHÉ-appearance-sec">
+      <p class="ARCKHÉ-appearance-label">Entrelinha</p>
+      <div class="ARCKHÉ-appearance-row">
+        <button type="button" data-ARCKHÉ-set-leading="1.5" class="ARCKHÉ-chip">Compacta</button>
+        <button type="button" data-ARCKHÉ-set-leading="1.7" class="ARCKHÉ-chip">Normal</button>
+        <button type="button" data-ARCKHÉ-set-leading="1.9" class="ARCKHÉ-chip">Ampla</button>
       </div>
     </div>
   </div>`;
@@ -270,11 +270,11 @@ export function footer({ trackLabel = '', landing = false }) {
   <footer class="border-t border-dark-600 mt-16 py-8">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm space-y-2">
       <p>${COURSE_TITLE}${trackLabel ? ' · ' + trackLabel : ''} · 2026 ·
-        <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a> -
-        <a href="https://inema.pro" target="_blank" class="text-amber-700 dark:text-slate-300">PRO</a></p>
-      ${landing ? `<!-- inema-backlink:v1 -->
-<p style="display:block;width:100%;text-align:center;font-size:.85rem;margin:.75rem 0 0;opacity:.85"><a href="https://www.inema.club/cursos/304-produtos-na-era-da-ia-saber-o-que-vale-a-pena-construir/" style="color:inherit;text-decoration:underline">Ficha completa deste curso no INEMA.CLUB</a> · <a href="https://www.inema.club/aprender-inteligencia-artificial/" style="color:inherit;text-decoration:underline">Guia: como aprender inteligência artificial</a> · <a href="https://www.inema.club/cursos/" style="color:inherit;text-decoration:underline">Todos os cursos</a></p>
-<!-- /inema-backlink:v1 -->` : ''}
+        <a href="https://ARCKHÉ AI" target="_blank" class="text-sky-400 hover:text-sky-300">ARCKHÉ AI</a> -
+        <a href="https://ARCKHÉ.pro" target="_blank" class="text-amber-700 dark:text-slate-300">PRO</a></p>
+      ${landing ? `<!-- ARCKHÉ-backlink:v1 -->
+<p style="display:block;width:100%;text-align:center;font-size:.85rem;margin:.75rem 0 0;opacity:.85"><a href="https://www.ARCKHÉ AI/cursos/304-produtos-na-era-da-ia-saber-o-que-vale-a-pena-construir/" style="color:inherit;text-decoration:underline">Ficha completa deste curso no ARCKHÉ AI</a> · <a href="https://www.ARCKHÉ AI/aprender-inteligencia-artificial/" style="color:inherit;text-decoration:underline">Guia: como aprender inteligência artificial</a> · <a href="https://www.ARCKHÉ AI/cursos/" style="color:inherit;text-decoration:underline">Todos os cursos</a></p>
+<!-- /ARCKHÉ-backlink:v1 -->` : ''}
     </div>
   </footer>
 `;
@@ -307,7 +307,7 @@ export function scripts({ rel }) {
       html.classList.toggle('dark');
       const dark = html.classList.contains('dark');
       localStorage.setItem('theme', dark ? 'dark' : 'light');
-      if (window.INEMA && INEMA.setPref) { try { INEMA.setPref('theme', dark ? 'inema-dark' : 'claro'); } catch (e) {} }
+      if (window.ARCKHÉ && ARCKHÉ.setPref) { try { ARCKHÉ.setPref('theme', dark ? 'ARCKHÉ-dark' : 'claro'); } catch (e) {} }
     });
     function openModal(modalId) { const m = document.getElementById(modalId); if (m) { m.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
     function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
@@ -332,7 +332,7 @@ export function scripts({ rel }) {
 
   <script src="${rel}/assets/learn.js"></script>
   <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init(); }
   </script>
 </body>
 </html>
@@ -347,13 +347,13 @@ function bid() { blockCounter += 1; return `${blockPrefix}-p${blockCounter}`; }
 
 export const c = {
   p(text, cls = 'text-neutral-300 mb-6 leading-relaxed') {
-    return `<p class="${cls}" data-inema-block="${bid()}">${text}</p>`;
+    return `<p class="${cls}" data-ARCKHÉ-block="${bid()}">${text}</p>`;
   },
   concept(t, { title, emoji = '💎', paras = [], bullets = [] }) {
     return `
       <div class="bg-gradient-to-br from-${t.color}-900/30 to-dark-800 rounded-xl border border-${t.color}-500/30 p-6 mb-6">
         <h3 class="text-lg font-semibold text-${t.color}-400 mb-4 flex items-center"><span class="mr-2">${emoji}</span> ${title}</h3>
-        ${paras.map(p => `<p class="text-neutral-300 mb-4" data-inema-block="${bid()}">${p}</p>`).join('\n')}
+        ${paras.map(p => `<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="${bid()}">${p}</p>`).join('\n')}
         ${bullets.length ? `<ul class="space-y-2 text-neutral-300">${bullets.map(b => `<li class="flex items-start space-x-2"><span class="text-${t.color}-400 mt-1">&#8226;</span><span>${b}</span></li>`).join('')}</ul>` : ''}
       </div>`;
   },
@@ -380,7 +380,7 @@ export const c = {
           <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
             <h4 class="font-semibold text-white mb-2">${s.h}</h4>
             ${s.sub ? `<p class="text-sm text-neutral-400 mb-2">${s.sub}</p>` : ''}
-            <p class="text-neutral-300 text-sm" data-inema-block="${bid()}">${s.text}</p>
+            <p class="text-neutral-300 text-sm" data-ARCKHÉ-block="${bid()}">${s.text}</p>
           </div>
         </div>`).join('')}
       </div>`;
@@ -389,14 +389,14 @@ export const c = {
     return `
       <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
         <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">${emoji}</span> ${title}</h3>
-        <p class="text-neutral-300" data-inema-block="${bid()}">${text}</p>
+        <p class="text-neutral-300" data-ARCKHÉ-block="${bid()}">${text}</p>
       </div>`;
   },
   alert({ title = 'Armadilha comum', emoji = '⚠️', text }) {
     return `
       <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
         <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">${emoji}</span> ${title}</h3>
-        <p class="text-neutral-300" data-inema-block="${bid()}">${text}</p>
+        <p class="text-neutral-300" data-ARCKHÉ-block="${bid()}">${text}</p>
       </div>`;
   },
   data({ title = 'O que os números dizem', emoji = '📊', items }) {
@@ -413,7 +413,7 @@ export const c = {
         <div class="bg-dark-800 rounded-xl border border-dark-600 p-5">
           <div class="text-2xl mb-2">${i.emoji || ''}</div>
           <h4 class="font-semibold text-${t.color}-400 mb-2">${i.h}</h4>
-          <p class="text-neutral-300 text-sm" data-inema-block="${bid()}">${i.text}</p>
+          <p class="text-neutral-300 text-sm" data-ARCKHÉ-block="${bid()}">${i.text}</p>
         </div>`).join('')}
       </div>`;
   },
@@ -432,7 +432,7 @@ export const c = {
       <aside class="bg-dark-800/60 rounded-xl border border-dashed border-${t.color}-500/30 p-5 mb-6">
         <p class="text-xs font-semibold uppercase tracking-wider text-${t.color}-400 mb-3">Novo aqui? Termos deste tópico</p>
         <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-          ${items.map(([k, v]) => `<div><dt class="font-semibold text-neutral-100">${k}</dt><dd class="text-neutral-400" data-inema-block="${bid()}">${v}</dd></div>`).join('')}
+          ${items.map(([k, v]) => `<div><dt class="font-semibold text-neutral-100">${k}</dt><dd class="text-neutral-400" data-ARCKHÉ-block="${bid()}">${v}</dd></div>`).join('')}
         </dl>
       </aside>`;
   },
@@ -467,11 +467,11 @@ export const c = {
   },
   readToggle(t) {
     return `
-      <button type="button" data-inema-read-toggle class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-${t.color}-500/20 text-${t.color}-400 hover:bg-${t.color}-500/30 transition-colors flex items-center space-x-2 justify-start">
-        <span class="inema-ico-todo" aria-hidden="true">&#9744;</span>
-        <span class="inema-ico-done" aria-hidden="true">&#9745;</span>
-        <span class="inema-label-todo">Marcar como lido</span>
-        <span class="inema-label-done">Lido</span>
+      <button type="button" data-ARCKHÉ-read-toggle class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-${t.color}-500/20 text-${t.color}-400 hover:bg-${t.color}-500/30 transition-colors flex items-center space-x-2 justify-start">
+        <span class="ARCKHÉ-ico-todo" aria-hidden="true">&#9744;</span>
+        <span class="ARCKHÉ-ico-done" aria-hidden="true">&#9745;</span>
+        <span class="ARCKHÉ-label-todo">Marcar como lido</span>
+        <span class="ARCKHÉ-label-done">Lido</span>
       </button>`;
   },
   figure(t, svg, legend) {
@@ -639,7 +639,7 @@ export function modulePage({ t, m, prev, next, manifestJson, tracksContent }) {
     const n = i + 1;
     return `
     <!-- TÓPICO ${n} -->
-    <section id="topico-${n}" data-inema-topic="modulo-${m.id}#topico-${n}" class="mb-16">
+    <section id="topico-${n}" data-ARCKHÉ-topic="modulo-${m.id}#topico-${n}" class="mb-16">
       <div class="flex items-center space-x-4 mb-6">
         <span class="flex items-center justify-center w-12 h-12 rounded-full bg-${t.color}-500/20 text-${t.color}-400 font-bold text-xl">${n}</span>
         <h2 class="text-2xl font-bold">${tp.emoji} ${tp.title}</h2>
@@ -671,15 +671,15 @@ export function modulePage({ t, m, prev, next, manifestJson, tracksContent }) {
       <h1 class="text-3xl sm:text-4xl font-bold mb-4">${m.emoji} ${m.title}</h1>
       <p class="text-lg text-neutral-400 max-w-3xl">${m.lead}</p>
       ${stats}
-      <div data-inema-meter="modulo:${m.id}" class="inema-meter max-w-md mt-6" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso do módulo">
-        <div class="flex justify-between text-sm text-neutral-400 mb-1"><span data-inema-meter-frac>0 de ${m.topics.length}</span><span data-inema-meter-pct>0%</span></div>
-        <div class="inema-bar h-2 bg-dark-700 rounded-full overflow-hidden"><div class="inema-bar__fill h-full bg-${t.color}-500 rounded-full transition-all" data-inema-meter-fill style="width:0%"></div></div>
+      <div data-ARCKHÉ-meter="modulo:${m.id}" class="ARCKHÉ-meter max-w-md mt-6" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso do módulo">
+        <div class="flex justify-between text-sm text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac>0 de ${m.topics.length}</span><span data-ARCKHÉ-meter-pct>0%</span></div>
+        <div class="ARCKHÉ-bar h-2 bg-dark-700 rounded-full overflow-hidden"><div class="ARCKHÉ-bar__fill h-full bg-${t.color}-500 rounded-full transition-all" data-ARCKHÉ-meter-fill style="width:0%"></div></div>
       </div>
     </div>
   </header>
 
-  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 inema-prose" data-inema-module="${m.id}" data-inema-track="${t.n}">
-    <nav aria-label="Tópicos deste módulo" class="mb-12 bg-dark-800 rounded-xl border border-dark-600 p-5" data-inema-toc>
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ARCKHÉ-prose" data-ARCKHÉ-module="${m.id}" data-ARCKHÉ-track="${t.n}">
+    <nav aria-label="Tópicos deste módulo" class="mb-12 bg-dark-800 rounded-xl border border-dark-600 p-5" data-ARCKHÉ-toc>
       <p class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">Neste módulo</p>
       <ol class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
         ${m.topics.map((tp, i) => `<li><a href="#topico-${i + 1}" class="flex items-start gap-2 text-neutral-300 hover:text-${t.color}-400"><span class="w-5 h-5 rounded-full bg-${t.color}-500/20 text-${t.color}-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">${i + 1}</span><span>${tp.title}</span></a></li>`).join('')}
@@ -719,12 +719,12 @@ export function trackIndex({ t, manifestJson, heroSvg }) {
           <p class="text-xs text-neutral-500">${m.punch}</p>
         </a>`).join('');
   const cards = t.modules.map(m => `
-    <div id="modulo-${m.id}" class="bg-dark-800 rounded-2xl border border-dark-600 mb-8 overflow-hidden scroll-mt-20" data-inema-module="${m.id}">
+    <div id="modulo-${m.id}" class="bg-dark-800 rounded-2xl border border-dark-600 mb-8 overflow-hidden scroll-mt-20" data-ARCKHÉ-module="${m.id}">
       <div class="p-6 border-b border-dark-600">
         <div class="flex items-start justify-between flex-wrap gap-3 mb-3">
           <span class="text-${t.color}-400 font-bold text-sm">Módulo ${m.id.replace('-', '.')}</span>
           <div class="flex items-center gap-4"><span class="text-neutral-500 text-sm">~${m.minutes} min</span>
-            <span data-inema-meter="modulo:${m.id}" class="text-xs text-${t.color}-400 font-semibold"><span data-inema-meter-frac>0 de ${m.topics.length}</span></span></div>
+            <span data-ARCKHÉ-meter="modulo:${m.id}" class="text-xs text-${t.color}-400 font-semibold"><span data-ARCKHÉ-meter-frac>0 de ${m.topics.length}</span></span></div>
         </div>
         <h2 class="text-2xl font-bold mb-2">${m.emoji} ${m.title}</h2>
         <p class="text-neutral-400">${m.lead}</p>
@@ -759,7 +759,7 @@ export function trackIndex({ t, manifestJson, heroSvg }) {
     <div class="flex items-center space-x-2 text-sm text-neutral-400"><a href="${rel}/index.html" class="hover:text-${t.color}-400">Início</a><span>/</span><span class="text-${t.color}-400">Trilha ${t.n}</span></div>
   </nav>
 
-  <header class="bg-gradient-to-br from-${t.color}-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600" data-inema-track="${t.n}">
+  <header class="bg-gradient-to-br from-${t.color}-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600" data-ARCKHÉ-track="${t.n}">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <div>
@@ -769,10 +769,10 @@ export function trackIndex({ t, manifestJson, heroSvg }) {
           <div class="grid grid-cols-3 gap-4 mb-6">
             ${[[t.modules.length, 'Módulos'], [totalTopics, 'Tópicos'], [`~${Math.round(totalMin / 60 * 10) / 10}h`, 'Duração']].map(([v, l]) => `<div class="bg-dark-800 rounded-xl p-4 border border-dark-600 text-center"><div class="text-2xl font-bold text-${t.color}-400">${v}</div><div class="text-xs text-neutral-500 mt-1">${l}</div></div>`).join('')}
           </div>
-          <div data-inema-meter="trilha:${t.n}" class="inema-meter bg-dark-800 rounded-xl p-4 border border-dark-600" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso da trilha ${t.n}">
-            <div class="flex justify-between text-sm text-neutral-400 mb-2"><span>Seu progresso</span><span class="text-${t.color}-400 font-semibold" data-inema-meter-pct>0%</span></div>
-            <div class="inema-bar h-2 bg-dark-700 rounded-full overflow-hidden mb-2"><div class="inema-bar__fill h-full bg-${t.color}-500 rounded-full transition-all" data-inema-meter-fill style="width:0%"></div></div>
-            <div class="text-xs text-neutral-500"><span data-inema-meter-frac>0 de ${totalTopics}</span> tópicos concluídos</div>
+          <div data-ARCKHÉ-meter="trilha:${t.n}" class="ARCKHÉ-meter bg-dark-800 rounded-xl p-4 border border-dark-600" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso da trilha ${t.n}">
+            <div class="flex justify-between text-sm text-neutral-400 mb-2"><span>Seu progresso</span><span class="text-${t.color}-400 font-semibold" data-ARCKHÉ-meter-pct>0%</span></div>
+            <div class="ARCKHÉ-bar h-2 bg-dark-700 rounded-full overflow-hidden mb-2"><div class="ARCKHÉ-bar__fill h-full bg-${t.color}-500 rounded-full transition-all" data-ARCKHÉ-meter-fill style="width:0%"></div></div>
+            <div class="text-xs text-neutral-500"><span data-ARCKHÉ-meter-frac>0 de ${totalTopics}</span> tópicos concluídos</div>
           </div>
         </div>
         <div class="rounded-2xl border border-${t.color}-500/30 bg-dark-900/40 p-4">${heroSvg}</div>

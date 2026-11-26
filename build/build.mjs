@@ -60,9 +60,9 @@ const trackCard = (t) => {
           <div class="flex flex-wrap gap-2 mb-6">
             ${t.modules.map(m => `<span class="text-xs px-2.5 py-1 rounded-md bg-dark-900/60 border border-dark-600 text-neutral-300">${m.id.replace('-', '.')} ${m.title}</span>`).join('')}
           </div>
-          <div data-inema-meter="trilha:${t.n}" class="inema-meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso da trilha ${t.n}">
-            <div class="flex justify-between text-xs text-neutral-500 mb-1"><span data-inema-meter-frac>0 de ${topics}</span><span data-inema-meter-pct>0%</span></div>
-            <div class="inema-bar h-1.5 bg-dark-700 rounded-full overflow-hidden"><div class="inema-bar__fill h-full bg-${t.color}-500 rounded-full transition-all" data-inema-meter-fill style="width:0%"></div></div>
+          <div data-ARCKHÉ-meter="trilha:${t.n}" class="ARCKHÉ-meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso da trilha ${t.n}">
+            <div class="flex justify-between text-xs text-neutral-500 mb-1"><span data-ARCKHÉ-meter-frac>0 de ${topics}</span><span data-ARCKHÉ-meter-pct>0%</span></div>
+            <div class="ARCKHÉ-bar h-1.5 bg-dark-700 rounded-full overflow-hidden"><div class="ARCKHÉ-bar__fill h-full bg-${t.color}-500 rounded-full transition-all" data-ARCKHÉ-meter-fill style="width:0%"></div></div>
           </div>
           <span class="inline-flex items-center gap-1 text-${t.color}-400 font-semibold mt-5 group-hover:gap-2 transition-all">Entrar na trilha &#8594;</span>
         </div>
@@ -83,11 +83,11 @@ const landing = head({ rel: '.', title: 'Início', desc: `${COURSE_TITLE}: ${COU
         </p>
         <div class="flex flex-col sm:flex-row gap-3 mb-8">
           <a href="curso/trilha1/index.html" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-emerald-600 text-white rounded-xl font-bold text-lg hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-900/30">Começar agora &#8594;</a>
-          <button type="button" data-inema-journey-open class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-dark-800 border border-emerald-500/30 text-emerald-400 rounded-xl font-semibold hover:bg-emerald-500/10 transition-colors">🧭 Continuar de onde parei</button>
+          <button type="button" data-ARCKHÉ-journey-open class="inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-dark-800 border border-emerald-500/30 text-emerald-400 rounded-xl font-semibold hover:bg-emerald-500/10 transition-colors">🧭 Continuar de onde parei</button>
         </div>
-        <div data-inema-meter="curso" class="inema-meter max-w-md" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso do curso">
-          <div class="flex justify-between text-sm text-neutral-400 mb-1"><span data-inema-meter-frac>0 de ${totalTopics} tópicos</span><span data-inema-meter-pct>0%</span></div>
-          <div class="inema-bar h-2 bg-dark-700 rounded-full overflow-hidden"><div class="inema-bar__fill h-full bg-emerald-500 rounded-full transition-all" data-inema-meter-fill style="width:0%"></div></div>
+        <div data-ARCKHÉ-meter="curso" class="ARCKHÉ-meter max-w-md" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso do curso">
+          <div class="flex justify-between text-sm text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac>0 de ${totalTopics} tópicos</span><span data-ARCKHÉ-meter-pct>0%</span></div>
+          <div class="ARCKHÉ-bar h-2 bg-dark-700 rounded-full overflow-hidden"><div class="ARCKHÉ-bar__fill h-full bg-emerald-500 rounded-full transition-all" data-ARCKHÉ-meter-fill style="width:0%"></div></div>
         </div>
       </div>
       <figure class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4">${heroSvg}
@@ -175,7 +175,7 @@ const landing = head({ rel: '.', title: 'Início', desc: `${COURSE_TITLE}: ${COU
         <p class="text-lg text-neutral-300 max-w-2xl mx-auto mb-8">Comece pela Trilha 1. Em cerca de ${hours} horas você sai com um roteiro de perguntas, um pré-mortem feito e um plano de lançamento.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">
           <a href="curso/trilha1/index.html" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-emerald-600 text-white rounded-xl font-bold text-lg hover:bg-emerald-500 transition-colors shadow-lg shadow-emerald-900/30">Começar pela Trilha 1 &#8594;</a>
-          <button type="button" data-inema-journey-open class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-dark-800 border border-emerald-500/30 text-emerald-400 rounded-xl font-semibold hover:bg-emerald-500/10 transition-colors">🧭 Minha jornada</button>
+          <button type="button" data-ARCKHÉ-journey-open class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-dark-800 border border-emerald-500/30 text-emerald-400 rounded-xl font-semibold hover:bg-emerald-500/10 transition-colors">🧭 Minha jornada</button>
         </div>
       </div>
     </section>

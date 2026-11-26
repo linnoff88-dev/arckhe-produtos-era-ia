@@ -3,10 +3,10 @@
 
 Uso:  node build/build.mjs && python3 build/i18n.py [en es] [--so-montar]
 
-Padrêo INEMA trilíngue (wifi/RELATORIO-CURSOS-TRILINGUES.md): PT na raiz, <lang>/ ao lado.
+Padrêo ARCKHÉ trilíngue (wifi/RELATORIO-CURSOS-TRILINGUES.md): PT na raiz, <lang>/ ao lado.
 Só TEXTO vai para o modelo (blocos com as tags inline preservadas, atributos de acessibilidade, rótulos
 de SVG, manifesto e as mensagens do learn.js). Layout, CSS e JS sêo reaproveitados.
-Motor: tradutor central do INEMA (`inema-traduz`, INEMA_TRADUCAO_* em ~/.config/inema/modelos.env, hoje Sonnet 5.5)
+Motor: tradutor central do ARCKHÉ (`ARCKHÉ-traduz`, ARCKHÉ_TRADUCAO_* em ~/.config/ARCKHÉ/modelos.env, hoje Sonnet 5.5)
 pela ASSINATURA, sem chave de API.
 Cache em i18n/<lang>.json (chave = hash do texto PT): unidade traduzida nunca é reenviada.
 Unidade inválida (tags diferentes, vazia) volta até 3 vezes; depois o script para e diz qual.
@@ -26,7 +26,7 @@ HTMLLANG = {'pt': 'pt-BR', 'en': 'en', 'es': 'es'}
 ROTULO = {'pt': 'PT', 'en': 'EN', 'es': 'ES'}
 INLINE = {'b', 'strong', 'i', 'em', 'span', 'a', 'br', 'code', 'small', 'mark', 'sup', 'sub', 'kbd', 'abbr'}
 ATTRS = ['alt', 'title', 'aria-label', 'placeholder', 'data-text']
-PULAR = {'INEMA.CLUB', 'PRO', 'Aa', 'INEMA', 'T1', 'T2', 'T3', 'PT', 'EN', 'ES'}
+PULAR = {'ARCKHÉ AI', 'PRO', 'Aa', 'ARCKHÉ', 'T1', 'T2', 'T3', 'PT', 'EN', 'ES'}
 LETRA = re.compile(r'[A-Za-zÀ-ÿ]{2,}')
 TAG = re.compile(r'</?[a-zA-Z][^>]*>')
 
@@ -41,7 +41,7 @@ HARD RULES
 - Text between &lt; and &gt; is a fill-in hint for the student: translate the words inside, keep the &lt; &gt;.
 - Some strings are complete prompts the student will paste into Claude Code or Codex: translate them fully and naturally,
   keep their structure, numbering, line breaks, slash commands (/product-feedback), file names and URLs.
-- Brand/product names stay: INEMA.CLUB, INEMA.PRO, PRO, Claude, Claude Code, Codex, ChatGPT, Gemini, PostHog, Hotjar, Sentry,
+- Brand/product names stay: ARCKHÉ AI, ARCKHÉ.PRO, PRO, Claude, Claude Code, Codex, ChatGPT, Gemini, PostHog, Hotjar, Sentry,
   CodeRabbit, Reddit, TikTok, Instagram, Stripe, 21st.dev, whatships.com, Awwwards, Mirofish, Y Combinator, SaaS, MRR.
 - Keep established English startup terms natural in {nome}: vibe coding, moat, pattern interrupt, flywheel, onboarding, pitch.
 - Audience: adults who build products with AI (founders, freelancers, consultants). Plain, direct, adult language, short
@@ -132,7 +132,7 @@ def unidades(soup):
 
 
 def manifest_textos(soup):
-    sc = soup.find('script', attrs={'data-inema-manifest': True})
+    sc = soup.find('script', attrs={'data-ARCKHÉ-manifest': True})
     m = json.loads(sc.string)
     ts = [t['title'] for t in m['tracks']] + [md['title'] for t in m['tracks'] for md in t['modules']]
     return sc, m, ts
@@ -148,13 +148,13 @@ def valido(pt, tr):
     return True
 
 
-_TRADUTOR = os.path.expanduser("~/projetos/wifi/scripts/inema-traduz")
+_TRADUTOR = os.path.expanduser("~/projetos/wifi/scripts/ARCKHÉ-traduz")
 def chamar_tradutor(pedido: str, timeout: int = 900) -> str:
-    """Traduçêo pelo tradutor central do INEMA (INEMA_TRADUCAO_* em ~/.config/inema/modelos.env). Assinatura, nunca API."""
+    """Traduçêo pelo tradutor central do ARCKHÉ (ARCKHÉ_TRADUCAO_* em ~/.config/ARCKHÉ/modelos.env). Assinatura, nunca API."""
     if os.path.exists(_TRADUTOR):
         cmd = [_TRADUTOR]
     else:  # fora da máquina do Nei: Claude Code da assinatura com o modelo da variável (padrêo Sonnet 5.5)
-        cmd = ["claude", "-p", "--model", os.environ.get("INEMA_TRADUCAO_MODELO", "claude-sonnet-5-5"),
+        cmd = ["claude", "-p", "--model", os.environ.get("ARCKHÉ_TRADUCAO_MODELO", "claude-sonnet-5-5"),
                "--output-format", "text", "--tools", ""]
     env = {k: v for k, v in os.environ.items() if k not in ("ANTHROPIC_API_KEY", "OPENAI_API_KEY", "CLAUDECODE")}
     with tempfile.TemporaryDirectory() as d:
@@ -226,7 +226,7 @@ def seletor(pagina, lang):
 
 
 def hreflang(pagina):
-    base = 'https://inematds.github.io/produtos-era-ia/'
+    base = 'https://linnoff88-dev.github.io/arckhe-/'
     alt = [(HTMLLANG[l], base + ('' if l == 'pt' else l + '/') + pagina.replace('index.html', '')) for l in ('pt', 'en', 'es')]
     alt.append(('x-default', alt[0][1]))
     return ''.join(f'<link rel="alternate" hreflang="{k}" href="{u}">' for k, u in alt)
@@ -236,7 +236,7 @@ def injeta_nav(html, pagina, lang):
     html = re.sub(r'<link rel="alternate" hreflang[^>]*>', '', html)
     html = re.sub(r'<span data-lang-switch.*?</a></span>', '', html, flags=re.S)
     html = html.replace('</head>', hreflang(pagina) + '\n</head>', 1)
-    alvo = re.compile(r'<button type="button" data-inema-journey-open(?:="")? class="hidden lg:inline-flex')
+    alvo = re.compile(r'<button type="button" data-ARCKHÉ-journey-open(?:="")? class="hidden lg:inline-flex')
     assert alvo.search(html), pagina
     return alvo.sub(lambda m: seletor(pagina, lang) + '\n          ' + m.group(0), html, count=1)
 
@@ -289,7 +289,7 @@ def main():
                 for md in t['modules']:
                     md['title'] = T(md['title'])
             sc.string = '\n' + json.dumps(m, ensure_ascii=False, indent=1) + '\n  '
-            mc = soup.find('meta', attrs={'name': 'inema-course'})
+            mc = soup.find('meta', attrs={'name': 'ARCKHÉ-course'})
             mc['content'] = mc['content'] + '-' + lang
             soup.html['lang'] = HTMLLANG[lang]
             out = str(soup)

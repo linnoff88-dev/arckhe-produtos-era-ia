@@ -1,4 +1,4 @@
-# Produtos na era da IA — plano do curso (formato INEMA v2)
+# Produtos na era da IA — plano do curso (formato ARCKHÉ v2)
 
 Base: transcriçêo em `~/projetos/output/produtos-era-ia/fonte/transcricao/transcript.txt` + texto do post em `fonte/post.md`.
 

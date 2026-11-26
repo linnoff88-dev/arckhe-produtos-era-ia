@@ -8,9 +8,9 @@
 
 ![capa](capa/capa.png)
 
-Curso INEMA.CLUB (formato v2, 3 trilhas, 9 mêÂ³dulos, 54 têÂ³picos, ~6,5 h) sobre a mentalidade de construir produtos quando a IA constrêÂ³i quase tudo: pessimismo produtivo, as perguntas de oportunidade (necessidade, prazo de validade, risco de clone, valor dos dados, dificuldade como fosso, uso recorrente), distribuiêÂ§êÂ£o, posicionamento, jornada do usuêÂ¡rio, feedback com IA, design fora da mêÂ©dia e usuêÂ¡rios simulados.
+Curso ARCKHÉ AI (formato v2, 3 trilhas, 9 mêÂ³dulos, 54 têÂ³picos, ~6,5 h) sobre a mentalidade de construir produtos quando a IA constrêÂ³i quase tudo: pessimismo produtivo, as perguntas de oportunidade (necessidade, prazo de validade, risco de clone, valor dos dados, dificuldade como fosso, uso recorrente), distribuiêÂ§êÂ£o, posicionamento, jornada do usuêÂ¡rio, feedback com IA, design fora da mêÂ©dia e usuêÂ¡rios simulados.
 
-**PêÂ¡gina:** https://inematds.github.io/produtos-era-ia/ êÂ· **English:** https://inematds.github.io/produtos-era-ia/en/ êÂ· **EspaêÂ±ol:** https://inematds.github.io/produtos-era-ia/es/
+**PêÂ¡gina:** https://linnoff88-dev.github.io/arckhe-/ êÂ· **English:** https://linnoff88-dev.github.io/arckhe-/en/ êÂ· **EspaêÂ±ol:** https://linnoff88-dev.github.io/arckhe-/es/
 
 ## Estrutura
 
@@ -21,19 +21,19 @@ Curso INEMA.CLUB (formato v2, 3 trilhas, 9 mêÂ³dulos, 54 têÂ³picos, ~6
 - `capa/capa.png`: capa 1280êâ720
 - `PLANO-CURSO.md`: plano editorial
 
-## Mais no INEMA.CLUB
+## Mais no ARCKHÉ AI
 
-- [Ficha deste curso](https://www.inema.club/cursos/304-produtos-na-era-da-ia-saber-o-que-vale-a-pena-construir/)
-- [Guia: como aprender inteligêÂªncia artificial](https://www.inema.club/aprender-inteligencia-artificial/)
-- [Todos os cursos](https://www.inema.club/cursos/)
+- [Ficha deste curso](https://www.ARCKHÉ AI/cursos/304-produtos-na-era-da-ia-saber-o-que-vale-a-pena-construir/)
+- [Guia: como aprender inteligêÂªncia artificial](https://www.ARCKHÉ AI/aprender-inteligencia-artificial/)
+- [Todos os cursos](https://www.ARCKHÉ AI/cursos/)
 
-<!-- inema-backlink:v1 -->
-## Mais no INEMA.CLUB
+<!-- ARCKHÉ-backlink:v1 -->
+## Mais no ARCKHÉ AI
 
-- [Ficha completa deste curso](https://www.inema.club/cursos/304-produtos-na-era-da-ia-saber-o-que-vale-a-pena-construir/)
-- [Guia: como aprender inteligêÂªncia artificial](https://www.inema.club/aprender-inteligencia-artificial/)
-- [Todos os cursos](https://www.inema.club/cursos/)
-<!-- /inema-backlink:v1 -->
+- [Ficha completa deste curso](https://www.ARCKHÉ AI/cursos/304-produtos-na-era-da-ia-saber-o-que-vale-a-pena-construir/)
+- [Guia: como aprender inteligêÂªncia artificial](https://www.ARCKHÉ AI/aprender-inteligencia-artificial/)
+- [Todos os cursos](https://www.ARCKHÉ AI/cursos/)
+<!-- /ARCKHÉ-backlink:v1 -->
 
 ---
 

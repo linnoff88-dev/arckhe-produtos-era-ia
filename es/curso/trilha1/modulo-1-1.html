@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="produtos-era-ia-es" name="inema-course"/>
+<meta content="produtos-era-ia-es" name="ARCKHÉ-course"/>
 <title>El juego cambió | Productos en la era de la IA</title>
 <meta content="Hoy puedes construir casi cualquier cosa en pocas horas. Eso cambia la pregunta central de quien crea productos: ya no es «¿puedo hacerlo?», sino «¿vale la pena hacerlo?». Este módulo muestra qué cambió en el terreno antes de hablar de estrategia." name="description"/>
 <!-- ANTI-FOUC: bloqueante, antes de tudo -->
@@ -12,22 +12,22 @@
 (function () {
   try {
     var html = document.documentElement;
-    var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+    var DEF = { theme: 'ARCKHÉ-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
     function clone(o) { var r = {}; for (var x in o) r[x] = o[x]; return r; }
     var p = clone(DEF);
     try {
-      var raw = localStorage.getItem('inema.prefs');
+      var raw = localStorage.getItem('ARCKHÉ.prefs');
       if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed === 'object') { for (var k in DEF) if (parsed[k] != null) p[k] = parsed[k]; } }
-      else { var legacy = localStorage.getItem('theme'); if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'inema-dark'; }
+      else { var legacy = localStorage.getItem('theme'); if (legacy === 'light') p.theme = 'claro'; else if (legacy === 'dark') p.theme = 'ARCKHÉ-dark'; }
     } catch (e) { p = clone(DEF); }
-    var THEMES = { 'inema-dark': { dark: true, attr: null, cs: 'dark' }, 'claro': { dark: false, attr: null, cs: 'light' }, 'sepia': { dark: false, attr: 'sepia', cs: 'light' }, 'foco': { dark: null, attr: 'foco', cs: null }, 'contraste': { dark: true, attr: 'contraste', cs: 'dark' } };
-    var t = THEMES[p.theme] || THEMES['inema-dark'];
+    var THEMES = { 'ARCKHÉ-dark': { dark: true, attr: null, cs: 'dark' }, 'claro': { dark: false, attr: null, cs: 'light' }, 'sepia': { dark: false, attr: 'sepia', cs: 'light' }, 'foco': { dark: null, attr: 'foco', cs: null }, 'contraste': { dark: true, attr: 'contraste', cs: 'dark' } };
+    var t = THEMES[p.theme] || THEMES['ARCKHÉ-dark'];
     if (t.dark === true) html.classList.add('dark'); else if (t.dark === false) html.classList.remove('dark');
     if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
     html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark') ? 'dark' : 'light'));
     html.setAttribute('data-font', p.font || 'inter'); html.setAttribute('data-accent', p.accent || 'emerald');
     var s = html.style; var scale = (+p.fontScale || 100);
-    s.setProperty('--inema-font-scale', (scale / 100).toString()); s.setProperty('font-size', scale + '%');
+    s.setProperty('--ARCKHÉ-font-scale', (scale / 100).toString()); s.setProperty('font-size', scale + '%');
     s.setProperty('--measure', (+p.lineWidth || 68) + 'ch'); s.setProperty('--lh-body', (+p.leading || 1.7).toString());
     var fam = p.font === 'system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font === 'leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
     s.setProperty('--font-body', fam);
@@ -45,7 +45,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="../../assets/learn.css" rel="stylesheet"/>
 <!-- Manifesto do curso (obrigatório em toda página) -->
-<script data-inema-manifest="" type="application/json">
+<script data-ARCKHÉ-manifest="" type="application/json">
 {
  "course": "produtos-era-ia-es",
  "tracks": [
@@ -228,23 +228,23 @@
     .qz-fb { display:none; } .qz[data-answered] .qz-fb { display:block; }
 
     /* TOC do módulo é um bloco inline, nêo uma barra lateral sticky */
-    [data-inema-toc] { position: static !important; top: auto !important; max-height: none !important; }
+    [data-ARCKHÉ-toc] { position: static !important; top: auto !important; max-height: none !important; }
     /* Painel de aparência (classes internas) */
-    .inema-appearance-sec { margin-bottom: .75rem; }
-    .inema-appearance-label { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9ca3af; margin-bottom: .35rem; }
-    .inema-appearance-row { display: flex; flex-wrap: wrap; gap: .35rem; }
-    .inema-chip { font-size: .8rem; padding: .3rem .65rem; border-radius: .5rem; border: 1px solid #374151; background: rgba(31,41,55,.6); color: #e5e7eb; cursor: pointer; }
-    .inema-chip:hover { border-color: #FACC15; }
-    .inema-chip[aria-pressed="true"], .inema-chip.is-active { background: rgba(250,204,21,.15); border-color: #FACC15; color: #FACC15; }
-    html:not(.dark) .inema-chip { background: #f3f4f6; color: #111827; border-color: #d1d5db; }
-    html:not(.dark) .inema-chip[aria-pressed="true"], html:not(.dark) .inema-chip.is-active { background: rgba(161,98,7,.1); border-color: #a16207; color: #a16207; }
+    .ARCKHÉ-appearance-sec { margin-bottom: .75rem; }
+    .ARCKHÉ-appearance-label { font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #9ca3af; margin-bottom: .35rem; }
+    .ARCKHÉ-appearance-row { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .ARCKHÉ-chip { font-size: .8rem; padding: .3rem .65rem; border-radius: .5rem; border: 1px solid #374151; background: rgba(31,41,55,.6); color: #e5e7eb; cursor: pointer; }
+    .ARCKHÉ-chip:hover { border-color: #FACC15; }
+    .ARCKHÉ-chip[aria-pressed="true"], .ARCKHÉ-chip.is-active { background: rgba(250,204,21,.15); border-color: #FACC15; color: #FACC15; }
+    html:not(.dark) .ARCKHÉ-chip { background: #f3f4f6; color: #111827; border-color: #d1d5db; }
+    html:not(.dark) .ARCKHÉ-chip[aria-pressed="true"], html:not(.dark) .ARCKHÉ-chip.is-active { background: rgba(161,98,7,.1); border-color: #a16207; color: #a16207; }
     /* Coluna do módulo: largura fixa do layout, independente da ordem em que o Tailwind CDN injeta o CSS */
-    main.max-w-6xl.inema-prose { max-width: 72rem; }
+    main.max-w-6xl.ARCKHÉ-prose { max-width: 72rem; }
     /* Code box */
     .codebox pre { white-space: pre-wrap; word-break: break-word; }
     
   </style>
-<link href="https://inematds.github.io/produtos-era-ia/curso/trilha1/modulo-1-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/en/curso/trilha1/modulo-1-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/es/curso/trilha1/modulo-1-1.html" hreflang="es" rel="alternate"/><link href="https://inematds.github.io/produtos-era-ia/curso/trilha1/modulo-1-1.html" hreflang="x-default" rel="alternate"/>
+<link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha1/modulo-1-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/en/curso/trilha1/modulo-1-1.html" hreflang="en" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/es/curso/trilha1/modulo-1-1.html" hreflang="es" rel="alternate"/><link href="https://linnoff88-dev.github.io/arckhe-/curso/trilha1/modulo-1-1.html" hreflang="x-default" rel="alternate"/>
 </head>
 <body class="bg-dark-900 text-neutral-100 min-h-screen">
 <!-- NAVIGATION -->
@@ -257,9 +257,9 @@
 <span class="font-bold text-lg hidden md:inline">Productos en la era de la IA</span>
 </a>
 <span class="text-neutral-600">|</span>
-<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a>
 <span class="text-neutral-600 hidden sm:inline">-</span>
-<a class="text-amber-700 dark:text-slate-300 hover:opacity-80 text-sm font-medium hidden sm:inline" href="https://inema.pro" target="_blank">PRO</a>
+<a class="text-amber-700 dark:text-slate-300 hover:opacity-80 text-sm font-medium hidden sm:inline" href="https://ARCKHÉ.pro" target="_blank">PRO</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="../../curso/trilha1/index.html">
@@ -275,11 +275,11 @@
 <span class="hidden sm:inline">Lanzar</span>
 </a>
 <span class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold px-2" data-lang-switch=""><a class="text-neutral-400 hover:text-primary" href="../../../curso/trilha1/modulo-1-1.html" hreflang="pt-BR" lang="pt-BR">PT</a><span class="text-neutral-600">·</span><a class="text-neutral-400 hover:text-primary" href="../../../en/curso/trilha1/modulo-1-1.html" hreflang="en" lang="en">EN</a><span class="text-neutral-600">·</span><a class="text-primary font-bold" href="../../../es/curso/trilha1/modulo-1-1.html" hreflang="es" lang="es">ES</a></span>
-<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors" data-inema-journey-open="" type="button">
+<button class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm font-semibold text-primary bg-primary/10 hover:bg-primary/20 transition-colors" data-ARCKHÉ-journey-open="" type="button">
 <span>🧭</span><span>Mi recorrido</span>
-<span class="text-xs px-1.5 py-0.5 rounded-full bg-primary/20" data-inema-journey-badge=""></span>
+<span class="text-xs px-1.5 py-0.5 rounded-full bg-primary/20" data-ARCKHÉ-journey-badge=""></span>
 </button>
-<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" data-inema-appearance-toggle="[data-inema-appearance]" title="Apariencia y lectura" type="button">
+<button aria-expanded="false" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" data-ARCKHÉ-appearance-toggle="[data-ARCKHÉ-appearance]" title="Apariencia y lectura" type="button">
 <span aria-hidden="true">Aa</span>
 </button>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors" id="theme-toggle" title="Tema claro/oscuro">
@@ -290,40 +290,40 @@
 </div>
 </div>
 </nav>
-<div aria-label="Apariencia y lectura" class="inema-appearance-pop" data-inema-appearance="" role="region">
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Tema</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-theme="inema-dark" type="button">Oscuro</button>
-<button class="inema-chip" data-inema-set-theme="claro" type="button">Claro</button>
-<button class="inema-chip" data-inema-set-theme="sepia" type="button">Sepia</button>
-<button class="inema-chip" data-inema-set-theme="foco" type="button">Enfoque</button>
-<button class="inema-chip" data-inema-set-theme="contraste" type="button">Contraste</button>
+<div aria-label="Apariencia y lectura" class="ARCKHÉ-appearance-pop" data-ARCKHÉ-appearance="" role="region">
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Tema</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="ARCKHÉ-dark" type="button">Oscuro</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="claro" type="button">Claro</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="sepia" type="button">Sepia</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="foco" type="button">Enfoque</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-theme="contraste" type="button">Contraste</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Tamaño del texto</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-fontscale="90" type="button">A-</button>
-<button class="inema-chip" data-inema-set-fontscale="100" type="button">A</button>
-<button class="inema-chip" data-inema-set-fontscale="115" type="button">A+</button>
-<button class="inema-chip" data-inema-set-fontscale="130" type="button">A++</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Tamaño del texto</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="90" type="button">A-</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="100" type="button">A</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="115" type="button">A+</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-fontscale="130" type="button">A++</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Fuente</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-font="inter" type="button">Inter</button>
-<button class="inema-chip" data-inema-set-font="system" type="button">Sistema</button>
-<button class="inema-chip" data-inema-set-font="leitura" type="button">Lectura</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Fuente</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="inter" type="button">Inter</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="system" type="button">Sistema</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-font="leitura" type="button">Lectura</button>
 </div>
 </div>
-<div class="inema-appearance-sec">
-<p class="inema-appearance-label">Interlineado</p>
-<div class="inema-appearance-row">
-<button class="inema-chip" data-inema-set-leading="1.5" type="button">Compacto</button>
-<button class="inema-chip" data-inema-set-leading="1.7" type="button">Normal</button>
-<button class="inema-chip" data-inema-set-leading="1.9" type="button">Amplio</button>
+<div class="ARCKHÉ-appearance-sec">
+<p class="ARCKHÉ-appearance-label">Interlineado</p>
+<div class="ARCKHÉ-appearance-row">
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.5" type="button">Compacto</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.7" type="button">Normal</button>
+<button class="ARCKHÉ-chip" data-ARCKHÉ-set-leading="1.9" type="button">Amplio</button>
 </div>
 </div>
 </div>
@@ -344,36 +344,36 @@
 <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">40</div><div class="text-xs text-neutral-400">Minutos</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nivel</div></div><div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Fundamento</div><div class="text-xs text-neutral-400">Tipo</div></div>
 </div>
-<div aria-label="Progreso del módulo" aria-valuemax="100" aria-valuemin="0" class="inema-meter max-w-md mt-6" data-inema-meter="modulo:1-1" role="progressbar">
-<div class="flex justify-between text-sm text-neutral-400 mb-1"><span data-inema-meter-frac="">0 de 6</span><span data-inema-meter-pct="">0%</span></div>
-<div class="inema-bar h-2 bg-dark-700 rounded-full overflow-hidden"><div class="inema-bar__fill h-full bg-emerald-500 rounded-full transition-all" data-inema-meter-fill="" style="width:0%"></div></div>
+<div aria-label="Progreso del módulo" aria-valuemax="100" aria-valuemin="0" class="ARCKHÉ-meter max-w-md mt-6" data-ARCKHÉ-meter="modulo:1-1" role="progressbar">
+<div class="flex justify-between text-sm text-neutral-400 mb-1"><span data-ARCKHÉ-meter-frac="">0 de 6</span><span data-ARCKHÉ-meter-pct="">0%</span></div>
+<div class="ARCKHÉ-bar h-2 bg-dark-700 rounded-full overflow-hidden"><div class="ARCKHÉ-bar__fill h-full bg-emerald-500 rounded-full transition-all" data-ARCKHÉ-meter-fill="" style="width:0%"></div></div>
 </div>
 </div>
 </header>
-<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 inema-prose" data-inema-module="1-1" data-inema-track="1">
-<nav aria-label="Temas de este módulo" class="mb-12 bg-dark-800 rounded-xl border border-dark-600 p-5" data-inema-toc="">
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 ARCKHÉ-prose" data-ARCKHÉ-module="1-1" data-ARCKHÉ-track="1">
+<nav aria-label="Temas de este módulo" class="mb-12 bg-dark-800 rounded-xl border border-dark-600 p-5" data-ARCKHÉ-toc="">
 <p class="text-xs font-semibold uppercase tracking-wider text-neutral-500 mb-3">En este módulo</p>
 <ol class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
 <li><a class="flex items-start gap-2 text-neutral-300 hover:text-emerald-400" href="#topico-1"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">1</span><span>La inflación de apps</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-emerald-400" href="#topico-2"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">2</span><span>¿Murió el SaaS?</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-emerald-400" href="#topico-3"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">3</span><span>El ciclo de producto se desordenó</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-emerald-400" href="#topico-4"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">4</span><span>Cuando la experiencia ya es la validación</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-emerald-400" href="#topico-5"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">5</span><span>Una persona, tres roles</span></a></li><li><a class="flex items-start gap-2 text-neutral-300 hover:text-emerald-400" href="#topico-6"><span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">6</span><span>La velocidad ama el dinero</span></a></li>
 </ol>
 </nav>
 <!-- TÓPICO 1 -->
-<section class="mb-16" data-inema-topic="modulo-1-1#topico-1" id="topico-1">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-1#topico-1" id="topico-1">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
 <h2 class="text-2xl font-bold">🎈 La inflación de apps</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-p1">Una estimación que circula entre quienes siguen el mercado del software dice que <strong class="text-emerald-400">cerca de dos tercios de las aplicaciones que existen hoy se crearon en los últimos tres o cuatro años</strong>. El número exacto importa menos que la tendencia: la cantidad de software creció mucho más rápido que la cantidad de personas dispuestas a usarlo.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-p1">Una estimación que circula entre quienes siguen el mercado del software dice que <strong class="text-emerald-400">cerca de dos tercios de las aplicaciones que existen hoy se crearon en los últimos tres o cuatro años</strong>. El número exacto importa menos que la tendencia: la cantidad de software creció mucho más rápido que la cantidad de personas dispuestas a usarlo.</p>
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-emerald-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-3">¿Eres nuevo por aquí? Términos de este tema</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">App / aplicación</dt><dd class="text-neutral-400" data-inema-block="m1-1-p2">Cualquier software que alguien usa para resolver una tarea: sitio web, app móvil, extensión, panel web.</dd></div><div><dt class="font-semibold text-neutral-100">SaaS</dt><dd class="text-neutral-400" data-inema-block="m1-1-p3">Software como Servicio. No compras el programa; pagas una suscripción mensual para usarlo por internet (p. ej., Notion, Canva, RD Station).</dd></div><div><dt class="font-semibold text-neutral-100">Vibe coding</dt><dd class="text-neutral-400" data-inema-block="m1-1-p4">Crear software describiendo en lenguaje natural lo que quieres que haga una IA (Claude Code, Codex, Cursor) y dejando que escriba el código.</dd></div><div><dt class="font-semibold text-neutral-100">Costo marginal</dt><dd class="text-neutral-400" data-inema-block="m1-1-p5">Cuánto cuesta producir una unidad más. En el software hecho con IA, el costo de «una app más» bajó a unas horas y pocos dólares.</dd></div>
+<div><dt class="font-semibold text-neutral-100">App / aplicación</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-1-p2">Cualquier software que alguien usa para resolver una tarea: sitio web, app móvil, extensión, panel web.</dd></div><div><dt class="font-semibold text-neutral-100">SaaS</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-1-p3">Software como Servicio. No compras el programa; pagas una suscripción mensual para usarlo por internet (p. ej., Notion, Canva, RD Station).</dd></div><div><dt class="font-semibold text-neutral-100">Vibe coding</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-1-p4">Crear software describiendo en lenguaje natural lo que quieres que haga una IA (Claude Code, Codex, Cursor) y dejando que escriba el código.</dd></div><div><dt class="font-semibold text-neutral-100">Costo marginal</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-1-p5">Cuánto cuesta producir una unidad más. En el software hecho con IA, el costo de «una app más» bajó a unas horas y pocos dólares.</dd></div>
 </dl>
 </aside>
 <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">💸</span> Inflación, en el sentido económico</h3>
-<p class="text-neutral-300 mb-4" data-inema-block="m1-1-p6">En economía, hay inflación cuando circula demasiado dinero y cada billete pasa a valer menos. Con las apps pasa algo parecido: hay demasiado software compitiendo por la misma atención, y cada lanzamiento por separado pasa a valer menos para quien lo ve.</p>
-<p class="text-neutral-300 mb-4" data-inema-block="m1-1-p7">Eso no quiere decir que el software haya perdido valor. Quiere decir que el <strong>software genérico</strong> perdió valor. Lo que sigue teniendo valor es el software que resuelve un problema real, de una manera difícil de copiar y que llega a las personas adecuadas.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m1-1-p6">En economía, hay inflación cuando circula demasiado dinero y cada billete pasa a valer menos. Con las apps pasa algo parecido: hay demasiado software compitiendo por la misma atención, y cada lanzamiento por separado pasa a valer menos para quien lo ve.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m1-1-p7">Eso no quiere decir que el software haya perdido valor. Quiere decir que el <strong>software genérico</strong> perdió valor. Lo que sigue teniendo valor es el software que resuelve un problema real, de una manera difícil de copiar y que llega a las personas adecuadas.</p>
 </div>
 <figure class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Curva que compara el crecimiento de la cantidad de apps con el crecimiento de la atención disponible: las apps aumentan mucho más rápido" class="w-full h-auto" role="img" viewbox="0 0 800 360"><defs>
@@ -403,26 +403,26 @@
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Consecuencia práctica</h3>
-<p class="text-neutral-300" data-inema-block="m1-1-p8">Antes de abrir el editor, hazte la pregunta que impone la inflación: si mañana aparecen diez apps más como la mía, ¿por qué alguien seguiría eligiendo la mía? Si no hay respuesta, el problema no es técnico.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m1-1-p8">Antes de abrir el editor, hazte la pregunta que impone la inflación: si mañana aparecen diez apps más como la mía, ¿por qué alguien seguiría eligiendo la mía? Si no hay respuesta, el problema no es técnico.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Marcar como leído</span>
-<span class="inema-label-done">Leído</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span>
+<span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </section>
 <!-- TÓPICO 2 -->
-<section class="mb-16" data-inema-topic="modulo-1-1#topico-2" id="topico-2">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-1#topico-2" id="topico-2">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
 <h2 class="text-2xl font-bold">⚰️ ¿Murió el SaaS?</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-p9">Mucha gente repite que el SaaS se acabó. En buena parte, tiene razón: las herramientas simples que solo organizaban datos o generaban texto están siendo reemplazadas por un pedido de dos líneas a un asistente de IA. ¿Por qué pagar R$ 50 al mes por algo que el chat hace gratis?</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-p9">Mucha gente repite que el SaaS se acabó. En buena parte, tiene razón: las herramientas simples que solo organizaban datos o generaban texto están siendo reemplazadas por un pedido de dos líneas a un asistente de IA. ¿Por qué pagar R$ 50 al mes por algo que el chat hace gratis?</p>
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-emerald-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-3">¿Eres nuevo por aquí? Términos de este tema</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">Arbitraje</dt><dd class="text-neutral-400" data-inema-block="m1-1-p10">Ganar con una diferencia que el mercado aún no ha corregido. Comprar barato en un lugar y vender caro en otro; aquí, resolver un problema antes de que el resto del mercado se dé cuenta de que es fácil de resolver.</dd></div><div><dt class="font-semibold text-neutral-100">Nicho</dt><dd class="text-neutral-400" data-inema-block="m1-1-p11">Un grupo específico de clientes con una necesidad específica: contadores de ciudades pequeñas, clínicas veterinarias, oficinas de ingeniería.</dd></div><div><dt class="font-semibold text-neutral-100">Caso de uso</dt><dd class="text-neutral-400" data-inema-block="m1-1-p12">La tarea concreta que la persona quiere hacer con el producto: «emitir la factura del mes», no «administrar las finanzas».</dd></div>
+<div><dt class="font-semibold text-neutral-100">Arbitraje</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-1-p10">Ganar con una diferencia que el mercado aún no ha corregido. Comprar barato en un lugar y vender caro en otro; aquí, resolver un problema antes de que el resto del mercado se dé cuenta de que es fácil de resolver.</dd></div><div><dt class="font-semibold text-neutral-100">Nicho</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-1-p11">Un grupo específico de clientes con una necesidad específica: contadores de ciudades pequeñas, clínicas veterinarias, oficinas de ingeniería.</dd></div><div><dt class="font-semibold text-neutral-100">Caso de uso</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-1-p12">La tarea concreta que la persona quiere hacer con el producto: «emitir la factura del mes», no «administrar las finanzas».</dd></div>
 </dl>
 </aside>
 <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
@@ -446,22 +446,22 @@
 </figure>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Trampa común</h3>
-<p class="text-neutral-300" data-inema-block="m1-1-p13">Leer «el SaaS murió» y rendirse, o leer «todavía hay espacio» y construir cualquier cosa. Ambas interpretaciones son flojas. Lo que existe es un filtro más estricto: menos ideas pasan, pero las que pasan tienen menos competencia seria.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m1-1-p13">Leer «el SaaS murió» y rendirse, o leer «todavía hay espacio» y construir cualquier cosa. Ambas interpretaciones son flojas. Lo que existe es un filtro más estricto: menos ideas pasan, pero las que pasan tienen menos competencia seria.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Marcar como leído</span>
-<span class="inema-label-done">Leído</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span>
+<span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </section>
 <!-- TÓPICO 3 -->
-<section class="mb-16" data-inema-topic="modulo-1-1#topico-3" id="topico-3">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-1#topico-3" id="topico-3">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
 <h2 class="text-2xl font-bold">🔀 El ciclo de producto se desordenó</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-p14">El proceso tradicional de producto tiene siete etapas: <strong class="text-emerald-400">tener la idea, validar, prototipar, hacer marketing, desarrollar, lanzar y mejorar</strong>. Era una secuencia lógica en una época en que desarrollar costaba caro: solo invertías en ingenieros después de tener la certeza de que valía la pena.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-p14">El proceso tradicional de producto tiene siete etapas: <strong class="text-emerald-400">tener la idea, validar, prototipar, hacer marketing, desarrollar, lanzar y mejorar</strong>. Era una secuencia lógica en una época en que desarrollar costaba caro: solo invertías en ingenieros después de tener la certeza de que valía la pena.</p>
 <figure class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Flujo de las siete etapas clásicas del ciclo de producto" class="w-full h-auto" role="img" viewbox="0 0 800 200"><defs>
 <lineargradient id="s3-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
@@ -498,73 +498,73 @@
 <text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" font-style="italic" text-anchor="middle" x="400" y="178">Flujo de las siete etapas clásicas del ciclo de producto</text></svg>
 <figcaption class="text-xs text-neutral-400 mt-3 px-1"><strong class="text-emerald-400">Qué observar:</strong> En el orden clásico, construir viene más tarde porque era la etapa más cara. Hoy el prototipo cuesta horas; por eso puede venir antes de la validación y convertirse en la propia herramienta de validación.</figcaption>
 </figure>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-p15">Con IA, construir un prototipo lleva una tarde. Esto cambia la lógica: a veces tiene más sentido <strong>prototipar para validar</strong> que validar para después prototipar. Un prototipo funcional responde preguntas que una encuesta de opinión nunca responde, como «¿la persona realmente hace clic?».</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-p15">Con IA, construir un prototipo lleva una tarde. Esto cambia la lógica: a veces tiene más sentido <strong>prototipar para validar</strong> que validar para después prototipar. Un prototipo funcional responde preguntas que una encuesta de opinión nunca responde, como «¿la persona realmente hace clic?».</p>
 <div class="space-y-5 mb-6">
 <h3 class="text-lg font-semibold text-emerald-400 mb-2">Cómo suele ser el orden hoy</h3>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Idea basada en un dolor</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m1-1-p16">La ideación sigue en el centro. Nada reemplaza entender el problema.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m1-1-p16">La ideación sigue en el centro. Nada reemplaza entender el problema.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Prototipo rápido</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m1-1-p17">Una versión fea, pero usable, construida en horas con un asistente de código.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m1-1-p17">Una versión fea, pero usable, construida en horas con un asistente de código.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Validación con el prototipo en la mano</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m1-1-p18">Les muestras algo real a personas reales y mides lo que hacen, no lo que dicen.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m1-1-p18">Les muestras algo real a personas reales y mides lo que hacen, no lo que dicen.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">4</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Distribución desde el primer día</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m1-1-p19">El marketing deja de ser la etapa final. Sin audiencia, no hay forma de validar nada.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m1-1-p19">El marketing deja de ser la etapa final. Sin audiencia, no hay forma de validar nada.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">5</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Desarrollar, lanzar y mejorar en ciclos cortos</h4>
-<p class="text-neutral-300 text-sm" data-inema-block="m1-1-p20">Las etapas finales se convierten en un ciclo continuo en lugar de una línea recta.</p>
+<p class="text-neutral-300 text-sm" data-ARCKHÉ-block="m1-1-p20">Las etapas finales se convierten en un ciclo continuo en lugar de una línea recta.</p>
 </div>
 </div>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Regla sencilla</h3>
-<p class="text-neutral-300" data-inema-block="m1-1-p21">El orden correcto depende del producto y del nicho. Pregúntate qué etapa es hoy la más barata de hacer y cuál responde a la duda más peligrosa. Empieza por la que reúne ambas cosas.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m1-1-p21">El orden correcto depende del producto y del nicho. Pregúntate qué etapa es hoy la más barata de hacer y cuál responde a la duda más peligrosa. Empieza por la que reúne ambas cosas.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Marcar como leído</span>
-<span class="inema-label-done">Leído</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span>
+<span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </section>
 <!-- TÓPICO 4 -->
-<section class="mb-16" data-inema-topic="modulo-1-1#topico-4" id="topico-4">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-1#topico-4" id="topico-4">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">🎓 Cuando la experiencia ya es la validación</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-p22">Si eres consultor, freelancer o llevas años trabajando en un área, probablemente ya notaste una brecha que se repite: todos los clientes necesitan la misma cosita y nadie la ofrece de forma sencilla. En ese caso, no necesitas tanta validación. <strong class="text-emerald-400">Tu experiencia ya fue la investigación de mercado.</strong></p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-p22">Si eres consultor, freelancer o llevas años trabajando en un área, probablemente ya notaste una brecha que se repite: todos los clientes necesitan la misma cosita y nadie la ofrece de forma sencilla. En ese caso, no necesitas tanta validación. <strong class="text-emerald-400">Tu experiencia ya fue la investigación de mercado.</strong></p>
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-emerald-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-3">¿Eres nuevo por aquí? Términos de este tema</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">Micro SaaS</dt><dd class="text-neutral-400" data-inema-block="m1-1-p23">Un SaaS pequeño, enfocado en una sola tarea, a menudo creado y mantenido por una o dos personas.</dd></div><div><dt class="font-semibold text-neutral-100">Hacer operativo</dt><dd class="text-neutral-400" data-inema-block="m1-1-p24">Transformar algo que haces «a mano», caso por caso, en un proceso repetible que siempre funciona igual.</dd></div><div><dt class="font-semibold text-neutral-100">Plug and play</dt><dd class="text-neutral-400" data-inema-block="m1-1-p25">Algo que la persona conecta y ya funciona, sin una configuración complicada.</dd></div>
+<div><dt class="font-semibold text-neutral-100">Micro SaaS</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-1-p23">Un SaaS pequeño, enfocado en una sola tarea, a menudo creado y mantenido por una o dos personas.</dd></div><div><dt class="font-semibold text-neutral-100">Hacer operativo</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-1-p24">Transformar algo que haces «a mano», caso por caso, en un proceso repetible que siempre funciona igual.</dd></div><div><dt class="font-semibold text-neutral-100">Plug and play</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-1-p25">Algo que la persona conecta y ya funciona, sin una configuración complicada.</dd></div>
 </dl>
 </aside>
 <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🧮</span> El cálculo que hace el cliente</h3>
-<p class="text-neutral-300 mb-4" data-inema-block="m1-1-p26">El cliente compara tu precio con la alternativa. Si la alternativa es contratar a un desarrollador por algunas semanas o pagar una suscripción premium de IA que cuesta cientos de dólares al mes y además exige aprender a usarla, un producto de R$ 49 que resuelve exactamente eso parece barato.</p>
-<p class="text-neutral-300 mb-4" data-inema-block="m1-1-p27">El precio no se compara con cero. Se compara con el costo y el trabajo de resolverlo de otra manera.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m1-1-p26">El cliente compara tu precio con la alternativa. Si la alternativa es contratar a un desarrollador por algunas semanas o pagar una suscripción premium de IA que cuesta cientos de dólares al mes y además exige aprender a usarla, un producto de R$ 49 que resuelve exactamente eso parece barato.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m1-1-p27">El precio no se compara con cero. Se compara con el costo y el trabajo de resolverlo de otra manera.</p>
 </div>
 <figure class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Comparación del costo mensual de tres formas de resolver el mismo problema" class="w-full h-auto" role="img" viewbox="0 0 800 304"><defs>
@@ -598,24 +598,24 @@
 <ul class="space-y-3 text-neutral-300"><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Lo resolviste solo para ti.</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Cada cliente pidió una versión diferente.</span></li><li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Nadie pagaría si tú no estuvieras ahí.</span></li></ul>
 </div>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Marcar como leído</span>
-<span class="inema-label-done">Leído</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span>
+<span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </section>
 <!-- TÓPICO 5 -->
-<section class="mb-16" data-inema-topic="modulo-1-1#topico-5" id="topico-5">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-1#topico-5" id="topico-5">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
 <h2 class="text-2xl font-bold">🧑‍🚀 Una persona, tres roles</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-p28">En las empresas, los productos suelen ser creados por personas con roles separados. El <strong>gerente de producto</strong> decide qué construir y para quién. El <strong>ingeniero</strong> construye. El <strong>QA</strong> prueba y encuentra fallas. Cada uno frena a los demás, y esa fricción evita muchos errores.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-p28">En las empresas, los productos suelen ser creados por personas con roles separados. El <strong>gerente de producto</strong> decide qué construir y para quién. El <strong>ingeniero</strong> construye. El <strong>QA</strong> prueba y encuentra fallas. Cada uno frena a los demás, y esa fricción evita muchos errores.</p>
 <aside class="bg-dark-800/60 rounded-xl border border-dashed border-emerald-500/30 p-5 mb-6">
 <p class="text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-3">¿Eres nuevo por aquí? Términos de este tema</p>
 <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-sm">
-<div><dt class="font-semibold text-neutral-100">Gerente de producto (PM)</dt><dd class="text-neutral-400" data-inema-block="m1-1-p29">Quien decide qué hace el producto, para quién y en qué orden se construyen las cosas.</dd></div><div><dt class="font-semibold text-neutral-100">QA</dt><dd class="text-neutral-400" data-inema-block="m1-1-p30">Quality Assurance, garantía de calidad. Quien prueba el producto para encontrar errores antes de que los encuentre el usuario.</dd></div><div><dt class="font-semibold text-neutral-100">Agente de IA</dt><dd class="text-neutral-400" data-inema-block="m1-1-p31">Un modelo de IA que ejecuta tareas en varios pasos por su cuenta: lee archivos, ejecuta comandos, prueba y corrige.</dd></div>
+<div><dt class="font-semibold text-neutral-100">Gerente de producto (PM)</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-1-p29">Quien decide qué hace el producto, para quién y en qué orden se construyen las cosas.</dd></div><div><dt class="font-semibold text-neutral-100">QA</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-1-p30">Quality Assurance, garantía de calidad. Quien prueba el producto para encontrar errores antes de que los encuentre el usuario.</dd></div><div><dt class="font-semibold text-neutral-100">Agente de IA</dt><dd class="text-neutral-400" data-ARCKHÉ-block="m1-1-p31">Un modelo de IA que ejecuta tareas en varios pasos por su cuenta: lee archivos, ejecuta comandos, prueba y corrige.</dd></div>
 </dl>
 </aside>
 <figure class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
@@ -637,27 +637,27 @@
 </figure>
 <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🕳️</span> El rol que más desaparece</h3>
-<p class="text-neutral-300 mb-4" data-inema-block="m1-1-p32">Quien sabe programar tiende a saltar directamente a la ingeniería porque es la parte divertida. El agente de IA lo empeora: construir se vuelve tan fácil que nadie se detiene a preguntar si debería hacerlo.</p>
-<p class="text-neutral-300 mb-4" data-inema-block="m1-1-p33">Por eso, el resto de este curso trata casi por completo del rol de producto: las preguntas que un buen gerente haría antes de liberar una línea de código.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m1-1-p32">Quien sabe programar tiende a saltar directamente a la ingeniería porque es la parte divertida. El agente de IA lo empeora: construir se vuelve tan fácil que nadie se detiene a preguntar si debería hacerlo.</p>
+<p class="text-neutral-300 mb-4" data-ARCKHÉ-block="m1-1-p33">Por eso, el resto de este curso trata casi por completo del rol de producto: las preguntas que un buen gerente haría antes de liberar una línea de código.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Separa los sombreros en el tiempo</h3>
-<p class="text-neutral-300" data-inema-block="m1-1-p34">Reserva momentos distintos para cada rol. En una sesión solo decides (producto). En otra, solo construyes. En otra, solo intentas romper lo que construiste. Mezclar los tres al mismo tiempo hace que siempre gane quien construye.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m1-1-p34">Reserva momentos distintos para cada rol. En una sesión solo decides (producto). En otra, solo construyes. En otra, solo intentas romper lo que construiste. Mezclar los tres al mismo tiempo hace que siempre gane quien construye.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Marcar como leído</span>
-<span class="inema-label-done">Leído</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span>
+<span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </section>
 <!-- TÓPICO 6 -->
-<section class="mb-16" data-inema-topic="modulo-1-1#topico-6" id="topico-6">
+<section class="mb-16" data-ARCKHÉ-topic="modulo-1-1#topico-6" id="topico-6">
 <div class="flex items-center space-x-4 mb-6">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
 <h2 class="text-2xl font-bold">⚡ La velocidad ama el dinero</h2>
 </div>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-p35">Hay un viejo dicho en los negocios: <strong class="text-emerald-400">la velocidad ama el dinero</strong>. Siempre fue cierto, pero hoy lo es aún más. Si cualquier producto se puede clonar en semanas, la ventaja de quien llegó primero también se mide en semanas.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-ARCKHÉ-block="m1-1-p35">Hay un viejo dicho en los negocios: <strong class="text-emerald-400">la velocidad ama el dinero</strong>. Siempre fue cierto, pero hoy lo es aún más. Si cualquier producto se puede clonar en semanas, la ventaja de quien llegó primero también se mide en semanas.</p>
 <figure class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
 <svg aria-label="Curva del valor capturado por quienes llegan temprano frente a quienes llegan tarde durante una ventana de oportunidad" class="w-full h-auto" role="img" viewbox="0 0 800 360"><defs>
 <lineargradient id="s6-g" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
@@ -686,17 +686,17 @@
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> Velocidad no es apresuramiento</h3>
-<p class="text-neutral-300" data-inema-block="m1-1-p36">Ser rápido es acortar el tiempo entre una decisión y el aprendizaje que produce. Apresurarse es saltarse el pensamiento. Las preguntas de las próximas rutas llevan una tarde; son lo que hace que la velocidad sea segura.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m1-1-p36">Ser rápido es acortar el tiempo entre una decisión y el aprendizaje que produce. Apresurarse es saltarse el pensamiento. Las preguntas de las próximas rutas llevan una tarde; son lo que hace que la velocidad sea segura.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
 <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Mide en días</h3>
-<p class="text-neutral-300" data-inema-block="m1-1-p37">Para cada idea, define un plazo corto (siete a catorce días) para que alguien externo tenga en sus manos una primera versión. Si no cabe en ese plazo, probablemente la idea es demasiado grande.</p>
+<p class="text-neutral-300" data-ARCKHÉ-block="m1-1-p37">Para cada idea, define un plazo corto (siete a catorce días) para que alguien externo tenga en sus manos una primera versión. Si no cabe en ese plazo, probablemente la idea es demasiado grande.</p>
 </div>
-<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">☐</span>
-<span aria-hidden="true" class="inema-ico-done">☑</span>
-<span class="inema-label-todo">Marcar como leído</span>
-<span class="inema-label-done">Leído</span>
+<button class="mt-4 px-4 py-2 rounded-lg text-sm font-medium bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 transition-colors flex items-center space-x-2 justify-start" data-ARCKHÉ-read-toggle="" type="button">
+<span aria-hidden="true" class="ARCKHÉ-ico-todo">☐</span>
+<span aria-hidden="true" class="ARCKHÉ-ico-done">☑</span>
+<span class="ARCKHÉ-label-todo">Marcar como leído</span>
+<span class="ARCKHÉ-label-done">Leído</span>
 </button>
 </section>
 <!-- QUIZ -->
@@ -746,8 +746,8 @@
 <footer class="border-t border-dark-600 mt-16 py-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm space-y-2">
 <p>Productos en la era de la IA · Ruta 1 — La mentalidad · 2026 ·
-        <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a> -
-        <a class="text-amber-700 dark:text-slate-300" href="https://inema.pro" target="_blank">PRO</a></p>
+        <a class="text-sky-400 hover:text-sky-300" href="https://ARCKHÉ AI" target="_blank">ARCKHÉ AI</a> -
+        <a class="text-amber-700 dark:text-slate-300" href="https://ARCKHÉ.pro" target="_blank">PRO</a></p>
 </div>
 </footer>
 <!-- SCRIPTS núcleo v1 -->
@@ -775,7 +775,7 @@
       html.classList.toggle('dark');
       const dark = html.classList.contains('dark');
       localStorage.setItem('theme', dark ? 'dark' : 'light');
-      if (window.INEMA && INEMA.setPref) { try { INEMA.setPref('theme', dark ? 'inema-dark' : 'claro'); } catch (e) {} }
+      if (window.ARCKHÉ && ARCKHÉ.setPref) { try { ARCKHÉ.setPref('theme', dark ? 'ARCKHÉ-dark' : 'claro'); } catch (e) {} }
     });
     function openModal(modalId) { const m = document.getElementById(modalId); if (m) { m.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
     function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
@@ -799,7 +799,7 @@
   </script>
 <script src="../../assets/learn.js"></script>
 <script>
-    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+    if (window.ARCKHÉ && typeof window.ARCKHÉ.init === 'function') { window.ARCKHÉ.init(); }
   </script>
 </body>
 </html>
